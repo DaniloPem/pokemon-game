@@ -117,7 +117,7 @@ const divInfoBatalha = document.querySelector("#info-batalha");
 const infoBatalha = document.createElement("span");
 divInfoBatalha.append(infoBatalha);
 infoBatalha.innerHTML = `O que <span style="font-weight: bold">${pokemonCompetidor.nome}</span> fará?`;
-const atacar = (pokemonAtacante, pokemonAlvo, habilidade) => {
+const atacar = (habilidade) => {
   const barraVidaOponente = document.querySelector("#barra-vida-oponente");
   infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonCompetidor.nome}</span> usou ${habilidade.nome}`;
   const debilidadeOponente = pokemonOponente.debilidades.find((debilidade) => debilidade.tipo === habilidade.tipo);
