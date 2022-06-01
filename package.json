@@ -1,0 +1,19 @@
+{
+  "name": "jogo-pokemon",
+  "version": "1.0.0",
+  "description": "Jogo de Pokemon feito para praticar Javascript, HTML, CSS do zero.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Pokemon",
+    "javascript",
+    "html",
+    "css",
+    "web",
+    "jogo"
+  ],
+  "author": "Danilo Pezo Mendoza",
+  "license": "ISC",
+  "type": "module"
+}

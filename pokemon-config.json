@@ -1,0 +1,32 @@
+{
+    "1": {
+        "tipo": "Planta",
+        "nome": "Bulbasaur",
+        "habilidades": [
+            {"nome": "Tackle", "tipo": "Normal"},
+            {"nome": "Vine Whip", "tipo": "Planta"}
+        ],
+        "evolucao": 2
+    },
+    "2": {
+        "tipo": "Planta",
+        "nome": "Ivysaur",
+        "habilidades": [
+            {"nome": "Solar Beam", "tipo": "Planta"},
+            {"nome": "Vine Whip", "tipo": "Planta"}
+        ],
+        "evolucao": 3
+    },
+    "3": {
+        "tipo": "Planta",
+        "nome": "Venusaur",
+        "habilidades": [
+            {"nome": "Solar Beam", "tipo": "Planta"},
+            {"nome": "Cut", "tipo": "Planta"},
+            {"nome": "Bind", "tipo": "Planta"},
+            {"nome": "Headbutt", "tipo": "Normal"},
+            {"nome": "Vine Whip", "tipo": "Planta"}
+        ],
+        "evolucao": 3
+    }
+}

@@ -1,0 +1,300 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.batalha {
+    width: 700px;
+    height: 560px;
+    margin: auto;
+}
+
+body::before {
+    content: '';
+    background: radial-gradient(black 33%, transparent 33%);
+    background-size: 3px 3px;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    z-index: -1;
+}
+
+.campo-luta {
+    background: url(../../../assets/imagem/campoBatalha.jpg);
+    background-size: contain;
+    height: 395px;
+    overflow: hidden;
+}
+
+.barra-versus {
+    display: flex;
+    justify-content: space-between;
+}
+
+.barra-competidor, .barra-oponente{
+    width: 250px;
+    height: 40px;
+    margin: 20px auto auto auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.icon-pokemon-batalha{
+    height: 30px;
+    margin: 2px 2px;
+    float: left;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.div-barra-hp{
+    background-color: rgba(0, 0, 0, 0.274);
+    height: 20px;
+    float: left;
+    width: 202px;
+}
+
+.conteiner-barra-hp{
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 150px;
+    height: 10px;
+    margin: 5px auto 5px;
+}
+
+.barra-hp-competidor, .barra-hp-oponente {
+    background: green;
+    border: 1px solid white;
+    border-radius: 4px;
+    height: 8px;
+    width: 146px;
+    margin: auto;
+}
+.info-barra-batalha{
+    display: inline-block;
+    background-color: rgba(78, 78, 78, 0.815);
+    width: 202px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.info-barra-batalha span{
+    color: white;
+    font-size: 13px;
+    margin: auto;
+}
+
+.oponente-batalha {
+    width: 300px;
+    height: 300px;
+    margin-top: -30px;
+    float: left;
+}
+
+.competidor-batalha {
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin: 100px 0 0 85px;
+    float: left;
+}
+
+.img-competidor {
+    width: 300px;
+    height: 300px;
+    display: inline-block
+}
+
+.img-oponente {
+    width: 300px;
+    height: 300px;
+    display: inline-block
+}
+
+.acoes {
+    display: flex;
+    justify-content: space-between;
+    background:url(../../../assets/imagem/background3.jpg);
+    background-size: contain;
+    overflow: hidden;
+    height: 160px;
+    border: 3px solid black;
+    border-top: none;
+}
+
+.div-info-batalha {
+    background-color: rgba(255, 255, 255, 0.637);
+    display: inline-block;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    width: 35%;
+    height: 100%;
+    position: relative;
+ }
+
+ .info-batalha {
+     width: 80%;
+     height: 100%;
+     position: relative;
+     padding: 50px 10px;
+}
+
+.div-info-batalha span {
+    font-size: 20px;
+}
+
+.lista-acoes-competidor {
+    width: 50%;
+}
+
+.acoes-competidor {
+    display: inline-block;
+    width: 15%;
+    margin: auto;
+}
+
+.acoes-competidor button {
+    background-color: rgba(146, 146, 146, 0.705);
+    font-weight: bolder;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: none;
+    width: 95px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.acoes-competidor button:hover {
+    background-color: rgba(224, 97, 97, 0.726);
+    transform: scale(1.06);
+}
+
+.icon-pikachu {
+    width: 15px;
+    height: 15px;
+    margin-top: -3px;
+}
+
+.botoes-ataques {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 12px 25px 0 0;
+    gap: 20px;
+    justify-content: right;
+}
+
+.botoes-ataques button{
+    border: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+    padding: 5px 1px 5px 25px;
+    width: 130px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.botoes-ataques img {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    border: 6px solid white;
+    margin-top: -3px;
+    outline: 1px solid black;
+    transition: 0.3s;
+}
+
+.agua-color-ataque {
+    background-color: rgba(33, 101, 247, 0.75);
+}
+
+.dragao-color-ataque {
+    background-color: rgba(69, 69, 197, 0.75);
+}
+
+.eletrico-color-ataque {
+    background-color: rgba(212, 212, 8, 0.75);
+}
+
+.fada-color-ataque {
+    background-color: rgba(241, 125, 212, 0.75);
+}
+
+.fantasma-color-ataque {
+    background-color: rgba(109, 45, 182, 0.75);
+}
+
+.ferro-color-ataque {
+    background-color: rgba(29, 102, 121, 0.75);
+}
+
+.fogo-color-ataque {
+    background-color: rgba(250, 154, 65, 0.75);
+}
+
+.gelo-color-ataque {
+    background-color: rgba(60, 178, 194, 0.75);
+}
+
+.inseto-color-ataque {
+    background-color: rgba(136, 255, 0, 0.75);
+}
+
+.luta-color-ataque {
+    background-color: rgba(218, 60, 60, 0.75);
+}
+
+.normal-color-ataque {
+    background-color: rgba(116, 116, 116, 0.75);
+}
+
+.pedra-color-ataque {
+    background-color: rgba(219, 164, 80, 0.75);
+}
+
+.planta-color-ataque {
+    background-color: rgba(38, 141, 38, 0.75);
+}
+
+.psiquico-color-ataque {
+    background-color: rgba(255, 101, 101, 0.75);
+}
+
+.sombrio-color-ataque {
+    background-color: rgba(75, 75, 75, 0.75);
+    color: white;
+}
+
+.terra-color-ataque {
+    background-color: rgba(248, 94, 38, 0.75);
+}
+
+.veneno-color-ataque {
+    background-color: rgba(128, 0, 128, 0.75);
+    color: white;
+}
+
+.voador-color-ataque {
+    background-color: rgba(83, 139, 211, 0.75);
+}
+
+.botoes-ataques span {
+    margin-top: 2px;
+}
+
+.botoes-ataques button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}

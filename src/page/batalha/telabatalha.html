@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de batalha</title>
+    <link rel="stylesheet" href="../style-global/reset.css" />
+    <link rel="stylesheet" href="batalha.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="batalha">
+      <section class="campo-luta">
+        <div class="barra-versus">
+          <div class="barra-competidor">
+            <div id="icon-pokemon-competidor" class="icon-pokemon-batalha">
+              <!-- <img
+                class="img-icon-pokemon-competidor"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png"
+                alt="icon-pokemon-competidor"
+              /> -->
+            </div>
+            <div class="div-barra-hp">
+              <div class="conteiner-barra-hp">
+                <div class="barra-hp-competidor"></div>
+              </div>
+            </div>
+            <div id="info-competidor-batalha" class="info-barra-batalha">
+              <!-- <span>CHARMANDER 1</span>
+              <span>Lv X</span> -->
+            </div>
+          </div>
+
+          <div class="barra-oponente">
+            <div id="icon-pokemon-oponente" class="icon-pokemon-batalha">
+              <!-- <img
+                class="img-icon-pokemon-oponente"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png"
+                alt="icon-pokemon-competidor"
+              /> -->
+            </div>
+            <div class="div-barra-hp">
+              <div class="conteiner-barra-hp">
+                <div class="barra-hp-oponente"></div>
+              </div>
+            </div>
+            <div id="info-oponente-batalha" class="info-barra-batalha">
+              <!-- <span>CHARMANDER 2</span>
+              <span>Lv X</span> -->
+            </div>
+          </div>
+        </div>
+
+        <div id="competidor-batalha"  class="competidor-batalha">
+          <!-- <img
+            class="img-competidor"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png"
+            alt="imagem-competidor-charmander"
+          /> -->
+        </div>
+
+        <div id="oponente-batalha" class="oponente-batalha">
+          <!-- <img
+            class="img-oponente"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+            alt="imagem-oponente-charmander"
+          /> -->
+        </div>
+      </section>
+
+      <section class="acoes">
+        <div class="div-info-batalha">
+          <div id="info-batalha" class="info-batalha">
+            <!-- <span>O que Charmander fará?</span> -->
+          </div>
+        </div>
+
+        <div class="lista-acoes-competidor">
+          <div class="lista-ataques-batalha">
+            <div id="botoes-ataque" class="botoes-ataques">
+              <!-- <button>
+                <span>Ataque 4</span
+                ><img src="../../../assets/icone/iconobatalla.png" />
+              </button> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="acoes-competidor">
+          <button id="botao-lutar">
+            <p>Lutar</p>
+            <img src="../../../assets/icone/iconobatalla.png" />
+          </button>
+          <button id="botao-pokemon">
+            <p>Pokemon</p>
+            <img
+              class="icon-pikachu"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/25.png"
+            />
+          </button>
+          <button>
+            <p>Items</p>
+            <img src="../../../assets/icone/iconopokebola.png" />
+          </button>
+          <button>
+            <p>Fugir</p>
+            <img src="../../../assets/icone/iconofugir.png" />
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="batalha.js" type="module"></script>
+  </body>
+</html>
