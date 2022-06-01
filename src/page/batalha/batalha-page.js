@@ -1,21 +1,23 @@
-import { teste } from "./teste.js";
-
 const pokemonCompetidor = {
   tipo: "Planta",
   nome: "Venusaur",
   habilidades: [
-    { nome: "Solar Beam", tipo: "Planta" },
-    { nome: "Cut", tipo: "Planta" },
-    { nome: "Bind", tipo: "Planta" },
-    { nome: "Headbutt", tipo: "Normal" },
-    { nome: "Vine Whip", tipo: "Planta" },
+    { nome: "Solar Beam", tipo: "Planta", forca: 80 },
+    { nome: "Cut", tipo: "Planta", forca: 20 },
+    { nome: "Bind", tipo: "Planta", forca: 10 },
+    { nome: "Headbutt", tipo: "Normal", forca: 30 },
+    { nome: "Vine Whip", tipo: "Planta", forca: 30 },
+  ],
+  vidaOriginal: 100,
+  vida: 100,
+  debilidades: [
+    { tipo: "Planta", dano: 0.3 },
+    { tipo: "Agua", dano: 0.6 },
   ],
   evolucao: "",
   level: 20,
-  backDefault:
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
-  frontDefault:
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+  backDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
+  frontDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
   icon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png",
 };
 
@@ -23,25 +25,27 @@ const pokemonOponente = {
   tipo: "Planta",
   nome: "Venusaur",
   habilidades: [
-    { nome: "Solar Beam", tipo: "Planta" },
-    { nome: "Cut", tipo: "Planta" },
-    { nome: "Bind", tipo: "Planta" },
-    { nome: "Headbutt", tipo: "Normal" },
-    { nome: "Vine Whip", tipo: "Planta" },
+    { nome: "Solar Beam", tipo: "Planta", forca: 80 },
+    { nome: "Cut", tipo: "Planta", forca: 20 },
+    { nome: "Bind", tipo: "Planta", forca: 10 },
+    { nome: "Headbutt", tipo: "Normal", forca: 30 },
+    { nome: "Vine Whip", tipo: "Planta", forca: 30 },
+  ],
+  vidaOriginal: 100,
+  vida: 100,
+  debilidades: [
+    { tipo: "Planta", dano: 0.3 },
+    { tipo: "Agua", dano: 0.6 },
   ],
   evolucao: "",
   level: 20,
-  backDefault:
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
-  frontDefault:
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+  backDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
+  frontDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
   icon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png",
 };
 
 //Barras Versus
-const infoCompetidorBatalha = document.querySelector(
-  "#info-competidor-batalha"
-);
+const infoCompetidorBatalha = document.querySelector("#info-competidor-batalha");
 const nomeCompetidorBatalha = document.createElement("span");
 const nivelCompetidorBatalha = document.createElement("span");
 infoCompetidorBatalha.append(nomeCompetidorBatalha);
@@ -58,9 +62,7 @@ nomeOponenteBatalha.innerHTML = `<span style="text-transform: uppercase">${pokem
 nivelOponenteBatalha.innerText = `Lv ${pokemonOponente.level}`;
 
 //Icones dos Pokemon
-const divIconPokemonCompetidor = document.querySelector(
-  "#icon-pokemon-competidor"
-);
+const divIconPokemonCompetidor = document.querySelector("#icon-pokemon-competidor");
 const iconPokemonCompetidor = document.createElement("img");
 const urlIconPokemonCompetidor = pokemonCompetidor.icon;
 iconPokemonCompetidor.setAttribute("class", "img-icon-pokemon-competidor");
@@ -89,12 +91,6 @@ imgCompetidorBatalha.setAttribute("class", "img-competidor");
 imgCompetidorBatalha.setAttribute("src", urlBackDefault);
 divCompetidorBatalha.append(imgCompetidorBatalha);
 
-//Informacao da Batalha
-const divInfoBatalha = document.querySelector("#info-batalha");
-const infoBatalha = document.createElement("span");
-divInfoBatalha.append(infoBatalha);
-infoBatalha.innerHTML = `O que <span style="font-weight: bold">${pokemonCompetidor.nome}</span> fará?`;
-
 //Botao Lutar
 const botaoLutar = document.querySelector("#botao-lutar");
 const aparecerAtaques = () => {
@@ -111,9 +107,40 @@ const aparecerAtaques = () => {
     nomeAtaque.innerText = `${habilidade.nome}`;
     iconTipo.setAttribute("src", `../../../assets/icone/${tipoHabilidade}.png`);
     ataqueBatalha.setAttribute("class", `${tipoHabilidade}-color-ataque`);
+    ataqueBatalha.addEventListener("click", () => atacar(habilidade));
   });
 };
 botaoLutar.addEventListener("click", aparecerAtaques);
 
+//Informacao da Batalha
+const divInfoBatalha = document.querySelector("#info-batalha");
+const infoBatalha = document.createElement("span");
+divInfoBatalha.append(infoBatalha);
+infoBatalha.innerHTML = `O que <span style="font-weight: bold">${pokemonCompetidor.nome}</span> fará?`;
+const atacar = (pokemonAtacante, pokemonAlvo, habilidade) => {
+  const barraVidaOponente = document.querySelector("#barra-vida-oponente");
+  infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonCompetidor.nome}</span> usou ${habilidade.nome}`;
+  const debilidadeOponente = pokemonOponente.debilidades.find((debilidade) => debilidade.tipo === habilidade.tipo);
+  const multiplicadorDano = !!debilidadeOponente ? debilidadeOponente.dano : 1;
+  const vidaOponente = pokemonOponente.vida - habilidade.forca * multiplicadorDano;
+  const porVidaOponente = (vidaOponente / pokemonOponente.vidaOriginal) * 100;
+  if (porVidaOponente >= 0) {
+    pokemonOponente.vida = vidaOponente;
+    barraVidaOponente.style.width = `${porVidaOponente}%`;
+    if (porVidaOponente > 50) {
+      barraVidaOponente.style.backgroundColor = "green";
+    } else if (porVidaOponente > 20) {
+      barraVidaOponente.style.backgroundColor = "#D8DC00";
+    } else {
+      barraVidaOponente.style.backgroundColor = "red";
+    }
+  } else {
+    pokemonOponente.vida = 0;
+    barraVidaOponente.style.width = "0";
+  }
+};
+
 // function nome() {}
 // const nome = () => {     }
+// gerar numero aleatorio entre 1 e 5. Math.round(Math.random() * 5)
+//timeout

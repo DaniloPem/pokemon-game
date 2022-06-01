@@ -69,8 +69,9 @@ body::before {
     border: 1px solid white;
     border-radius: 4px;
     height: 8px;
-    width: 146px;
-    margin: auto;
+    width: 148px;
+    margin: auto auto auto 0;
+    transition: 1s;
 }
 .info-barra-batalha{
     display: inline-block;
