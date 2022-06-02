@@ -44,52 +44,61 @@ const pokemonOponente = {
   icon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png",
 };
 
-//Barras Versus
-const infoCompetidorBatalha = document.querySelector("#info-competidor-batalha");
-const nomeCompetidorBatalha = document.createElement("span");
-const nivelCompetidorBatalha = document.createElement("span");
-infoCompetidorBatalha.append(nomeCompetidorBatalha);
-infoCompetidorBatalha.append(nivelCompetidorBatalha);
-nomeCompetidorBatalha.innerHTML = `<span style="text-transform: uppercase">${pokemonCompetidor.nome}</span>`;
-nivelCompetidorBatalha.innerText = `Lv ${pokemonCompetidor.level}`;
+const renderGame = () => {
+  //Barras Versus
+  const infoCompetidorBatalha = document.querySelector("#info-competidor-batalha");
+  const nomeCompetidorBatalha = document.createElement("span");
+  const nivelCompetidorBatalha = document.createElement("span");
+  infoCompetidorBatalha.append(nomeCompetidorBatalha);
+  infoCompetidorBatalha.append(nivelCompetidorBatalha);
+  nomeCompetidorBatalha.innerHTML = `<span style="text-transform: uppercase">${pokemonCompetidor.nome}</span>`;
+  nivelCompetidorBatalha.innerText = `Lv ${pokemonCompetidor.level}`;
+  const barraVidaCompetidor = document.querySelector('#barra-vida-competidor');
+  atualizarBarraVida(barraVidaCompetidor, pokemonCompetidor);
 
-const infoOponenteBatalha = document.querySelector("#info-oponente-batalha");
-const nomeOponenteBatalha = document.createElement("span");
-const nivelOponenteBatalha = document.createElement("span");
-infoOponenteBatalha.append(nomeOponenteBatalha);
-infoOponenteBatalha.append(nivelOponenteBatalha);
-nomeOponenteBatalha.innerHTML = `<span style="text-transform: uppercase">${pokemonOponente.nome}</span>`;
-nivelOponenteBatalha.innerText = `Lv ${pokemonOponente.level}`;
+  
+  const infoOponenteBatalha = document.querySelector("#info-oponente-batalha");
+  const nomeOponenteBatalha = document.createElement("span");
+  const nivelOponenteBatalha = document.createElement("span");
+  infoOponenteBatalha.append(nomeOponenteBatalha);
+  infoOponenteBatalha.append(nivelOponenteBatalha);
+  nomeOponenteBatalha.innerHTML = `<span style="text-transform: uppercase">${pokemonOponente.nome}</span>`;
+  nivelOponenteBatalha.innerText = `Lv ${pokemonOponente.level}`;
+  const barraVidaOponente = document.querySelector("#barra-vida-oponente");
+  atualizarBarraVida(barraVidaOponente, pokemonOponente);
+  
 
-//Icones dos Pokemon
-const divIconPokemonCompetidor = document.querySelector("#icon-pokemon-competidor");
-const iconPokemonCompetidor = document.createElement("img");
-const urlIconPokemonCompetidor = pokemonCompetidor.icon;
-iconPokemonCompetidor.setAttribute("class", "img-icon-pokemon-competidor");
-iconPokemonCompetidor.setAttribute("src", urlIconPokemonCompetidor);
-divIconPokemonCompetidor.append(iconPokemonCompetidor);
+  //Icones dos Pokemon
+  const divIconPokemonCompetidor = document.querySelector("#icon-pokemon-competidor");
+  const iconPokemonCompetidor = document.createElement("img");
+  const urlIconPokemonCompetidor = pokemonCompetidor.icon;
+  iconPokemonCompetidor.setAttribute("class", "img-icon-pokemon-competidor");
+  iconPokemonCompetidor.setAttribute("src", urlIconPokemonCompetidor);
+  divIconPokemonCompetidor.append(iconPokemonCompetidor);
+  
+  const divIconPokemonOponente = document.querySelector("#icon-pokemon-oponente");
+  const iconPokemonOponente = document.createElement("img");
+  const urlIconPokemonOponente = pokemonOponente.icon;
+  iconPokemonOponente.setAttribute("class", "img-icon-pokemon-oponente");
+  iconPokemonOponente.setAttribute("src", urlIconPokemonOponente);
+  divIconPokemonOponente.append(iconPokemonOponente);
 
-const divIconPokemonOponente = document.querySelector("#icon-pokemon-oponente");
-const iconPokemonOponente = document.createElement("img");
-const urlIconPokemonOponente = pokemonOponente.icon;
-iconPokemonOponente.setAttribute("class", "img-icon-pokemon-oponente");
-iconPokemonOponente.setAttribute("src", urlIconPokemonOponente);
-divIconPokemonOponente.append(iconPokemonOponente);
 
-//Imagen dos Pokemon
-const divOponenteBatalha = document.querySelector("#oponente-batalha");
-const imgOponenteBatalha = document.createElement("img");
-const urlFrontDefault = pokemonOponente.frontDefault;
-imgOponenteBatalha.setAttribute("class", "img-oponente");
-imgOponenteBatalha.setAttribute("src", urlFrontDefault);
-divOponenteBatalha.append(imgOponenteBatalha);
-
-const divCompetidorBatalha = document.querySelector("#competidor-batalha");
-const imgCompetidorBatalha = document.createElement("img");
-const urlBackDefault = pokemonCompetidor.backDefault;
-imgCompetidorBatalha.setAttribute("class", "img-competidor");
-imgCompetidorBatalha.setAttribute("src", urlBackDefault);
-divCompetidorBatalha.append(imgCompetidorBatalha);
+  //Imagen dos Pokemon
+  const divOponenteBatalha = document.querySelector("#oponente-batalha");
+  const imgOponenteBatalha = document.createElement("img");
+  const urlFrontDefault = pokemonOponente.frontDefault;
+  imgOponenteBatalha.setAttribute("class", "img-oponente");
+  imgOponenteBatalha.setAttribute("src", urlFrontDefault);
+  divOponenteBatalha.append(imgOponenteBatalha);
+  
+  const divCompetidorBatalha = document.querySelector("#competidor-batalha");
+  const imgCompetidorBatalha = document.createElement("img");
+  const urlBackDefault = pokemonCompetidor.backDefault;
+  imgCompetidorBatalha.setAttribute("class", "img-competidor");
+  imgCompetidorBatalha.setAttribute("src", urlBackDefault);
+  divCompetidorBatalha.append(imgCompetidorBatalha);
+};
 
 //Botao Lutar
 const botaoLutar = document.querySelector("#botao-lutar");
@@ -118,27 +127,31 @@ const infoBatalha = document.createElement("span");
 divInfoBatalha.append(infoBatalha);
 infoBatalha.innerHTML = `O que <span style="font-weight: bold">${pokemonCompetidor.nome}</span> fará?`;
 const atacar = (habilidade) => {
-  const barraVidaOponente = document.querySelector("#barra-vida-oponente");
   infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonCompetidor.nome}</span> usou ${habilidade.nome}`;
   const debilidadeOponente = pokemonOponente.debilidades.find((debilidade) => debilidade.tipo === habilidade.tipo);
   const multiplicadorDano = !!debilidadeOponente ? debilidadeOponente.dano : 1;
   const vidaOponente = pokemonOponente.vida - habilidade.forca * multiplicadorDano;
-  const porVidaOponente = (vidaOponente / pokemonOponente.vidaOriginal) * 100;
-  if (porVidaOponente >= 0) {
-    pokemonOponente.vida = vidaOponente;
-    barraVidaOponente.style.width = `${porVidaOponente}%`;
-    if (porVidaOponente > 50) {
-      barraVidaOponente.style.backgroundColor = "green";
-    } else if (porVidaOponente > 20) {
-      barraVidaOponente.style.backgroundColor = "#D8DC00";
+  pokemonOponente.vida = vidaOponente; 
+};
+
+const atualizarBarraVida = (barraVida, pokemon) => {  
+  const porVidaPokemon = (pokemon.vida / pokemon.vidaOriginal) * 100;
+  if (porVidaPokemon >= 0) {
+    barraVida.style.width = `${porVidaPokemon}%`;
+    if (porVidaPokemon > 50) {
+      barraVida.style.backgroundColor = "green";
+    } else if (porVidaPokemon > 20) {
+      barraVida.style.backgroundColor = "#D8DC00";
     } else {
-      barraVidaOponente.style.backgroundColor = "red";
+      barraVida.style.backgroundColor = "red";
     }
   } else {
-    pokemonOponente.vida = 0;
-    barraVidaOponente.style.width = "0";
+    barraVida.style.width = "0";
   }
-};
+}
+
+renderGame();
+
 
 // function nome() {}
 // const nome = () => {     }
