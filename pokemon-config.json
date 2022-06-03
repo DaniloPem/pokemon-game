@@ -1,32 +1,89 @@
 {
-    "1": {
+    "bulbasaur": {
         "tipo": "Planta",
         "nome": "Bulbasaur",
         "habilidades": [
-            {"nome": "Tackle", "tipo": "Normal"},
-            {"nome": "Vine Whip", "tipo": "Planta"}
+            {"nome": "Tackle", "tipo": "Normal", "forca": 10},
+            {"nome": "Headbutt", "tipo": "Normal", "forca": 20},
+            {"nome": "Vine Whip", "tipo": "Planta", "forca": 30},
+            {"nome": "Mega-drain", "tipo": "Planta", "forca": 40},
+            {"nome": "Leech-seed", "tipo": "Planta", "forca": 50},
+            {"nome": "Razor-wind", "tipo": "Planta", "forca": 60}
         ],
-        "evolucao": 2
+        "vidaOriginal": 100,
+        "debilidades": [
+            {"tipo": "Planta", "dano": "0.3"},
+            {"tipo": "Agua", "dano": "0.6"},
+            {"tipo": "Luta", "dano": "0.6"},
+            {"tipo": "Elétrico", "dano": "0.6"},
+            {"tipo": "Fada", "dano": "0.6"},
+            {"tipo": "Voador", "dano": "1.6"},
+            {"tipo": "Fogo", "dano": "1.6"},
+            {"tipo": "Psíquico", "dano": "1.6"},
+            {"tipo": "Gelo", "dano": "1.6"}
+        ],
+        "evolucao": "ivysaur",
+        "level": 10,
+        "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
+        "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+        "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/1.png"
     },
-    "2": {
+    "ivysaur": {
         "tipo": "Planta",
         "nome": "Ivysaur",
         "habilidades": [
-            {"nome": "Solar Beam", "tipo": "Planta"},
-            {"nome": "Vine Whip", "tipo": "Planta"}
+            {"nome": "Headbutt", "tipo": "Normal", "forca": 30},
+            {"nome": "Vine Whip", "tipo": "Planta", "forca": 40},
+            {"nome": "Poison Powder", "tipo": "Veneno", "forca": 50},
+            {"nome": "Razor Leaf", "tipo": "Planta", "forca": 60},
+            {"nome": "Petal Dance", "tipo": "Planta", "forca": 70},
+            {"nome": "Solar Beam", "tipo": "Planta", "forca": 80}
         ],
-        "evolucao": 3
+        "vidaOriginal": 100,
+        "debilidades": [
+            {"tipo": "Planta", "dano": "0.3"},
+            {"tipo": "Agua", "dano": "0.6"},
+            {"tipo": "Luta", "dano": "0.6"},
+            {"tipo": "Elétrico", "dano": "0.6"},
+            {"tipo": "Fada", "dano": "0.6"},
+            {"tipo": "Voador", "dano": "1.6"},
+            {"tipo": "Fogo", "dano": "1.6"},
+            {"tipo": "Psíquico", "dano": "1.6"},
+            {"tipo": "Gelo", "dano": "1.6"}
+        ],
+        "evolucao": "venusaur",
+        "level": 20,
+        "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png",
+        "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+        "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/2.png"
     },
-    "3": {
+    "venusaur": {
         "tipo": "Planta",
         "nome": "Venusaur",
         "habilidades": [
-            {"nome": "Solar Beam", "tipo": "Planta"},
-            {"nome": "Cut", "tipo": "Planta"},
-            {"nome": "Bind", "tipo": "Planta"},
-            {"nome": "Headbutt", "tipo": "Normal"},
-            {"nome": "Vine Whip", "tipo": "Planta"}
+            {"nome": "Headbutt", "tipo": "Normal", "forca": 50},
+            {"nome": "Vine Whip", "tipo": "Planta", "forca": 60},
+            {"nome": "Toxic", "tipo": "Veneno", "forca": 70},
+            {"nome": "Razor Leaf", "tipo": "Planta", "forca": 60},
+            {"nome": "Petal Dance", "tipo": "Planta", "forca": 80},
+            {"nome": "Solar Beam", "tipo": "Planta", "forca": 100}
         ],
-        "evolucao": 3
+        "vidaOriginal": 100,
+        "debilidades": [
+            {"tipo": "Planta", "dano": "0.3"},
+            {"tipo": "Agua", "dano": "0.6"},
+            {"tipo": "Luta", "dano": "0.6"},
+            {"tipo": "Elétrico", "dano": "0.6"},
+            {"tipo": "Fada", "dano": "0.6"},
+            {"tipo": "Voador", "dano": "1.6"},
+            {"tipo": "Fogo", "dano": "1.6"},
+            {"tipo": "Psíquico", "dano": "1.6"},
+            {"tipo": "Gelo", "dano": "1.6"}
+        ],
+        "evolucao": null,
+        "level": 30,
+        "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
+        "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+        "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png"
     }
 }
