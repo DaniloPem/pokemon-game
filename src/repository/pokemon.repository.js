@@ -1,8 +1,13 @@
-import { Pokemon } from "../model/pokemon.model";
+import { Pokemon } from "../model/pokemon.model.js";
+import { readTextFile } from "./file-reader.js";
 
-let pokemons; 
-readTextFile('../../pokemon-config-json', (response) => pokemons = JSON.parse(response));
+let pokemons;
+readTextFile("../../../pokemon-config.json", (response) => (pokemons = JSON.parse(response)));
+Object.freeze(pokemons);
 
 export const buscarPokemonAleatorio = () => {
-    return new Pokemon
-}
+  const listaPokemons = Object.keys(pokemons);
+  const numAleatorio = Math.round(Math.random() * (listaPokemons.length - 1));
+  const pokemonAleatorio = listaPokemons[numAleatorio];
+  return new Pokemon(pokemons[pokemonAleatorio]);
+};

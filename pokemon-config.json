@@ -70,8 +70,8 @@
         ],
         "vidaOriginal": 100,
         "debilidades": [
-            {"tipo": "Planta", "dano": "0.3"},
             {"tipo": "Agua", "dano": "0.6"},
+            {"tipo": "Planta", "dano": "0.3"},
             {"tipo": "Luta", "dano": "0.6"},
             {"tipo": "Elétrico", "dano": "0.6"},
             {"tipo": "Fada", "dano": "0.6"},

@@ -2,50 +2,37 @@ import { Pokemon } from "../../model/pokemon.model.js";
 import { readTextFile } from "../../repository/file-reader.js";
 import { buscarPokemonAleatorio } from "../../repository/pokemon.repository.js";
 
-const pokemonCompetidor = new Pokemon(
-  "Planta",
-  "Venusaur",
-  [
-    { nome: "Solar Beam", tipo: "Planta", forca: 80 },
-    { nome: "Cut", tipo: "Planta", forca: 20 },
-    { nome: "Bind", tipo: "Planta", forca: 10 },
-    { nome: "Headbutt", tipo: "Normal", forca: 30 },
-    { nome: "Vine Whip", tipo: "Planta", forca: 30 },
+const pokemonCompetidor = new Pokemon({
+  tipo: "Planta",
+  nome: "Venusaur",
+  habilidades: [
+    { nome: "Headbutt", tipo: "Normal", forca: 50 },
+    { nome: "Vine Whip", tipo: "Planta", forca: 60 },
+    { nome: "Toxic", tipo: "Veneno", forca: 70 },
+    { nome: "Razor Leaf", tipo: "Planta", forca: 60 },
+    { nome: "Petal Dance", tipo: "Planta", forca: 80 },
+    { nome: "Solar Beam", tipo: "Planta", forca: 100 },
   ],
-  100,
-  [
-    { tipo: "Planta", dano: 0.3 },
-    { tipo: "Agua", dano: 0.6 },
+  vidaOriginal: 100,
+  debilidades: [
+    { tipo: "Planta", dano: "0.3" },
+    { tipo: "Agua", dano: "0.6" },
+    { tipo: "Luta", dano: "0.6" },
+    { tipo: "Elétrico", dano: "0.6" },
+    { tipo: "Fada", dano: "0.6" },
+    { tipo: "Voador", dano: "1.6" },
+    { tipo: "Fogo", dano: "1.6" },
+    { tipo: "Psíquico", dano: "1.6" },
+    { tipo: "Gelo", dano: "1.6" },
   ],
-  null,
-  20,
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png"
-);
-
+  evolucao: null,
+  level: 30,
+  backDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
+  frontDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+  icon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png",
+});
 
 const pokemonOponente = buscarPokemonAleatorio();
-//   "Planta",
-//   "Venusaur",
-//   [
-//     { nome: "Solar Beam", tipo: "Planta", forca: 80 },
-//     { nome: "Cut", tipo: "Planta", forca: 20 },
-//     { nome: "Bind", tipo: "Planta", forca: 10 },
-//     { nome: "Headbutt", tipo: "Normal", forca: 30 },
-//     { nome: "Vine Whip", tipo: "Planta", forca: 30 },
-//   ],
-//   100,
-//   [
-//     { tipo: "Planta", dano: 0.3 },
-//     { tipo: "Agua", dano: 0.6 },
-//   ],
-//   null,
-//   20,
-//   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
-//   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
-//   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png"
-// );
 
 const renderGame = () => {
   //Barras Versus
@@ -136,21 +123,20 @@ const usarHabilidade = (habilidade) => {
   const botoesAtaque = document.querySelectorAll("#botoes-ataque > button");
   botoesAtaque.forEach((botao) => {
     botao.disabled = true;
-  })
+  });
   pokemonCompetidor.atacar(habilidade, pokemonOponente);
   renderGame();
   setTimeout(() => {
     pokemonOponente.atacarAleatorio(pokemonCompetidor);
     botoesAtaque.forEach((botao) => {
       botao.disabled = false;
-    })
+    });
     renderGame();
   }, 3000);
 };
 
 const atualizarBarraVida = (barraVida, pokemon) => {
   const porVidaPokemon = (pokemon.vida / pokemon.vidaOriginal) * 100;
-  console.log(porVidaPokemon);
   if (porVidaPokemon >= 0) {
     barraVida.style.width = `${porVidaPokemon}%`;
     if (porVidaPokemon > 50) {
@@ -172,6 +158,6 @@ renderGame();
 // gerar numero aleatorio entre 1 e 5. Math.round(Math.random() * 5)
 //timeout
 
-// 
+//
 //pegar keys, sortear uma chave, pegar objeto
 // Object.keys(pokemons)
