@@ -26,10 +26,12 @@ export class Pokemon {
   }
 
   atacar(habilidade, pokemon) {
-    const debilidadePokemon = pokemon.debilidades.find((debilidade) => debilidade.tipo === habilidade.tipo);
-    const multiplicadorDano = !!debilidadePokemon ? debilidadePokemon.dano : 1;
-    const vidaPokemon = pokemon.vida - habilidade.forca * multiplicadorDano;
-    pokemon.vida = vidaPokemon;
+    if (this.vida > 0 && pokemon.vida > 0) {
+      const debilidadePokemon = pokemon.debilidades.find((debilidade) => debilidade.tipo === habilidade.tipo);
+      const multiplicadorDano = !!debilidadePokemon ? debilidadePokemon.dano : 1;
+      const vidaPokemon = pokemon.vida - habilidade.forca * multiplicadorDano;
+      pokemon.vida = vidaPokemon;
+    }
   }
 
   atacarAleatorio(pokemonAlvo) {

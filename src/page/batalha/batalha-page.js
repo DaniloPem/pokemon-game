@@ -1,13 +1,13 @@
+import { personagem } from "../../model/personagem.model.js";
 import { Pokemon } from "../../model/pokemon.model.js";
-import { readTextFile } from "../../repository/file-reader.js";
 import { buscarPokemonAleatorio } from "../../repository/pokemon.repository.js";
 
 const pokemonCompetidor = new Pokemon({
   tipo: "Planta",
   nome: "Venusaur",
   habilidades: [
-    { nome: "Headbutt", tipo: "Normal", forca: 50 },
-    { nome: "Vine Whip", tipo: "Planta", forca: 60 },
+    { nome: "Headbutt", tipo: "Normal", forca: 30 },
+    { nome: "Vine Whip", tipo: "Planta", forca: 40 },
     { nome: "Toxic", tipo: "Veneno", forca: 70 },
     { nome: "Razor Leaf", tipo: "Planta", forca: 60 },
     { nome: "Petal Dance", tipo: "Planta", forca: 80 },
@@ -15,8 +15,8 @@ const pokemonCompetidor = new Pokemon({
   ],
   vidaOriginal: 100,
   debilidades: [
-    { tipo: "Planta", dano: "0.3" },
     { tipo: "Agua", dano: "0.6" },
+    { tipo: "Planta", dano: "0.3" },
     { tipo: "Luta", dano: "0.6" },
     { tipo: "Elétrico", dano: "0.6" },
     { tipo: "Fada", dano: "0.6" },
@@ -24,6 +24,11 @@ const pokemonCompetidor = new Pokemon({
     { tipo: "Fogo", dano: "1.6" },
     { tipo: "Psíquico", dano: "1.6" },
     { tipo: "Gelo", dano: "1.6" },
+    { tipo: "Veneno", dano: "0.6" },
+    { tipo: "Pedra", dano: "0.5" },
+    { tipo: "Terra", dano: "0.6" },
+    { tipo: "Inseto", dano: "0.5" },
+    { tipo: "Ferro", dano: "0.6" },
   ],
   evolucao: null,
   level: 30,
@@ -57,6 +62,7 @@ const renderGame = () => {
   nivelOponenteBatalha.innerText = `Lv ${pokemonOponente.level}`;
   const barraVidaOponente = document.querySelector("#barra-vida-oponente");
   atualizarBarraVida(barraVidaOponente, pokemonOponente);
+  console.log(pokemonOponente.vida);
 
   //Icones dos Pokemon
   const divIconPokemonCompetidor = document.querySelector("#icon-pokemon-competidor");
@@ -114,25 +120,32 @@ const aparecerAtaques = () => {
 };
 botaoLutar.addEventListener("click", aparecerAtaques);
 
-//Informacao da Batalha
+// // Informacao da Batalha
 // const divInfoBatalha = document.querySelector("#info-batalha");
 // const infoBatalha = document.createElement("span");
 // divInfoBatalha.append(infoBatalha);
 // infoBatalha.innerHTML = `O que <span style="font-weight: bold">${pokemonCompetidor.nome}</span> fará?`;
+
 const usarHabilidade = (habilidade) => {
   const botoesAtaque = document.querySelectorAll("#botoes-ataque > button");
-  botoesAtaque.forEach((botao) => {
-    botao.disabled = true;
-  });
-  pokemonCompetidor.atacar(habilidade, pokemonOponente);
-  renderGame();
-  setTimeout(() => {
-    pokemonOponente.atacarAleatorio(pokemonCompetidor);
+  if (pokemonCompetidor.vida > 0 && pokemonOponente.vida > 0) {
     botoesAtaque.forEach((botao) => {
-      botao.disabled = false;
+      botao.disabled = true;
     });
+    pokemonCompetidor.atacar(habilidade, pokemonOponente);
     renderGame();
-  }, 3000);
+    setTimeout(() => {
+      pokemonOponente.atacarAleatorio(pokemonCompetidor);
+      botoesAtaque.forEach((botao) => {
+        botao.disabled = false;
+      });
+      renderGame();
+    }, 3000);
+  } else {
+    botoesAtaque.forEach((botao) => {
+      botao.disabled = true;
+    });
+  }
 };
 
 const atualizarBarraVida = (barraVida, pokemon) => {
