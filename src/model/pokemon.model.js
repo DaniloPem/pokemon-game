@@ -1,5 +1,5 @@
 export class Pokemon {
-  tipo;
+  tipos;
   nome;
   habilidades;
   vidaOriginal;
@@ -12,7 +12,7 @@ export class Pokemon {
   icon;
 
   constructor(pokemonPrototipo) {
-    this.tipo = pokemonPrototipo.tipo;
+    this.tipos = pokemonPrototipo.tipos;
     this.nome = pokemonPrototipo.nome;
     this.habilidades = pokemonPrototipo.habilidades;
     this.vidaOriginal = pokemonPrototipo.vidaOriginal;
@@ -30,7 +30,7 @@ export class Pokemon {
       const debilidadePokemon = pokemon.debilidades.find((debilidade) => debilidade.tipo === habilidade.tipo);
       const multiplicadorDano = !!debilidadePokemon ? debilidadePokemon.dano : 1;
       const vidaPokemon = pokemon.vida - habilidade.forca * multiplicadorDano;
-      pokemon.vida = vidaPokemon;
+      pokemon.vida = vidaPokemon > 0 ? vidaPokemon : 0;
     }
   }
 

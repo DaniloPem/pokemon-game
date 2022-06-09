@@ -1,9 +1,9 @@
-import { personagem } from "../../model/personagem.model.js";
+import { criarBotaoPokemon } from "../../components/batalha/botaoPokemon.js";
 import { Pokemon } from "../../model/pokemon.model.js";
 import { buscarPokemonAleatorio } from "../../repository/pokemon.repository.js";
 
-const pokemonCompetidor = new Pokemon({
-  tipo: "Planta",
+let pokemonCompetidor = new Pokemon({
+  tipos: ["Planta", "Veneno"],
   nome: "Venusaur",
   habilidades: [
     { nome: "Headbutt", tipo: "Normal", forca: 30 },
@@ -37,6 +37,11 @@ const pokemonCompetidor = new Pokemon({
   icon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png",
 });
 
+const pokemonsPersonagem = [
+  new Pokemon(pokemonCompetidor),
+  new Pokemon(pokemonCompetidor),
+  new Pokemon(pokemonCompetidor),
+];
 const pokemonOponente = buscarPokemonAleatorio();
 
 const renderGame = () => {
@@ -48,7 +53,7 @@ const renderGame = () => {
   infoCompetidorBatalha.append(nomeCompetidorBatalha);
   infoCompetidorBatalha.append(nivelCompetidorBatalha);
   nomeCompetidorBatalha.innerHTML = `<span style="text-transform: uppercase">${pokemonCompetidor.nome}</span>`;
-  nivelCompetidorBatalha.innerText = `Lv ${pokemonCompetidor.level}`;
+  nivelCompetidorBatalha.innerText = `Nv ${pokemonCompetidor.level}`;
   const barraVidaCompetidor = document.querySelector("#barra-vida-competidor");
   atualizarBarraVida(barraVidaCompetidor, pokemonCompetidor);
 
@@ -59,10 +64,9 @@ const renderGame = () => {
   infoOponenteBatalha.append(nomeOponenteBatalha);
   infoOponenteBatalha.append(nivelOponenteBatalha);
   nomeOponenteBatalha.innerHTML = `<span style="text-transform: uppercase">${pokemonOponente.nome}</span>`;
-  nivelOponenteBatalha.innerText = `Lv ${pokemonOponente.level}`;
+  nivelOponenteBatalha.innerText = `Nv ${pokemonOponente.level}`;
   const barraVidaOponente = document.querySelector("#barra-vida-oponente");
   atualizarBarraVida(barraVidaOponente, pokemonOponente);
-  console.log(pokemonOponente.vida);
 
   //Icones dos Pokemon
   const divIconPokemonCompetidor = document.querySelector("#icon-pokemon-competidor");
@@ -102,7 +106,23 @@ const renderGame = () => {
 //Botao Lutar
 const botaoLutar = document.querySelector("#botao-lutar");
 const aparecerAtaques = () => {
-  const botoesAtaque = document.querySelector("#botoes-ataque");
+  const acoesBatalha = document.querySelector("#acoesDosBotoes");
+  acoesBatalha.innerHTML = "";
+  const divInfoBatalha = document.createElement("div");
+  const infoBatalha = document.createElement("div");
+  const divListaAtaques = document.createElement("div");
+  const listaAtaques = document.createElement("div");
+  const botoesAtaque = document.createElement("div");
+  divInfoBatalha.setAttribute("class", "div-info-batalha");
+  infoBatalha.setAttribute("class", "info-batalha");
+  divListaAtaques.setAttribute("class", "lista-acoes-competidor");
+  listaAtaques.setAttribute("class", "lista-ataques-batalha");
+  botoesAtaque.setAttribute("class", "botoes-ataques");
+  acoesBatalha.append(divInfoBatalha);
+  divInfoBatalha.append(infoBatalha);
+  acoesBatalha.append(divListaAtaques);
+  divListaAtaques.append(listaAtaques);
+  listaAtaques.append(botoesAtaque);
   botoesAtaque.innerHTML = "";
   pokemonCompetidor.habilidades.forEach((habilidade) => {
     const ataqueBatalha = document.createElement("button");
@@ -120,6 +140,29 @@ const aparecerAtaques = () => {
 };
 botaoLutar.addEventListener("click", aparecerAtaques);
 
+//Botao Pokemon
+const botaoPokemon = document.querySelector("#botao-pokemon");
+const aparecerPokemons = () => {
+  const acoesBatalha = document.querySelector("#acoesDosBotoes");
+  acoesBatalha.innerHTML = "";
+  const divListaPokemons = document.createElement("div");
+  divListaPokemons.setAttribute("class", "lista-pokemons-batalha");
+  acoesBatalha.append(divListaPokemons);
+  divListaPokemons.innerHTML = "";
+  pokemonsPersonagem.forEach((poke, index) => {
+    const button = criarBotaoPokemon(poke);
+    divListaPokemons.append(button);
+    const pegarPokemonCompetidor = () => {
+      pokemonsPersonagem.push(pokemonCompetidor);
+      pokemonsPersonagem.splice(index, 1);
+      pokemonCompetidor = poke;
+      renderGame();
+    };
+    button.addEventListener("click", pegarPokemonCompetidor);
+  });
+};
+botaoPokemon.addEventListener("click", aparecerPokemons);
+
 // // Informacao da Batalha
 // const divInfoBatalha = document.querySelector("#info-batalha");
 // const infoBatalha = document.createElement("span");
@@ -127,7 +170,7 @@ botaoLutar.addEventListener("click", aparecerAtaques);
 // infoBatalha.innerHTML = `O que <span style="font-weight: bold">${pokemonCompetidor.nome}</span> fará?`;
 
 const usarHabilidade = (habilidade) => {
-  const botoesAtaque = document.querySelectorAll("#botoes-ataque > button");
+  const botoesAtaque = document.querySelectorAll("button");
   if (pokemonCompetidor.vida > 0 && pokemonOponente.vida > 0) {
     botoesAtaque.forEach((botao) => {
       botao.disabled = true;
