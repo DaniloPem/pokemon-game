@@ -1,10 +1,17 @@
-const pokebolas = {
-  Greatball: {
-    chanceDeCaptura: 2,
-    imagem: null,
+export const pokebolas = {
+  pokeball: {
+    nome: "Pokeball",
+    chanceDeCaptura: 1,
+    imagem: "../../../assets/icone/pokeball.png",
   },
-  Pokeball: {
+  greatball: {
+    nome: "Greatball",
     chanceDeCaptura: 2,
-    imagem: null,
+    imagem: "../../../assets/icone/greatball.png",
+  },
+  ultraball: {
+    nome: "Ultraball",
+    chanceDeCaptura: 4,
+    imagem: "../../../assets/icone/ultraball.png",
   },
 };

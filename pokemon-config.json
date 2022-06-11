@@ -39,7 +39,7 @@
     "habilidades": [
       { "nome": "Headbutt", "tipo": "Normal", "forca": 30 },
       { "nome": "Vine Whip", "tipo": "Planta", "forca": 40 },
-      { "nome": "Poison Powder", "tipo": "Veneno", "forca": 50 },
+      { "nome": "Poison P.", "tipo": "Veneno", "forca": 50 },
       { "nome": "Razor Leaf", "tipo": "Planta", "forca": 60 },
       { "nome": "Petal Dance", "tipo": "Planta", "forca": 70 },
       { "nome": "Solar Beam", "tipo": "Planta", "forca": 80 }

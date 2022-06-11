@@ -1,4 +1,6 @@
 import { criarBotaoPokemon } from "../../components/batalha/botaoPokemon.js";
+import { personagem } from "../../model/personagem.model.js";
+import { pokebolas } from "../../model/pokebola.model.js";
 import { Pokemon } from "../../model/pokemon.model.js";
 import { buscarPokemonAleatorio } from "../../repository/pokemon.repository.js";
 
@@ -37,11 +39,7 @@ let pokemonCompetidor = new Pokemon({
   icon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png",
 });
 
-const pokemonsPersonagem = [
-  new Pokemon(pokemonCompetidor),
-  new Pokemon(pokemonCompetidor),
-  new Pokemon(pokemonCompetidor),
-];
+const pokemonsPersonagem = personagem.pokemonsNaBolsa;
 const pokemonOponente = buscarPokemonAleatorio();
 
 const renderGame = () => {
@@ -163,6 +161,34 @@ const aparecerPokemons = () => {
 };
 botaoPokemon.addEventListener("click", aparecerPokemons);
 
+//Botao Items
+const botaoItems = document.querySelector("#botao-items");
+const aparecerItems = () => {
+  const acoesBatalha = document.querySelector("#acoesDosBotoes");
+  acoesBatalha.innerHTML = "";
+  const divItems = document.createElement("div");
+  divItems.setAttribute("class", "itens-conteiner");
+  acoesBatalha.append(divItems);
+  divItems.innerHTML = "";
+  personagem.itens.forEach((item) => {
+    const divItem = document.createElement("div");
+    const botaoItem = document.createElement("button");
+    const imgItem = document.createElement("img");
+    const numItem = document.createElement("span");
+    const urlImgPokebola = item.descricaoItem.imagem;
+    divItems.append(divItem);
+    divItem.append(botaoItem);
+    botaoItem.append(imgItem);
+    divItem.append(numItem);
+    divItem.setAttribute("class", "item");
+    imgItem.setAttribute("src", urlImgPokebola);
+    numItem.innerHTML = `${item.quantidade}`;
+    const imgPokemonOponente = document.querySelector("#oponente-batalha > img");
+    registrarCaptura(botaoItem, imgItem, pokemonOponente, imgPokemonOponente);
+  });
+};
+botaoItems.addEventListener("click", aparecerItems);
+
 // // Informacao da Batalha
 // const divInfoBatalha = document.querySelector("#info-batalha");
 // const infoBatalha = document.createElement("span");
@@ -207,6 +233,27 @@ const atualizarBarraVida = (barraVida, pokemon) => {
   }
 };
 
+const registrarCaptura = (botaoPokebola, imgPokebola, pokemonSelvagem, imgPokemon) => {
+  if (pokemonSelvagem.vida === 0) {
+    const arrastrarPokebola = () => {
+      imgPokebola.draggable = true;
+      imgPokemon.addEventListener("drop", soltarPokebola);
+      imgPokebola.addEventListener("mouseup", () => {
+        imgPokemon.removeEventListener("drop", soltarPokebola);
+      });
+      imgPokebola.addEventListener("dragend", () => {
+        imgPokemon.removeEventListener("drop", soltarPokebola);
+      });
+    };
+    const soltarPokebola = () => {
+      personagem.capturar(pokemonSelvagem);
+    };
+    botaoPokebola.addEventListener("mousedown", arrastrarPokebola);
+    imgPokemon.addEventListener("dragover", (pasarpokebola) => {
+      pasarpokebola.preventDefault();
+    });
+  }
+};
 renderGame();
 
 // function nome() {}
