@@ -228,13 +228,54 @@ body::before {
     margin: auto;
 }
 
+.mensagem-itens {
+    width: 30%;
+    padding: 12px 5px 10px 10px;
+}
+
+.mensagem-captura-conteiner { 
+    padding: 10px 5px 10px 10px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    border: 5px solid rgba(255, 255, 255, 0);
+    outline: 2px solid white;
+}
+
+.mensagem-captura {
+    text-shadow: rgb(85, 85, 85) 1px 1px;
+    font-size: 15px;
+    width: 140px;
+}
+
+.botoes-capturar-cancelar {
+    margin-top: 10px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.botoes-capturar-cancelar button {
+    width: 80px;
+    background: rgba(255, 255, 255);
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 20px
+}
+
+.botoes-capturar-cancelar button:hover {
+    background: rgba(255, 17, 0, 0.5);
+    color: white;
+}
+
 .itens-conteiner {
     display: flex;
     gap: 35px;
     flex-wrap: wrap;
     justify-content: right;
     width: 70%;
-    margin-left: 30%;
     padding: 10px;
 }
 
@@ -257,6 +298,10 @@ body::before {
     clip-path: circle(50% at 50% 50%);
     margin: 3px 0 0 4px;
     cursor: pointer;
+}
+
+.pokebola-active {
+    background: white !important;
 }
 
 .item button:hover {

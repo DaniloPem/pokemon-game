@@ -100,5 +100,93 @@
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png"
+  },
+  "charmander": {
+    "tipos": ["Fogo", "semtipo"],
+    "nome": "Charmander",
+    "habilidades": [
+      { "nome": "Scratch", "tipo": "Normal", "forca": 10 },
+      { "nome": "Mega Punch", "tipo": "Normal", "forca": 20 },
+      { "nome": "Headbutt", "tipo": "Normal", "forca": 20 },
+      { "nome": "Fire Punch", "tipo": "Fogo", "forca": 30 },
+      { "nome": "Thunder Punch", "tipo": "Elétrico", "forca": 40 },
+      { "nome": "Flamethrower", "tipo": "Fogo", "forca": 60 }
+    ],
+    "vidaOriginal": 100,
+    "debilidades": [
+      { "tipo": "Agua", "dano": 1.6 },
+      { "tipo": "Terra", "dano": 1.6 },
+      { "tipo": "Pedra", "dano": 1.6 },
+      { "tipo": "Inseto", "dano": 0.6 },
+      { "tipo": "Ferro", "dano": 0.6 },
+      { "tipo": "Fogo", "dano": 0.6 },
+      { "tipo": "Planta", "dano": 0.6 },
+      { "tipo": "Gelo", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 }
+    ],
+    "evolucao": "charmeleon",
+    "level": 10,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png"
+  },
+  "charmeleon": {
+    "tipos": ["Fogo", "semtipo"],
+    "nome": "Charmeleon",
+    "habilidades": [
+      { "nome": "Mega Punch", "tipo": "Normal", "forca": 30 },
+      { "nome": "Fire Punch", "tipo": "Fogo", "forca": 40 },
+      { "nome": "Thunder Punch", "tipo": "Elétrico", "forca": 40 },
+      { "nome": "Ember", "tipo": "Fogo", "forca": 50 },
+      { "nome": "Flamethrower", "tipo": "Fogo", "forca": 70 },
+      { "nome": "Fire Spin", "tipo": "Fogo", "forca": 80 }
+    ],
+    "vidaOriginal": 100,
+    "debilidades": [
+      { "tipo": "Agua", "dano": 1.6 },
+      { "tipo": "Terra", "dano": 1.6 },
+      { "tipo": "Pedra", "dano": 1.6 },
+      { "tipo": "Inseto", "dano": 0.6 },
+      { "tipo": "Ferro", "dano": 0.6 },
+      { "tipo": "Fogo", "dano": 0.6 },
+      { "tipo": "Planta", "dano": 0.6 },
+      { "tipo": "Gelo", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 }
+    ],
+    "evolucao": "charizard",
+    "level": 20,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/5.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/5.png"
+  },
+  "charizard": {
+    "tipos": ["Fogo", "Voador"],
+    "nome": "Charizard",
+    "habilidades": [
+      { "nome": "Dragon Claw", "tipo": "Dragão", "forca": 40 },
+      { "nome": "Wing Attack", "tipo": "Voador", "forca": 50 },
+      { "nome": "Ember", "tipo": "Fogo", "forca": 60 },
+      { "nome": "Flamethrower", "tipo": "Fogo", "forca": 80 },
+      { "nome": "Fire Spin", "tipo": "Fogo", "forca": 90 },
+      { "nome": "Heat Wave", "tipo": "Fogo", "froca": 100 }
+    ],
+    "vidaOriginal": 100,
+    "debilidades": [
+      { "tipo": "Pedra", "dano": 2.5 },
+      { "tipo": "Agua", "dano": 1.6 },
+      { "tipo": "Elétrico", "dano": 1.6 },
+      { "tipo": "Terra", "dano": 0.6 },
+      { "tipo": "Luta", "dano": 0.6 },
+      { "tipo": "Ferro", "dano": 0.6 },
+      { "tipo": "Fogo", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 },
+      { "tipo": "Inseto", "dano": 0.3 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": null,
+    "level": 30,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/6.png"
   }
 }
