@@ -1,5 +1,6 @@
 import { buscarPokemonAleatorio } from "../repository/pokemon.repository.js";
 import { pokebolas } from "./pokebola.model.js";
+import { pokeInicial } from "./pokemonCapturado.model.js";
 
 export class Personagem {
   nomeUser;
@@ -10,7 +11,7 @@ export class Personagem {
   constructor(nomeUser, imagemPersonagem) {
     this.nomeUser = nomeUser;
     this.imagemPersonagem = imagemPersonagem;
-    this.pokemonsNaBolsa = [];
+    this.pokemonsNaBolsa = [pokeInicial];
     this.itens = [
       { quantidade: 10, descricaoItem: pokebolas.pokeball },
       { quantidade: 5, descricaoItem: pokebolas.greatball },

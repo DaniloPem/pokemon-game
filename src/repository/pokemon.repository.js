@@ -1,4 +1,4 @@
-import { Pokemon } from "../model/pokemon.model.js";
+import { PokemonSelvagem } from "../model/pokemonSelvagem.model.js";
 import { readTextFile } from "./file-reader.js";
 
 let pokemons;
@@ -9,5 +9,5 @@ export const buscarPokemonAleatorio = () => {
   const listaPokemons = Object.keys(pokemons);
   const numAleatorio = Math.round(Math.random() * (listaPokemons.length - 1));
   const pokemonAleatorio = listaPokemons[numAleatorio];
-  return new Pokemon(pokemons[pokemonAleatorio]);
+  return new PokemonSelvagem(pokemons[pokemonAleatorio]);
 };

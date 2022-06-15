@@ -177,6 +177,11 @@ body::before {
     transition: 300ms;
 }
 
+.pokemonCompetidor-active {
+    background: rgba(51, 51, 51, 0.8) !important;
+    color: white;
+}
+
 .lista-pokemons-batalha button:hover {
     background-color: rgba(126, 126, 126, 0.8);
 }
@@ -365,10 +370,11 @@ body::before {
     border-bottom-right-radius: 15px;
     clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
     padding: 5px 1px 5px 25px;
-    width: 130px;
+    width: 138px;
     height: 30px;
     display: flex;
     justify-content: space-between;
+    font-size: 12px;
 }
 
 .botoes-ataques img {
@@ -385,11 +391,11 @@ body::before {
     background-color: rgba(33, 101, 247, 0.75);
 }
 
-.dragao-color-ataque {
+.dragão-color-ataque {
     background-color: rgba(69, 69, 197, 0.75);
 }
 
-.eletrico-color-ataque {
+.elétrico-color-ataque {
     background-color: rgba(212, 212, 8, 0.75);
 }
 

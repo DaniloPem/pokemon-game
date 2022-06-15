@@ -28,7 +28,8 @@
       { "tipo": "Ferro", "dano": "0.6" }
     ],
     "evolucao": "ivysaur",
-    "level": 10,
+    "levelMin": 1,
+    "levelMax": 10,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/1.png"
@@ -62,7 +63,8 @@
       { "tipo": "Ferro", "dano": "0.6" }
     ],
     "evolucao": "venusaur",
-    "level": 20,
+    "levelMin": 11,
+    "levelMax": 20,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/2.png"
@@ -96,7 +98,8 @@
       { "tipo": "Ferro", "dano": "0.6" }
     ],
     "evolucao": null,
-    "level": 30,
+    "levelMin": 21,
+    "levelMax": 30,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png"
@@ -125,7 +128,8 @@
       { "tipo": "Fada", "dano": 0.6 }
     ],
     "evolucao": "charmeleon",
-    "level": 10,
+    "levelMin": 1,
+    "levelMax": 10,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png"
@@ -154,7 +158,8 @@
       { "tipo": "Fada", "dano": 0.6 }
     ],
     "evolucao": "charizard",
-    "level": 20,
+    "levelMin": 11,
+    "levelMax": 20,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/5.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/5.png"
@@ -163,7 +168,7 @@
     "tipos": ["Fogo", "Voador"],
     "nome": "Charizard",
     "habilidades": [
-      { "nome": "Dragon Claw", "tipo": "Dragão", "forca": 40 },
+      { "nome": "Dragão Claw", "tipo": "Dragão", "forca": 40 },
       { "nome": "Wing Attack", "tipo": "Voador", "forca": 50 },
       { "nome": "Ember", "tipo": "Fogo", "forca": 60 },
       { "nome": "Flamethrower", "tipo": "Fogo", "forca": 80 },
@@ -184,7 +189,8 @@
       { "tipo": "Planta", "dano": 0.3 }
     ],
     "evolucao": null,
-    "level": 30,
+    "levelMin": 21,
+    "levelMax": 30,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/6.png"

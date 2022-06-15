@@ -2,46 +2,13 @@ import { criarBotaoPokemon } from "../../components/batalha/botaoPokemon.js";
 import { personagem } from "../../model/personagem.model.js";
 import { pokebolas } from "../../model/pokebola.model.js";
 import { Pokemon } from "../../model/pokemon.model.js";
+import { pokeInicial } from "../../model/pokemonCapturado.model.js";
 import { buscarPokemonAleatorio } from "../../repository/pokemon.repository.js";
 
-let pokemonCompetidor = new Pokemon({
-  tipos: ["Planta", "Veneno"],
-  nome: "Venusaur",
-  habilidades: [
-    { nome: "Headbutt", tipo: "Normal", forca: 30 },
-    { nome: "Vine Whip", tipo: "Planta", forca: 40 },
-    { nome: "Toxic", tipo: "Veneno", forca: 70 },
-    { nome: "Razor Leaf", tipo: "Planta", forca: 60 },
-    { nome: "Petal Dance", tipo: "Planta", forca: 80 },
-    { nome: "Solar Beam", tipo: "Planta", forca: 100 },
-  ],
-  vidaOriginal: 100,
-  debilidades: [
-    { tipo: "Agua", dano: "0.6" },
-    { tipo: "Planta", dano: "0.3" },
-    { tipo: "Luta", dano: "0.6" },
-    { tipo: "Elétrico", dano: "0.6" },
-    { tipo: "Fada", dano: "0.6" },
-    { tipo: "Voador", dano: "1.6" },
-    { tipo: "Fogo", dano: "1.6" },
-    { tipo: "Psíquico", dano: "1.6" },
-    { tipo: "Gelo", dano: "1.6" },
-    { tipo: "Veneno", dano: "0.6" },
-    { tipo: "Pedra", dano: "0.5" },
-    { tipo: "Terra", dano: "0.6" },
-    { tipo: "Inseto", dano: "0.5" },
-    { tipo: "Ferro", dano: "0.6" },
-  ],
-  evolucao: null,
-  level: 30,
-  backDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
-  frontDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
-  icon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png",
-});
+let pokemonCompetidor = pokeInicial;
 
 const pokemonsPersonagem = personagem.pokemonsNaBolsa;
 const pokemonOponente = buscarPokemonAleatorio();
-pokemonOponente.vida = 0;
 
 const renderGame = () => {
   //Barras Versus
@@ -150,10 +117,17 @@ const aparecerPokemons = () => {
   divListaPokemons.innerHTML = "";
   pokemonsPersonagem.forEach((poke, index) => {
     const button = criarBotaoPokemon(poke);
+    button.setAttribute("id", "button-pokemon");
     divListaPokemons.append(button);
+    if (poke === pokemonCompetidor) {
+      button.classList.add("pokemonCompetidor-active");
+    }
     const pegarPokemonCompetidor = () => {
-      pokemonsPersonagem.push(pokemonCompetidor);
-      pokemonsPersonagem.splice(index, 1);
+      const buttonPokemon = document.querySelectorAll("#button-pokemon");
+      buttonPokemon.forEach((botao) => {
+        botao.classList.remove("pokemonCompetidor-active");
+      });
+      button.classList.add("pokemonCompetidor-active");
       pokemonCompetidor = poke;
       renderGame();
     };
@@ -284,3 +258,9 @@ const registrarCaptura = (botaoPokebola) => {
   }
 };
 renderGame();
+
+//Chance de captura
+// dano baseado em nivel
+// funcionalidade de level, experiencia
+// tela de inicio
+// nao poder usar pokemon sem vida

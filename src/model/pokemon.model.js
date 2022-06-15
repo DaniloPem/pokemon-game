@@ -6,7 +6,10 @@ export class Pokemon {
   vida;
   debilidades;
   evolucao;
+  levelMin;
+  levelMax;
   level;
+  experiencia;
   backDefault;
   frontDefault;
   icon;
@@ -19,7 +22,10 @@ export class Pokemon {
     this.vida = pokemonPrototipo.vidaOriginal;
     this.debilidades = pokemonPrototipo.debilidades;
     this.evolucao = pokemonPrototipo.evolucao;
+    this.levelMin = pokemonPrototipo.levelMin;
+    this.levelMax = pokemonPrototipo.levelMax;
     this.level = pokemonPrototipo.level;
+    this.experiencia = pokemonPrototipo.experiencia;
     this.backDefault = pokemonPrototipo.backDefault;
     this.frontDefault = pokemonPrototipo.frontDefault;
     this.icon = pokemonPrototipo.icon;
