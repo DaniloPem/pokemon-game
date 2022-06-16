@@ -69,23 +69,34 @@ const renderGame = () => {
   divCompetidorBatalha.append(imgCompetidorBatalha);
 };
 
+const renderizarMensagem = (msg) => {
+  const acoesBatalha = document.querySelector("#acoesDosBotoes");
+  acoesBatalha.innerHTML = "";
+  const divInfoBatalha = document.createElement("div");
+  const infoBatalha = document.createElement("div");
+  divInfoBatalha.setAttribute("class", "div-info-batalha");
+  infoBatalha.setAttribute("class", "info-batalha");
+  divInfoBatalha.setAttribute("id", "divInfoBatalha");
+  infoBatalha.setAttribute("id", "infoBatalha");
+  acoesBatalha.append(divInfoBatalha);
+  divInfoBatalha.append(infoBatalha);
+  infoBatalha.innerHTML = msg;
+};
+
 //Botao Lutar
 const botaoLutar = document.querySelector("#botao-lutar");
 const aparecerAtaques = () => {
   const acoesBatalha = document.querySelector("#acoesDosBotoes");
   acoesBatalha.innerHTML = "";
-  const divInfoBatalha = document.createElement("div");
-  const infoBatalha = document.createElement("div");
   const divListaAtaques = document.createElement("div");
   const listaAtaques = document.createElement("div");
   const botoesAtaque = document.createElement("div");
-  divInfoBatalha.setAttribute("class", "div-info-batalha");
-  infoBatalha.setAttribute("class", "info-batalha");
+  const divInfoBatalha = document.querySelector("#divInfoBatalha");
+  const infoBatalha = document.querySelector("#infoBatalha");
   divListaAtaques.setAttribute("class", "lista-acoes-competidor");
   listaAtaques.setAttribute("class", "lista-ataques-batalha");
   botoesAtaque.setAttribute("class", "botoes-ataques");
-  acoesBatalha.append(divInfoBatalha);
-  divInfoBatalha.append(infoBatalha);
+  renderizarMensagem(`O que <span style="font-weight: bold">${pokemonCompetidor.nome}</span> fará?`);
   acoesBatalha.append(divListaAtaques);
   divListaAtaques.append(listaAtaques);
   listaAtaques.append(botoesAtaque);
@@ -176,22 +187,19 @@ const fugirPraTelaHome = () => {
 };
 botaoFugir.addEventListener("click", fugirPraTelaHome);
 
-// // Informacao da Batalha
-// const divInfoBatalha = document.querySelector("#info-batalha");
-// const infoBatalha = document.createElement("span");
-// divInfoBatalha.append(infoBatalha);
-// infoBatalha.innerHTML = `O que <span style="font-weight: bold">${pokemonCompetidor.nome}</span> fará?`;
-
 const usarHabilidade = (habilidade) => {
   const botoesAtaque = document.querySelectorAll("button");
+  const infoBatalha = document.querySelector("#infoBatalha");
   if (pokemonCompetidor.vida > 0 && pokemonOponente.vida > 0) {
     botoesAtaque.forEach((botao) => {
       botao.disabled = true;
     });
+    infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonCompetidor.nome}</span> usou <span style="font-weight: bold">${habilidade.nome}</span>`;
     pokemonCompetidor.atacar(habilidade, pokemonOponente);
     renderGame();
     setTimeout(() => {
-      pokemonOponente.atacarAleatorio(pokemonCompetidor);
+      const ataqueUtilizado = pokemonOponente.atacarAleatorio(pokemonCompetidor);
+      infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonOponente.nome}</span> usou <span style="font-weight: bold">${ataqueUtilizado.nome}</span>`;
       botoesAtaque.forEach((botao) => {
         botao.disabled = false;
       });
@@ -260,7 +268,6 @@ const registrarCaptura = (botaoPokebola) => {
 renderGame();
 
 //Chance de captura
-// dano baseado em nivel
 // funcionalidade de level, experiencia
 // tela de inicio
 // nao poder usar pokemon sem vida
