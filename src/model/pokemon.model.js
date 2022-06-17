@@ -10,6 +10,7 @@ export class Pokemon {
   levelMax;
   level;
   experiencia;
+  ratioCaptura;
   backDefault;
   frontDefault;
   icon;
@@ -26,6 +27,7 @@ export class Pokemon {
     this.levelMax = pokemonPrototipo.levelMax;
     this.level = pokemonPrototipo.level;
     this.experiencia = pokemonPrototipo.experiencia;
+    this.ratioCaptura = pokemonPrototipo.ratioCaptura;
     this.backDefault = pokemonPrototipo.backDefault;
     this.frontDefault = pokemonPrototipo.frontDefault;
     this.icon = pokemonPrototipo.icon;

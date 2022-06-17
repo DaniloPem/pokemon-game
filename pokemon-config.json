@@ -30,6 +30,7 @@
     "evolucao": "ivysaur",
     "levelMin": 1,
     "levelMax": 10,
+    "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/1.png"
@@ -65,6 +66,7 @@
     "evolucao": "venusaur",
     "levelMin": 11,
     "levelMax": 20,
+    "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/2.png"
@@ -100,6 +102,7 @@
     "evolucao": null,
     "levelMin": 21,
     "levelMax": 30,
+    "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png"
@@ -130,6 +133,7 @@
     "evolucao": "charmeleon",
     "levelMin": 1,
     "levelMax": 10,
+    "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png"
@@ -160,6 +164,7 @@
     "evolucao": "charizard",
     "levelMin": 11,
     "levelMax": 20,
+    "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/5.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/5.png"
@@ -191,6 +196,7 @@
     "evolucao": null,
     "levelMin": 21,
     "levelMax": 30,
+    "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/6.png"
