@@ -12,8 +12,8 @@ spritePersonagem.src = "../../../assets/imagem/personagem.png";
 const sprites = [];
 const cenario = {
   img: backgroundHome,
-  x: 500,
-  y: 650,
+  x: 0,
+  y: 0,
   posicaoX: 0,
   posicaoY: 0,
   largura: 3360,
@@ -33,8 +33,8 @@ const personagem = {
 sprites.push(personagem);
 
 const camera = {
-  x: 500,
-  y: 650,
+  x: 0,
+  y: 0,
   largura: canvas.clientWidth,
   altura: canvas.clientHeight,
   bordeEsquerdo: function () {
@@ -50,7 +50,6 @@ const camera = {
     return this.y + this.altura * 0.75;
   },
 };
-
 //Movimento do personagem
 const keymap = {};
 
@@ -82,11 +81,26 @@ const update = () => {
   if (keymap["ArrowDown"]) {
     personagem.posicaoY += 4;
   }
+
+  //Atualizar posicao da Camera
+  if (personagem.posicaoX < camera.bordeEsquerdo()) {
+    camera.x = personagem.posicaoX - camera.largura * 0.25;
+  }
+  if (personagem.posicaoX + personagem.largura > camera.bordeDireito()) {
+    camera.x = personagem.posicaoX + personagem.largura - camera.largura * 0.75;
+  }
+  if (personagem.posicaoY < camera.bordeCima()) {
+    camera.y = personagem.posicaoY - camera.altura * 0.25;
+  }
+  if (personagem.posicaoY + personagem.altura > camera.bordeBaixo()) {
+    camera.y = personagem.posicaoY + personagem.altura - camera.altura * 0.75;
+  }
 };
 
 //Desenhar funcoes na tela
 const render = () => {
   contexto.save();
+  contexto.translate(-camera.x, -camera.y);
   sprites.forEach((sprite) => {
     contexto.drawImage(
       sprite.img,
@@ -103,4 +117,8 @@ const render = () => {
   contexto.restore();
 };
 
+document.body.onload = function () {
+  personagem.posicaoX = 1200;
+  personagem.posicaoY = 964;
+};
 loop();
