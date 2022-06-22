@@ -1,6 +1,6 @@
 import { Pokemon } from "./pokemon.model.js";
 
-class PokemonCapturado extends Pokemon {
+export class PokemonCapturado extends Pokemon {
   pokemonInicial;
   constructor(pokemonPrototipo) {
     super(pokemonPrototipo);

@@ -1,13 +1,14 @@
 import { criarBotaoPokemon } from "../../components/batalha/botaoPokemon.js";
-import { personagem } from "../../model/personagem.model.js";
-import { pokebolas } from "../../model/pokebola.model.js";
-import { Pokemon } from "../../model/pokemon.model.js";
-import { pokeInicial } from "../../model/pokemonCapturado.model.js";
+import { Personagem } from "../../model/personagem.model.js";
 import { buscarPokemonAleatorio } from "../../repository/pokemon.repository.js";
 
-let pokemonCompetidor = pokeInicial;
-
+const personagem =
+  localStorage.getItem("personagem") !== null
+    ? Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")))
+    : Personagem.criarPersonagemInicial();
 const pokemonsPersonagem = personagem.pokemonsNaBolsa;
+
+let pokemonCompetidor = pokemonsPersonagem[0];
 const pokemonOponente = buscarPokemonAleatorio();
 
 const renderGame = () => {
@@ -166,6 +167,7 @@ const aparecerItems = () => {
     botaoItem.setAttribute("id", "botoesItems");
     const imgItem = document.createElement("img");
     const numItem = document.createElement("span");
+    numItem.setAttribute("id", "numItem");
     const urlImgPokebola = item.descricaoItem.imagem;
     divItems.append(divItem);
     divItem.append(botaoItem);
@@ -266,23 +268,23 @@ const registrarCaptura = (botaoPokebola, item) => {
           item.descricaoItem.ratio) /
         (3 * pokemonOponente.vidaOriginal);
       const probabilidadeDeCaptura = (variableCaptura + 1) / 256;
-      console.log(probabilidadeDeCaptura);
+      const numItem = document.querySelector("#numItem");
+      const quantidadeNovaItem = item.quantidade - 1;
+      numItem.innerHTML = `${quantidadeNovaItem}`;
       botoesTodos.forEach((botao) => {
         botao.disabled = true;
       });
       setTimeout(() => {
         const numRandom = Math.random();
-        console.log(numRandom);
         const numAleatorioA = Math.round(numRandom * 9 + 1);
-        console.log(numAleatorioA);
         const numAleatorioB = Math.round(Math.random() * 9 + 1);
-        console.log(numAleatorioB);
         if (probabilidadeDeCaptura >= 1) {
           if (numAleatorioA < 7) {
             personagem.capturar(pokemonOponente);
             mensagemCaptura.innerHTML = `${pokemonOponente.nome} foi capturado!`;
+            localStorage.setItem("personagem", JSON.stringify(personagem));
             setTimeout(() => {
-              // location.href = "../home/home.html";
+              location.href = "../home/home.html";
             }, 2000);
           } else {
             mensagemCaptura.innerHTML = `${pokemonOponente.nome} saiu da pokebola. Quer tentar capturar?`;
@@ -293,8 +295,9 @@ const registrarCaptura = (botaoPokebola, item) => {
         } else if (numRandom <= probabilidadeDeCaptura) {
           personagem.capturar(pokemonOponente);
           mensagemCaptura.innerHTML = `${pokemonOponente.nome} foi capturado!`;
+          localStorage.setItem("personagem", JSON.stringify(personagem));
           setTimeout(() => {
-            // location.href = "../home/home.html";
+            location.href = "../home/home.html";
           }, 2000);
         } else {
           if (numAleatorioB < 6) {
@@ -305,7 +308,7 @@ const registrarCaptura = (botaoPokebola, item) => {
           } else {
             mensagemCaptura.innerHTML = `${pokemonOponente.nome} fugiu!`;
             setTimeout(() => {
-              // location.href = "../home/home.html";
+              location.href = "../home/home.html";
             }, 2000);
           }
         }

@@ -20,7 +20,7 @@ export class Pokemon {
     this.nome = pokemonPrototipo.nome;
     this.habilidades = pokemonPrototipo.habilidades;
     this.vidaOriginal = pokemonPrototipo.vidaOriginal;
-    this.vida = pokemonPrototipo.vidaOriginal;
+    this.vida = pokemonPrototipo.vida !== undefined ? pokemonPrototipo.vida : pokemonPrototipo.vidaOriginal;
     this.debilidades = pokemonPrototipo.debilidades;
     this.evolucao = pokemonPrototipo.evolucao;
     this.levelMin = pokemonPrototipo.levelMin;

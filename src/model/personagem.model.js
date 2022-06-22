@@ -1,24 +1,47 @@
-import { buscarPokemonAleatorio } from "../repository/pokemon.repository.js";
 import { pokebolas } from "./pokebola.model.js";
-import { pokeInicial } from "./pokemonCapturado.model.js";
+import { pokeInicial, PokemonCapturado } from "./pokemonCapturado.model.js";
 
 export class Personagem {
   nomeUser;
-  imagemPersonagem;
   pokemonsNaBolsa;
   pokemonsNoDepote;
   itens;
+  posicaoX;
+  posicaoY;
 
-  constructor(nomeUser, imagemPersonagem) {
+  constructor(nomeUser, pokemonsNaBolsa, pokemonsNoDepote, itens, posicaoX, posicaoY) {
     this.nomeUser = nomeUser;
-    this.imagemPersonagem = imagemPersonagem;
-    this.pokemonsNaBolsa = [pokeInicial];
-    this.pokemonsNoDepote = [];
-    this.itens = [
-      { quantidade: 10, descricaoItem: pokebolas.pokeball },
-      { quantidade: 5, descricaoItem: pokebolas.greatball },
-      { quantidade: 2, descricaoItem: pokebolas.ultraball },
-    ];
+    this.pokemonsNaBolsa = pokemonsNaBolsa;
+    this.pokemonsNoDepote = pokemonsNoDepote;
+    this.itens = itens;
+    this.posicaoX = posicaoX;
+    this.posicaoY = posicaoY;
+  }
+
+  static criarPersonagemInicial(usuario) {
+    return new Personagem(
+      usuario,
+      [pokeInicial],
+      [],
+      [
+        { quantidade: 10, descricaoItem: pokebolas.pokeball },
+        { quantidade: 5, descricaoItem: pokebolas.greatball },
+        { quantidade: 2, descricaoItem: pokebolas.ultraball },
+      ],
+      1200,
+      964
+    );
+  }
+
+  static criarAPartirDoLocalStorage(personagem) {
+    return new Personagem(
+      personagem.nomeUser,
+      personagem.pokemonsNaBolsa.map((dadosPokemon) => new PokemonCapturado(dadosPokemon)),
+      personagem.pokemonsNoDepote.map((dadosPokemon) => new PokemonCapturado(dadosPokemon)),
+      personagem.itens,
+      personagem.posicaoX,
+      personagem.posicaoY
+    );
   }
 
   capturar(pokemonSelvagem) {
@@ -31,6 +54,4 @@ export class Personagem {
 }
 
 export const personagem = new Personagem();
-// personagem.capturar(buscarPokemonAleatorio());
-// personagem.capturar(buscarPokemonAleatorio());
-// personagem.capturar(buscarPokemonAleatorio());
+Personagem.criarPersonagemInicial();
