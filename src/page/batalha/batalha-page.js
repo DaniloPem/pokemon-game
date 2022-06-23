@@ -167,7 +167,6 @@ const aparecerItems = () => {
     botaoItem.setAttribute("id", "botoesItems");
     const imgItem = document.createElement("img");
     const numItem = document.createElement("span");
-    numItem.setAttribute("id", "numItem");
     const urlImgPokebola = item.descricaoItem.imagem;
     divItems.append(divItem);
     divItem.append(botaoItem);
@@ -177,7 +176,7 @@ const aparecerItems = () => {
     imgItem.setAttribute("src", urlImgPokebola);
     numItem.innerHTML = `${item.quantidade}`;
     const imgPokemonOponente = document.querySelector("#oponente-batalha > img");
-    registrarCaptura(botaoItem, item);
+    registrarCaptura(botaoItem, item, numItem);
   });
 };
 botaoItems.addEventListener("click", aparecerItems);
@@ -236,94 +235,144 @@ const atualizarBarraVida = (barraVida, pokemon) => {
   }
 };
 
-const registrarCaptura = (botaoPokebola, item) => {
+const registrarCaptura = (botaoPokebola, item, numeroItem) => {
   const clicarPokebola = () => {
-    const botoesItems = document.querySelectorAll("#botoesItems");
-    botoesItems.forEach((botao) => {
-      botao.classList.remove("pokebola-active");
-    });
-    botaoPokebola.classList.add("pokebola-active");
+    estilarBotoesItemClick(botaoPokebola);
     const divMensagemItems = document.getElementById("divMensagemItems");
-    divMensagemItems.innerHTML = "";
-    const mensagemConteiner = document.createElement("div");
-    const mensagemCaptura = document.createElement("span");
-    const divBotoesCaptura = document.createElement("div");
-    const botaoCapturar = document.createElement("button");
-    const botaoCancelar = document.createElement("button");
-    mensagemConteiner.setAttribute("class", "mensagem-captura-conteiner");
-    mensagemCaptura.setAttribute("class", "mensagem-captura");
-    divBotoesCaptura.setAttribute("class", "botoes-capturar-cancelar");
-    divMensagemItems.append(mensagemConteiner);
-    mensagemConteiner.append(mensagemCaptura);
-    mensagemConteiner.append(divBotoesCaptura);
-    divBotoesCaptura.append(botaoCapturar, botaoCancelar);
-    mensagemCaptura.innerHTML = `Você quer tentar capturar ${pokemonOponente.nome}?`;
-    botaoCapturar.innerHTML = "Capturar";
-    botaoCancelar.innerHTML = "Cancelar";
-    const capturarPokemon = () => {
-      const botoesTodos = document.querySelectorAll("button");
-      const variableCaptura =
-        ((3 * pokemonOponente.vidaOriginal - 2 * pokemonOponente.vida) *
-          pokemonOponente.ratioCaptura *
-          item.descricaoItem.ratio) /
-        (3 * pokemonOponente.vidaOriginal);
-      const probabilidadeDeCaptura = (variableCaptura + 1) / 256;
-      const numItem = document.querySelector("#numItem");
-      const quantidadeNovaItem = item.quantidade - 1;
-      numItem.innerHTML = `${quantidadeNovaItem}`;
-      botoesTodos.forEach((botao) => {
-        botao.disabled = true;
-      });
-      setTimeout(() => {
-        const numRandom = Math.random();
-        const numAleatorioA = Math.round(numRandom * 9 + 1);
-        const numAleatorioB = Math.round(Math.random() * 9 + 1);
-        if (probabilidadeDeCaptura >= 1) {
-          if (numAleatorioA < 7) {
-            personagem.capturar(pokemonOponente);
-            mensagemCaptura.innerHTML = `${pokemonOponente.nome} foi capturado!`;
-            localStorage.setItem("personagem", JSON.stringify(personagem));
-            setTimeout(() => {
-              location.href = "../home/home.html";
-            }, 2000);
-          } else {
-            mensagemCaptura.innerHTML = `${pokemonOponente.nome} saiu da pokebola. Quer tentar capturar?`;
-            botoesTodos.forEach((botao) => {
-              botao.disabled = false;
-            });
-          }
-        } else if (numRandom <= probabilidadeDeCaptura) {
-          personagem.capturar(pokemonOponente);
-          mensagemCaptura.innerHTML = `${pokemonOponente.nome} foi capturado!`;
-          localStorage.setItem("personagem", JSON.stringify(personagem));
-          setTimeout(() => {
-            location.href = "../home/home.html";
-          }, 2000);
-        } else {
-          if (numAleatorioB < 6) {
-            mensagemCaptura.innerHTML = `${pokemonOponente.nome} saiu da pokebola. Quer tentar capturar?`;
-            botoesTodos.forEach((botao) => {
-              botao.disabled = false;
-            });
-          } else {
-            mensagemCaptura.innerHTML = `${pokemonOponente.nome} fugiu!`;
-            setTimeout(() => {
-              location.href = "../home/home.html";
-            }, 2000);
-          }
-        }
-      }, 3000);
-    };
+    const { botaoCapturar, botaoCancelar } = aparecerMensagemItem(
+      divMensagemItems,
+      `Você quer tentar capturar ${pokemonOponente.nome}?`
+    );
     const cancelarCaptura = () => {
       divMensagemItems.innerHTML = "";
     };
-    botaoCapturar.addEventListener("click", capturarPokemon);
+    if (item.quantidade > 0) {
+      adicionarTentativaDeCaptura(item, numeroItem, divMensagemItems, cancelarCaptura, botaoCapturar);
+    } else {
+      divMensagemItems.innerHTML = ``;
+    }
     botaoCancelar.addEventListener("click", cancelarCaptura);
   };
   botaoPokebola.addEventListener("click", clicarPokebola);
 };
 renderGame();
 
+const adicionarTentativaDeCaptura = (item, numeroItem, divMensagemItems, cancelarCaptura, botaoCapturar) => {
+  const capturarPokemon = () => {
+    const botoesTodos = document.querySelectorAll("button");
+    const variableCaptura =
+      ((3 * pokemonOponente.vidaOriginal - 2 * pokemonOponente.vida) *
+        pokemonOponente.ratioCaptura *
+        item.descricaoItem.ratio) /
+      (3 * pokemonOponente.vidaOriginal);
+    const probabilidadeDeCaptura = (variableCaptura + 1) / 256;
+    if (item.quantidade > 0) {
+      item.quantidade -= 1;
+      numeroItem.innerHTML = `${item.quantidade}`;
+    }
+    botoesTodos.forEach((botao) => {
+      botao.disabled = true;
+    });
+    handleCaptura(probabilidadeDeCaptura, divMensagemItems, botoesTodos, item, capturarPokemon, cancelarCaptura);
+  };
+  botaoCapturar.addEventListener("click", capturarPokemon);
+};
+
+const handleCaptura = (
+  probabilidadeDeCaptura,
+  divMensagemItems,
+  botoesTodos,
+  item,
+  capturarPokemon,
+  cancelarCaptura
+) => {
+  setTimeout(() => {
+    const numRandom = Math.random();
+    const numAleatorioA = Math.round(numRandom * 9 + 1);
+    const numAleatorioB = Math.round(Math.random() * 9 + 1);
+    if (probabilidadeDeCaptura >= 1) {
+      if (numAleatorioA < 7) {
+        personagem.capturar(pokemonOponente);
+        aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} foi capturado!`);
+        localStorage.setItem("personagem", JSON.stringify(personagem));
+        setTimeout(() => {
+          location.href = "../home/home.html";
+        }, 2000);
+      } else {
+        const { botaoCapturar, botaoCancelar } = aparecerMensagemItem(
+          divMensagemItems,
+          `${pokemonOponente.nome} saiu da pokebola. Quer tentar capturar?`
+        );
+        botoesTodos.forEach((botao) => {
+          botao.disabled = false;
+        });
+        verificarItemEMostrarMensagem(item, botaoCapturar, capturarPokemon, botaoCancelar, cancelarCaptura);
+      }
+    } else if (numRandom <= probabilidadeDeCaptura) {
+      personagem.capturar(pokemonOponente);
+      aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} foi capturado!`);
+      localStorage.setItem("personagem", JSON.stringify(personagem));
+      setTimeout(() => {
+        location.href = "../home/home.html";
+      }, 2000);
+    } else {
+      if (numAleatorioB < 6) {
+        const { botaoCapturar, botaoCancelar } = aparecerMensagemItem(
+          divMensagemItems,
+          `${pokemonOponente.nome} saiu da pokebola. Quer tentar capturar?`
+        );
+        botoesTodos.forEach((botao) => {
+          botao.disabled = false;
+        });
+        verificarItemEMostrarMensagem(item, botaoCapturar, capturarPokemon, botaoCancelar, cancelarCaptura);
+      } else {
+        aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} fugiu!`);
+        localStorage.setItem("personagem", JSON.stringify(personagem));
+        setTimeout(() => {
+          location.href = "../home/home.html";
+        }, 2000);
+      }
+    }
+  }, 3000);
+};
+
+const verificarItemEMostrarMensagem = (item, botaoCapturar, capturarPokemon, botaoCancelar, cancelarCaptura) => {
+  if (item.quantidade > 0) {
+    botaoCapturar.addEventListener("click", capturarPokemon);
+    botaoCancelar.addEventListener("click", cancelarCaptura);
+  } else {
+    botaoCapturar.style.visibility = "hidden";
+    botaoCancelar.style.visibility = "hidden";
+  }
+};
+
+const aparecerMensagemItem = (divMensagemItems, msg) => {
+  divMensagemItems.innerHTML = "";
+  const mensagemConteiner = document.createElement("div");
+  const mensagemCaptura = document.createElement("span");
+  const divBotoesCaptura = document.createElement("div");
+  const botaoCapturar = document.createElement("button");
+  const botaoCancelar = document.createElement("button");
+  mensagemConteiner.setAttribute("class", "mensagem-captura-conteiner");
+  mensagemCaptura.setAttribute("class", "mensagem-captura");
+  divBotoesCaptura.setAttribute("class", "botoes-capturar-cancelar");
+  divMensagemItems.append(mensagemConteiner);
+  mensagemConteiner.append(mensagemCaptura);
+  mensagemConteiner.append(divBotoesCaptura);
+  divBotoesCaptura.append(botaoCapturar, botaoCancelar);
+  mensagemCaptura.innerHTML = msg;
+  botaoCapturar.innerHTML = "Capturar";
+  botaoCancelar.innerHTML = "Cancelar";
+  return { botaoCapturar, botaoCancelar };
+};
+
+const estilarBotoesItemClick = (botaoPokebola) => {
+  const botoesItems = document.querySelectorAll("#botoesItems");
+  botoesItems.forEach((botao) => {
+    botao.classList.remove("pokebola-active");
+  });
+  botaoPokebola.classList.add("pokebola-active");
+};
 // funcionalidade de level, experiencia
 // tela de inicio
 // nao poder usar pokemon sem vida
