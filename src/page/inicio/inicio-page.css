@@ -84,6 +84,7 @@ gap: 20px;
   font-weight: bolder;
   text-align: center;
   font-size: 13px;
+  text-transform: uppercase;
 }
 
 .pokemonsIniciais button:hover {

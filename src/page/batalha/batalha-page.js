@@ -127,7 +127,7 @@ const aparecerPokemons = () => {
   divListaPokemons.setAttribute("class", "lista-pokemons-batalha");
   acoesBatalha.append(divListaPokemons);
   divListaPokemons.innerHTML = "";
-  pokemonsPersonagem.forEach((poke, index) => {
+  pokemonsPersonagem.forEach((poke) => {
     const button = criarBotaoPokemon(poke);
     button.setAttribute("id", "button-pokemon");
     divListaPokemons.append(button);

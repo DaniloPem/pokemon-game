@@ -1,5 +1,5 @@
 import { pokebolas } from "./pokebola.model.js";
-import { pokeInicial, PokemonCapturado } from "./pokemonCapturado.model.js";
+import { PokemonCapturado } from "./pokemonCapturado.model.js";
 
 export class Personagem {
   nomeUser;
@@ -18,7 +18,7 @@ export class Personagem {
     this.posicaoY = posicaoY;
   }
 
-  static criarPersonagemInicial(usuario) {
+  static criarPersonagemInicial(usuario, pokeInicial) {
     return new Personagem(
       usuario,
       [pokeInicial],

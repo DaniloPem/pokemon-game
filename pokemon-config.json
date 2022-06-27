@@ -33,7 +33,8 @@
     "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/1.png"
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/1.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif"
   },
   "ivysaur": {
     "tipos": ["Planta", "Veneno"],
@@ -69,7 +70,8 @@
     "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
-    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/2.png"
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/2.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/2.gif"
   },
   "venusaur": {
     "tipos": ["Planta", "Veneno"],
@@ -105,7 +107,8 @@
     "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
-    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png"
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif"
   },
   "charmander": {
     "tipos": ["Fogo", "semtipo"],
@@ -136,7 +139,8 @@
     "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png"
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif"
   },
   "charmeleon": {
     "tipos": ["Fogo", "semtipo"],
@@ -167,7 +171,8 @@
     "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/5.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
-    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/5.png"
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/5.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/5.gif"
   },
   "charizard": {
     "tipos": ["Fogo", "Voador"],
@@ -199,6 +204,44 @@
     "ratioCaptura": 45,
     "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
-    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/6.png"
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/6.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif"
+  },
+  "squirtle": {
+    "tipos": ["Água", "semtipo"],
+    "nome": "Squirtle",
+    "habilidades": [
+      { "nome": "Tackle", "tipo": "Normal", "forca": 10 },
+      { "nome": "Headbutt", "tipo": "Normal", "forca": 20 },
+      { "nome": "Vine Whip", "tipo": "Planta", "forca": 30 },
+      { "nome": "Mega-drain", "tipo": "Planta", "forca": 40 },
+      { "nome": "Leech-seed", "tipo": "Planta", "forca": 50 },
+      { "nome": "Razor-wind", "tipo": "Planta", "forca": 60 }
+    ],
+    "vidaOriginal": 100,
+    "debilidades": [
+      { "tipo": "Planta", "dano": "0.3" },
+      { "tipo": "Agua", "dano": "0.6" },
+      { "tipo": "Luta", "dano": "0.6" },
+      { "tipo": "Elétrico", "dano": "0.6" },
+      { "tipo": "Fada", "dano": "0.6" },
+      { "tipo": "Voador", "dano": "1.6" },
+      { "tipo": "Fogo", "dano": "1.6" },
+      { "tipo": "Psíquico", "dano": "1.6" },
+      { "tipo": "Gelo", "dano": "1.6" },
+      { "tipo": "Veneno", "dano": "0.6" },
+      { "tipo": "Pedra", "dano": "0.5" },
+      { "tipo": "Terra", "dano": "0.6" },
+      { "tipo": "Inseto", "dano": "0.5" },
+      { "tipo": "Ferro", "dano": "0.6" }
+    ],
+    "evolucao": "wartortle",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 45,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/7.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif"
   }
 }

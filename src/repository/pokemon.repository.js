@@ -11,3 +11,9 @@ export const buscarPokemonAleatorio = () => {
   const pokemonAleatorio = listaPokemons[numAleatorio];
   return new PokemonSelvagem(pokemons[pokemonAleatorio]);
 };
+
+export const pegarPokemonsIniciais = () => {
+  const listaPokemons = Object.keys(pokemons);
+  const listaPokemonsInicias = [listaPokemons[0], listaPokemons[3], listaPokemons[6]];
+  return listaPokemonsInicias.map((pokeInicial) => new PokemonSelvagem(pokemons[pokeInicial]));
+};
