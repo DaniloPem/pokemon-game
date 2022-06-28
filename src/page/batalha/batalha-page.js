@@ -184,6 +184,8 @@ botaoItems.addEventListener("click", aparecerItems);
 // //Botao Fugir
 const botaoFugir = document.querySelector("#botao-fugir");
 const fugirPraTelaHome = () => {
+  const bonus = 0;
+  pokemonCompetidor.adicionarExperiencia(pokemonOponente, bonus);
   localStorage.setItem("personagem", JSON.stringify(personagem));
   location.href = "../home/home.html";
 };
@@ -295,6 +297,8 @@ const handleCaptura = (
       if (numAleatorioA < 7) {
         personagem.capturar(pokemonOponente);
         aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} foi capturado!`);
+        const bonus = 0.5;
+        pokemonCompetidor.adicionarExperiencia(pokemonOponente, bonus);
         localStorage.setItem("personagem", JSON.stringify(personagem));
         setTimeout(() => {
           location.href = "../home/home.html";
@@ -312,6 +316,8 @@ const handleCaptura = (
     } else if (numRandom <= probabilidadeDeCaptura) {
       personagem.capturar(pokemonOponente);
       aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} foi capturado!`);
+      const bonus = 0.5;
+      pokemonCompetidor.adicionarExperiencia(pokemonOponente, bonus);
       localStorage.setItem("personagem", JSON.stringify(personagem));
       setTimeout(() => {
         location.href = "../home/home.html";
@@ -328,6 +334,8 @@ const handleCaptura = (
         verificarItemEMostrarMensagem(item, botaoCapturar, capturarPokemon, botaoCancelar, cancelarCaptura);
       } else {
         aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} fugiu!`);
+        const bonus = 0;
+        pokemonCompetidor.adicionarExperiencia(pokemonOponente, bonus);
         localStorage.setItem("personagem", JSON.stringify(personagem));
         setTimeout(() => {
           location.href = "../home/home.html";
@@ -375,5 +383,4 @@ const estilarBotoesItemClick = (botaoPokebola) => {
   botaoPokebola.classList.add("pokebola-active");
 };
 // funcionalidade de level, experiencia
-// tela de inicio
 // nao poder usar pokemon sem vida

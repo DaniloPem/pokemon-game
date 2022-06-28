@@ -49,6 +49,8 @@ function aparecerListaPokemonInicial(nomePersonagem) {
     nomePokemonInicial.innerHTML = `${pokeInicial.nome}`;
     const escolherPokemonInicial = () => {
       const personagem = Personagem.criarPersonagemInicial(nomePersonagem, pokeInicial);
+      pokeInicial.level = 1;
+      pokeInicial.experiencia = 0;
       localStorage.setItem("personagem", JSON.stringify(personagem));
       location.href = "../home/home.html";
     };
