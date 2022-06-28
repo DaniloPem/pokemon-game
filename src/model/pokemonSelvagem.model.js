@@ -4,7 +4,7 @@ export class PokemonSelvagem extends Pokemon {
   constructor(pokemonPrototipo) {
     super(pokemonPrototipo);
     this.level = this.gerarNivel();
-    this.experiencia = this.experienciaAleatoria();
+    this.experiencia = this.gerarExperiencia();
   }
 
   gerarNivel() {

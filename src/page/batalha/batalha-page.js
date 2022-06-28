@@ -185,7 +185,8 @@ botaoItems.addEventListener("click", aparecerItems);
 const botaoFugir = document.querySelector("#botao-fugir");
 const fugirPraTelaHome = () => {
   const bonus = 0;
-  pokemonCompetidor.adicionarExperiencia(pokemonOponente, bonus);
+  pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonus);
+  pokemonCompetidor.sumarExperiencia();
   localStorage.setItem("personagem", JSON.stringify(personagem));
   location.href = "../home/home.html";
 };
@@ -298,7 +299,8 @@ const handleCaptura = (
         personagem.capturar(pokemonOponente);
         aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} foi capturado!`);
         const bonus = 0.5;
-        pokemonCompetidor.adicionarExperiencia(pokemonOponente, bonus);
+        pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonus);
+        pokemonCompetidor.sumarExperiencia();
         localStorage.setItem("personagem", JSON.stringify(personagem));
         setTimeout(() => {
           location.href = "../home/home.html";
@@ -317,7 +319,8 @@ const handleCaptura = (
       personagem.capturar(pokemonOponente);
       aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} foi capturado!`);
       const bonus = 0.5;
-      pokemonCompetidor.adicionarExperiencia(pokemonOponente, bonus);
+      pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonus);
+      pokemonCompetidor.sumarExperiencia();
       localStorage.setItem("personagem", JSON.stringify(personagem));
       setTimeout(() => {
         location.href = "../home/home.html";
@@ -335,7 +338,8 @@ const handleCaptura = (
       } else {
         aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} fugiu!`);
         const bonus = 0;
-        pokemonCompetidor.adicionarExperiencia(pokemonOponente, bonus);
+        pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonus);
+        pokemonCompetidor.sumarExperiencia();
         localStorage.setItem("personagem", JSON.stringify(personagem));
         setTimeout(() => {
           location.href = "../home/home.html";
