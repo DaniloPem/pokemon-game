@@ -8,6 +8,7 @@ const paragrafoUsuarioNome = document.createElement("p");
 const inputUsuario = document.createElement("input");
 const botaoProximo = document.createElement("button");
 divUsuarioNome.setAttribute("class", "nome-usuario");
+inputUsuario.setAttribute("placeholder", "Entre 5 e 12 caracteres.");
 telaInicio.append(divUsuarioNome);
 divUsuarioNome.append(paragrafoUsuarioNome);
 divUsuarioNome.append(inputUsuario);
@@ -16,9 +17,13 @@ inputUsuario.required = true;
 paragrafoUsuarioNome.innerText = "Qual é o seu nome, treinador?";
 botaoProximo.innerText = "Próximo";
 const clicarBotaoProximo = () => {
-  const nomePersonagem = inputUsuario.value;
-  divUsuarioNome.style.visibility = "hidden";
-  aparecerListaPokemonInicial(nomePersonagem);
+  if (inputUsuario.value.length > 4 && inputUsuario.value.length < 13) {
+    const nomePersonagem = inputUsuario.value;
+    divUsuarioNome.style.visibility = "hidden";
+    aparecerListaPokemonInicial(nomePersonagem);
+  } else {
+    inputUsuario.value = "";
+  }
 };
 botaoProximo.addEventListener("click", clicarBotaoProximo);
 
@@ -31,7 +36,7 @@ function aparecerListaPokemonInicial(nomePersonagem) {
   telaInicio.append(divElecaoPokemonInicial);
   divElecaoPokemonInicial.append(paragrafoElecaoPokemonInicial);
   divElecaoPokemonInicial.append(divListaPokemonInicial);
-  paragrafoElecaoPokemonInicial.innerText = `Escolha seu primeiro pokemon!`;
+  paragrafoElecaoPokemonInicial.innerHTML = `<span style="font-weight: bold">${nomePersonagem}</span>, escolha seu primeiro pokemon!`;
   pokemonsIniciais.forEach((pokeInicial) => {
     const botaoPokemonInicial = document.createElement("button");
     const imgPokemonInicial = document.createElement("img");

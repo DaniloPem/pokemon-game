@@ -184,6 +184,7 @@ botaoItems.addEventListener("click", aparecerItems);
 // //Botao Fugir
 const botaoFugir = document.querySelector("#botao-fugir");
 const fugirPraTelaHome = () => {
+  localStorage.setItem("personagem", JSON.stringify(personagem));
   location.href = "../home/home.html";
 };
 botaoFugir.addEventListener("click", fugirPraTelaHome);
