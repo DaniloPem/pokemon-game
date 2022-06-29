@@ -182,6 +182,12 @@ body::before {
     color: white;
 }
 
+.pokemonSemVida {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 .lista-pokemons-batalha button:hover {
     background-color: rgba(126, 126, 126, 0.8);
 }

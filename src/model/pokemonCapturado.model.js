@@ -8,8 +8,8 @@ export class PokemonCapturado extends Pokemon {
     this.experienciaGanhada = this.experienciaGanhada;
   }
 
-  adicionarExperienciaGanhada(pokemon, bonus) {
-    this.experienciaGanhada = 4 * pokemon.level * (1 - pokemon.vida / pokemon.vidaOriginal) * (1 + bonus);
+  adicionarExperienciaGanhada(pokemon, bonusCaptura) {
+    this.experienciaGanhada = 4 * pokemon.level * (1 - pokemon.vida / pokemon.vidaOriginal) * (1 + bonusCaptura);
   }
 
   sumarExperiencia() {

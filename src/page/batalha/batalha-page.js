@@ -134,6 +134,9 @@ const aparecerPokemons = () => {
     if (poke === pokemonCompetidor) {
       button.classList.add("pokemonCompetidor-active");
     }
+    if (poke.vida === 0) {
+      button.classList.add("pokemonSemVida");
+    }
     const pegarPokemonCompetidor = () => {
       const buttonPokemon = document.querySelectorAll("#button-pokemon");
       buttonPokemon.forEach((botao) => {
@@ -175,7 +178,6 @@ const aparecerItems = () => {
     divItem.setAttribute("class", "item");
     imgItem.setAttribute("src", urlImgPokebola);
     numItem.innerHTML = `${item.quantidade}`;
-    const imgPokemonOponente = document.querySelector("#oponente-batalha > img");
     registrarCaptura(botaoItem, item, numItem);
   });
 };
@@ -184,8 +186,8 @@ botaoItems.addEventListener("click", aparecerItems);
 // //Botao Fugir
 const botaoFugir = document.querySelector("#botao-fugir");
 const fugirPraTelaHome = () => {
-  const bonus = 0;
-  pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonus);
+  const bonusCaptura = 0;
+  pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
   pokemonCompetidor.sumarExperiencia();
   localStorage.setItem("personagem", JSON.stringify(personagem));
   location.href = "../home/home.html";
@@ -217,8 +219,18 @@ const usarHabilidade = (habilidade) => {
     if (pokemonCompetidor.vida === 0) {
       infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonCompetidor.nome}</span> foi derrotado!`;
     } else if (pokemonOponente.vida === 0) {
-      infoBatalha.innerHTML =
-        infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonOponente.nome}</span> foi derrotado!`;
+      const botoesTodos = document.querySelectorAll("button");
+      botoesTodos.forEach((botao) => {
+        botao.disabled = true;
+      });
+      infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonOponente.nome}</span> foi derrotado!`;
+      setTimeout(() => {
+        botoesTodos.forEach((botao) => {
+          botao.disabled = false;
+        });
+        botaoLutar.classList.add("pokemonSemVida");
+        aparecerItems();
+      }, 2000);
     }
   }, 3000);
 };
@@ -298,8 +310,8 @@ const handleCaptura = (
       if (numAleatorioA < 7) {
         personagem.capturar(pokemonOponente);
         aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} foi capturado!`);
-        const bonus = 0.5;
-        pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonus);
+        const bonusCaptura = 0.5;
+        pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
         pokemonCompetidor.sumarExperiencia();
         localStorage.setItem("personagem", JSON.stringify(personagem));
         setTimeout(() => {
@@ -318,8 +330,8 @@ const handleCaptura = (
     } else if (numRandom <= probabilidadeDeCaptura) {
       personagem.capturar(pokemonOponente);
       aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} foi capturado!`);
-      const bonus = 0.5;
-      pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonus);
+      const bonusCaptura = 0.5;
+      pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
       pokemonCompetidor.sumarExperiencia();
       localStorage.setItem("personagem", JSON.stringify(personagem));
       setTimeout(() => {
@@ -337,8 +349,8 @@ const handleCaptura = (
         verificarItemEMostrarMensagem(item, botaoCapturar, capturarPokemon, botaoCancelar, cancelarCaptura);
       } else {
         aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} fugiu!`);
-        const bonus = 0;
-        pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonus);
+        const bonusCaptura = 0;
+        pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
         pokemonCompetidor.sumarExperiencia();
         localStorage.setItem("personagem", JSON.stringify(personagem));
         setTimeout(() => {
@@ -386,5 +398,3 @@ const estilarBotoesItemClick = (botaoPokebola) => {
   });
   botaoPokebola.classList.add("pokebola-active");
 };
-// funcionalidade de level, experiencia
-// nao poder usar pokemon sem vida
