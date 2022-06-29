@@ -67,6 +67,7 @@ const renderGame = () => {
   const urlBackDefault = pokemonCompetidor.backDefault;
   imgCompetidorBatalha.setAttribute("class", "img-competidor");
   imgCompetidorBatalha.setAttribute("src", urlBackDefault);
+  imgCompetidorBatalha.setAttribute("id", "imgCompetidorBatalha");
   divCompetidorBatalha.append(imgCompetidorBatalha);
 };
 
@@ -139,6 +140,7 @@ const aparecerPokemons = () => {
     }
     const pegarPokemonCompetidor = () => {
       const buttonPokemon = document.querySelectorAll("#button-pokemon");
+      botaoLutar.classList.remove("pokemonSemVida");
       buttonPokemon.forEach((botao) => {
         botao.classList.remove("pokemonCompetidor-active");
       });
@@ -216,10 +218,22 @@ const usarHabilidade = (habilidade) => {
     }, 3000);
   }
   setTimeout(() => {
+    const botoesTodos = document.querySelectorAll("button");
     if (pokemonCompetidor.vida === 0) {
+      botoesTodos.forEach((botao) => {
+        botao.disabled = true;
+      });
+      const imgCompetidorBatalha = document.querySelector("#imgCompetidorBatalha");
+      imgCompetidorBatalha.style.visibility = "hidden";
       infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonCompetidor.nome}</span> foi derrotado!`;
+      setTimeout(() => {
+        botoesTodos.forEach((botao) => {
+          botao.disabled = false;
+        });
+        botaoLutar.classList.add("pokemonSemVida");
+        aparecerPokemons();
+      }, 2000);
     } else if (pokemonOponente.vida === 0) {
-      const botoesTodos = document.querySelectorAll("button");
       botoesTodos.forEach((botao) => {
         botao.disabled = true;
       });
