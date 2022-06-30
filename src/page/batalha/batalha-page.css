@@ -21,7 +21,7 @@ body::before {
 }
 
 .campo-luta {
-    background: url(../../../assets/imagem/campoBatalha.jpg);
+    background: url(../../../assets/imagem/campoBatalha.png);
     background-size: contain;
     height: 395px;
     overflow: hidden;
@@ -57,6 +57,7 @@ body::before {
 }
 
 .conteiner-barra-hp{
+    background: rgba(255, 255, 255, 0.6);
     border: 1px solid black;
     border-radius: 4px;
     width: 150px;
@@ -91,29 +92,30 @@ body::before {
 }
 
 .oponente-batalha {
-    width: 300px;
-    height: 300px;
-    margin-top: -30px;
+    width: 250px;
+    height: 250px;
+    margin-top: 50px;
+    margin-left: 40px;
     float: left;
 }
 
 .competidor-batalha {
     display: block;
-    width: 300px;
-    height: 300px;
-    margin: 100px 0 0 85px;
+    width: 350px;
+    height: 350px;
+    margin: 70px 0 0 40px;
     float: left;
 }
 
 .img-competidor {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     display: inline-block
 }
 
 .img-oponente {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     display: inline-block
 }
 
@@ -124,8 +126,7 @@ body::before {
     background-size: contain;
     overflow: hidden;
     height: 160px;
-    border: 3px solid black;
-    border-top: none;
+    border: 1px solid black;
 }
 .acoesDosBotoes {
     width: 85%;
