@@ -5,7 +5,7 @@ const contexto = canvas.getContext("2d");
 
 // Recursos do jogo
 const backgroundHome = new Image();
-backgroundHome.src = "../../../assets/imagem/backgroundHome.png";
+backgroundHome.src = "../../../assets/imagem/mapaPokemon.png";
 
 const imagemPersonagem = new Image();
 imagemPersonagem.src = "../../../assets/imagem/personagem.png";
@@ -18,8 +18,8 @@ const cenario = {
   y: 0,
   posicaoX: 0,
   posicaoY: 0,
-  largura: 3360,
-  altura: 1920,
+  largura: 6144,
+  altura: 3072,
 };
 sprites.push(cenario);
 
@@ -34,8 +34,9 @@ const spritePersonagem = {
   y: 0,
   posicaoX: null,
   posicaoY: null,
-  largura: 80,
-  altura: 80,
+  largura: 68,
+  altura: 72,
+  velocidade: 3,
 };
 sprites.push(spritePersonagem);
 
@@ -70,6 +71,17 @@ const soltarArrow = (evento) => {
 document.addEventListener("keydown", apertarArrow);
 document.addEventListener("keyup", soltarArrow);
 
+// const imagens = [0, 1, 2, 3, 0];
+// let indiceImagens = 0;
+// function passos(posicaoSpriteMovimentoX, posicaoSpriteMovimentoY) {
+//   posicaoSpriteMovimentoX = spritePersonagem.largura * imagens[indiceImagens];
+//   posicaoSpriteMovimentoY = spritePersonagem.altura;
+//   indiceImagens++;
+//   if (indiceImagens > 4) {
+//     indiceImagens = 0;
+//   }
+// }
+
 //Rodando infinitamente
 const loop = () => {
   window.requestAnimationFrame(loop, canvas);
@@ -80,20 +92,24 @@ const loop = () => {
 //Pra fazer atualizacoes
 const update = () => {
   if (keymap["ArrowLeft"]) {
-    spritePersonagem.posicaoX -= 4;
-    verificarPokemonsSelvagem();
+    spritePersonagem.y = 1;
+    spritePersonagem.posicaoX -= spritePersonagem.velocidade;
+    // verificarPokemonsSelvagem();
   }
   if (keymap["ArrowRight"]) {
-    spritePersonagem.posicaoX += 4;
-    verificarPokemonsSelvagem();
+    spritePersonagem.y = 2;
+    spritePersonagem.posicaoX += spritePersonagem.velocidade;
+    // verificarPokemonsSelvagem();
   }
   if (keymap["ArrowUp"]) {
-    spritePersonagem.posicaoY -= 4;
-    verificarPokemonsSelvagem();
+    spritePersonagem.y = 3;
+    spritePersonagem.posicaoY -= spritePersonagem.velocidade;
+    // verificarPokemonsSelvagem();
   }
   if (keymap["ArrowDown"]) {
-    spritePersonagem.posicaoY += 4;
-    verificarPokemonsSelvagem();
+    spritePersonagem.y = 0;
+    spritePersonagem.posicaoY += spritePersonagem.velocidade;
+    // verificarPokemonsSelvagem();
   }
 
   //Atualizar posicao da Camera
@@ -112,22 +128,47 @@ const update = () => {
 };
 
 //Desenhar funcoes na tela
+let elapsed = 0;
 const render = () => {
   contexto.save();
   contexto.translate(-camera.x, -camera.y);
-  sprites.forEach((sprite) => {
-    contexto.drawImage(
-      sprite.img,
-      sprite.x,
-      sprite.y,
-      sprite.largura,
-      sprite.altura,
-      sprite.posicaoX,
-      sprite.posicaoY,
-      sprite.largura,
-      sprite.altura
-    );
-  });
+  contexto.drawImage(
+    cenario.img,
+    cenario.x,
+    cenario.y,
+    cenario.largura,
+    cenario.altura,
+    cenario.posicaoX,
+    cenario.posicaoY,
+    cenario.largura,
+    cenario.altura
+  );
+  contexto.drawImage(
+    spritePersonagem.img,
+    spritePersonagem.largura * spritePersonagem.x,
+    spritePersonagem.altura * spritePersonagem.y,
+    spritePersonagem.largura,
+    spritePersonagem.altura,
+    spritePersonagem.posicaoX,
+    spritePersonagem.posicaoY,
+    spritePersonagem.largura,
+    spritePersonagem.altura
+  );
+  console.log(spritePersonagem.posicaoX);
+  console.log(spritePersonagem.posicaoY);
+  const emMovimento = Object.values(keymap).some((valor) => valor === true); // [false, false, false, false];
+  if (emMovimento) {
+    if (elapsed % 15 === 0) {
+      spritePersonagem.x++;
+      if (spritePersonagem.x > 3) {
+        spritePersonagem.x = 0;
+      }
+    }
+    elapsed++;
+  } else {
+    spritePersonagem.x = 0;
+    elapsed = 0;
+  }
   contexto.restore();
 };
 
