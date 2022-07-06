@@ -18,7 +18,7 @@ const cenario = {
   y: 0,
   posicaoX: 0,
   posicaoY: 0,
-  largura: 6144,
+  largura: 5632,
   altura: 3072,
 };
 sprites.push(cenario);
@@ -124,6 +124,16 @@ const update = () => {
   }
   if (spritePersonagem.posicaoY + spritePersonagem.altura > camera.bordeBaixo()) {
     camera.y = spritePersonagem.posicaoY + spritePersonagem.altura - camera.altura * 0.75;
+  }
+
+  //Limite cenario
+  if (camera.y < 0) {
+    camera.y = 0;
+  }
+
+  //limite personagem
+  if (spritePersonagem.posicaoY < 0) {
+    spritePersonagem.posicaoY = 0;
   }
 };
 

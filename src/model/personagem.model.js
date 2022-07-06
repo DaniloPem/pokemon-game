@@ -28,7 +28,7 @@ export class Personagem {
         { quantidade: 5, descricaoItem: pokebolas.greatball },
         { quantidade: 2, descricaoItem: pokebolas.ultraball },
       ],
-      2604,
+      2061,
       180
     );
   }

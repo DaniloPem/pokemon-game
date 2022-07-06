@@ -1,3 +1,7 @@
+.main {
+  position: relative;
+}
+
 .canvas {
   padding: 0;
   margin: 0 auto;
@@ -7,4 +11,22 @@
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.pokemons-depote-bolsa {
+  position: absolute;
+  top: 10px;
+  right: 250px;
+  z-index: 10;
+}
+
+.botao-pokemom-bolsa{
+  width: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.botao-pokemom-bolsa span {
+  font-size: 10px;
 }
