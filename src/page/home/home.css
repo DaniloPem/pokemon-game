@@ -1,3 +1,7 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .main {
   position: relative;
 }
@@ -13,20 +17,128 @@
   right: 0;
 }
 
+.botao-listaPokemons {
+  position: absolute;
+  top: 25px;
+  left: calc(870px + (100% - (1000px + (100% - 1000px)/2)));
+  display: flex;
+  border-radius: 20px;
+  border: 1px solid black;
+  background: rgba(190, 109, 109, 0.7);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao-listaPokemons:hover {
+  background: rgba(190, 109, 109, 0.9);
+  transform: scale(1.04);
+}
+
+.botao-listaPokemons span {
+  margin: auto 3px;
+  font-weight: bolder;
+}
+
 .pokemons-depote-bolsa {
   position: absolute;
-  top: 10px;
-  right: 250px;
+  top: 70px;
+  left: calc(780px + (100% - (1000px + (100% - 1000px)/2)));
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 5px 3px;
   z-index: 10;
 }
 
-.botao-pokemom-bolsa{
+.pokemons-depote-bolsa p {
+  color: white;
+  margin-bottom: 4px;
+}
+
+.p-depote {
+  margin-top: 7px;
+}
+
+.pokemon-conteiner {
+  display: flex;
+}
+
+.pokemon-depote-altura {
+  height: 116px;
+}
+
+.pokemon-bolsa-depote {
+  width: 135px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon-depote-overflow {
+overflow-y: auto;
+scrollbar-width: 5px;
+scrollbar-track-color: black;
+scrollbar-base-color: white;
+}
+
+.pokemon-depote-overflow::-webkit-scrollbar {
+  width: 5px;
+}
+
+.pokemon-depote-overflow::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 5px;
+}
+
+.pokemon-depote-overflow::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.botao-remover-adicionar{
+  background: rgba(138, 168, 206, 0.781);
+  margin: auto 5px;
+  border-radius: 7px;
+  border: 1px solid black;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao-remover-adicionar:hover {
+  background: rgb(91, 116, 228, 0.6);
+}
+
+.botao-pokemon{
+  background: rgba(255, 255, 255, 0.42);
   width: 42px;
+  height: 58px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.botao-pokemom-bolsa span {
+.botao-pokemon:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.botao-pokemon span {
   font-size: 10px;
+  font-weight: bolder;
+}
+
+.barra-hp-conteiner {
+  width: 30px;
+  background: white;
+  border-radius: 5px;
+}
+
+.barra-hp {
+  width: 30px;
+  height: 5px;
+  border-radius: 5px;
+  background: green;
 }

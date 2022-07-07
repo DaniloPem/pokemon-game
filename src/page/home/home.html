@@ -7,23 +7,49 @@
     <title>Home-Pokemon</title>
     <link rel="stylesheet" href="../style-global/reset.css" />
     <link rel="stylesheet" href="home.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;600&display=swap" rel="stylesheet" />
   </head>
   <body>
     <main>
       <canvas height="600" width="1000" id="canvas" class="canvas"> </canvas>
-      <div class="pokemons-depote-bolsa">
-        <p>Bolsa</p>
-        <div class="pokemon-bolsa">
-          <button class="botao-pokemom-bolsa">
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png"
-            />
-            <span> Nv30</span>
-            <div><div></div></div>
-          </button>
+      <button id="botaoPokemons" class="botao-listaPokemons">
+        <span>Pokemons</span>
+        <div>
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/25.png"
+          />
         </div>
-        <div class="pokemons-depote"></div>
-      </div>
+      </button>
+
+      <!-- <div class="pokemons-depote-bolsa">
+      <p>Bolsa</p>
+        <div class="pokemon-bolsa-conteiner">
+          <div class="pokemon-bolsa">
+            <button class="botao-pokemon">
+              <img
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png"
+              />
+              <span> Nv30</span>
+              <div class="barra-hp-conteiner"><div class="barra-hp"></div></div>
+            </button>
+          </div>
+          <button class="botao-remover-adicionar">Remover</button>
+        </div>
+
+        <p class="p-depote">Depote</p>
+        <div class="pokemon-depote-conteiner">
+          <div class="pokemon-depote">
+            <button class="botao-pokemon">
+              <img
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png"
+              />
+              <span> Nv30</span>
+              <div class="barra-hp-conteiner"><div class="barra-hp"></div></div>
+            </button>
+          </div>
+          <button class="botao-remover-adicionar">Adicionar</button>
+        </div>
+      </div> -->
     </main>
     <script type="module" src="home.js"></script>
   </body>
