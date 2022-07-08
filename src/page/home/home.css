@@ -58,7 +58,7 @@ body {
   margin-top: 7px;
 }
 
-.pokemon-conteiner {
+.pokemon-bolsa-conteiner, .pokemon-depote-conteiner {
   display: flex;
 }
 
@@ -66,7 +66,7 @@ body {
   height: 116px;
 }
 
-.pokemon-bolsa-depote {
+.pokemon-bolsa, .pokemon-depote {
   width: 135px;
   display: flex;
   flex-wrap: wrap;
@@ -107,6 +107,12 @@ scrollbar-base-color: white;
   background: rgb(91, 116, 228, 0.6);
 }
 
+.botaoDesabilitado {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .botao-pokemon{
   background: rgba(255, 255, 255, 0.42);
   width: 42px;
@@ -119,6 +125,11 @@ scrollbar-base-color: white;
   padding: 5px;
   cursor: pointer;
   transition: 0.3s;
+}
+
+.botaoPokemon-active {
+  background: rgba(0, 0, 0, 0.7) !important;
+  color: white;
 }
 
 .botao-pokemon:hover {
@@ -142,3 +153,4 @@ scrollbar-base-color: white;
   border-radius: 5px;
   background: green;
 }
+
