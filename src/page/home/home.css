@@ -154,3 +154,99 @@ scrollbar-base-color: white;
   background: green;
 }
 
+.centroPokemon-conteiner {
+  display: flex;
+  position: absolute;
+  height: 250px;
+  width: 300px;
+  top: calc((600px - 250px)/2);
+  left: calc((100% - 300px)/2);
+  border: 1px solid black;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.curarPokemon-conteiner {
+  position: relative;
+  width: 290px;
+  height: 240px;
+  border: 1px solid white;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.msg-nurseJoy-conteiner {
+  width: 290px;
+  height: 48px;
+  padding: 20px 0 0 10px;
+  margin-bottom: 20px;
+}
+.msg-nurseJoy {
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.botoes-curarPokemons-pokebolas {
+  width: 290px;
+  height: 50px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  padding: 0 auto;
+  margin: 15px 0;
+}
+
+.botoes-curarPokemons-pokebolas button{
+  background: rgba(255, 255, 255, 0.7);
+  position: relative;
+  width: 85px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botoes-curarPokemons-pokebolas button:hover {
+  background: white;
+}
+
+.msg-disponivel {
+  position: absolute;
+  font-size: 8px;
+  bottom: -10px;
+  color: white;
+}
+
+.botao-aceitar {
+  background: rgba(228, 75, 75, 0.5);
+  width: 90px;
+  height: 40px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: bolder;
+  border: 1px solid black;
+  margin: 10px 0 0 100px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao-aceitar:hover {
+  background: rgba(228, 75, 75, 0.7);
+}
+
+.img-nurseJoy {
+  position: absolute;
+  width: 81px;
+  height: 223.5px;
+  top: 25px;
+  left: -65px;
+}
+
+.img-chansey {
+  position: absolute;
+  width: 140.625px;
+  height: 125px;
+  top: 120px;
+  right: -115px;
+}
