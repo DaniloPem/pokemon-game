@@ -3,12 +3,12 @@
     "tipos": ["Planta", "Veneno"],
     "nome": "Bulbasaur",
     "habilidades": [
-      { "nome": "Tackle", "tipo": "Normal", "forca": 10, "pontosPoder": 20 },
-      { "nome": "Headbutt", "tipo": "Normal", "forca": 20, "pontosPoder": 18 },
-      { "nome": "Vine Whip", "tipo": "Planta", "forca": 30, "pontosPoder": 15 },
-      { "nome": "Mega-drain", "tipo": "Planta", "forca": 40, "pontosPoder": 12 },
-      { "nome": "Leech-seed", "tipo": "Planta", "forca": 50, "pontosPoder": 10 },
-      { "nome": "Razor-wind", "tipo": "Planta", "forca": 60, "pontosPoder": 6 }
+      { "nome": "Tackle", "tipo": "Normal", "forca": 10, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Headbutt", "tipo": "Normal", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Vine Whip", "tipo": "Planta", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Mega-drain", "tipo": "Planta", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Leech-seed", "tipo": "Planta", "forca": 50, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Razor-wind", "tipo": "Planta", "forca": 60, "pontosMax": 6, "pontosPoder": 6 }
     ],
     "vidaOriginal": 100,
     "debilidades": [
@@ -40,12 +40,12 @@
     "tipos": ["Planta", "Veneno"],
     "nome": "Ivysaur",
     "habilidades": [
-      { "nome": "Headbutt", "tipo": "Normal", "forca": 30, "pontosPoder": 20 },
-      { "nome": "Vine Whip", "tipo": "Planta", "forca": 40, "pontosPoder": 18 },
-      { "nome": "Poison Powder", "tipo": "Veneno", "forca": 50, "pontosPoder": 15 },
-      { "nome": "Razor Leaf", "tipo": "Planta", "forca": 60, "pontosPoder": 10 },
-      { "nome": "Petal Dance", "tipo": "Planta", "forca": 70, "pontosPoder": 8 },
-      { "nome": "Solar Beam", "tipo": "Planta", "forca": 80, "pontosPoder": 5 }
+      { "nome": "Headbutt", "tipo": "Normal", "forca": 30, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Vine Whip", "tipo": "Planta", "forca": 40, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Poison Powder", "tipo": "Veneno", "forca": 50, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Razor Leaf", "tipo": "Planta", "forca": 60, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Petal Dance", "tipo": "Planta", "forca": 70, "pontosMax": 8, "pontosPoder": 8 },
+      { "nome": "Solar Beam", "tipo": "Planta", "forca": 80, "pontosMax": 5, "pontosPoder": 5 }
     ],
     "vidaOriginal": 100,
     "debilidades": [
@@ -77,12 +77,12 @@
     "tipos": ["Planta", "Veneno"],
     "nome": "Venusaur",
     "habilidades": [
-      { "nome": "Headbutt", "tipo": "Normal", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Vine Whip", "tipo": "Planta", "forca": 40, "pontosPoder": 15 },
-      { "nome": "Razor Leaf", "tipo": "Planta", "forca": 60, "pontosPoder": 12 },
-      { "nome": "Toxic", "tipo": "Veneno", "forca": 70, "pontosPoder": 9 },
-      { "nome": "Petal Dance", "tipo": "Planta", "forca": 80, "pontosPoder": 6 },
-      { "nome": "Solar Beam", "tipo": "Planta", "forca": 100, "pontosPoder": 3 }
+      { "nome": "Headbutt", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Vine Whip", "tipo": "Planta", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Razor Leaf", "tipo": "Planta", "forca": 60, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Toxic", "tipo": "Veneno", "forca": 70, "pontosMax": 9, "pontosPoder": 9 },
+      { "nome": "Petal Dance", "tipo": "Planta", "forca": 80, "pontosMax": 6, "pontosPoder": 6 },
+      { "nome": "Solar Beam", "tipo": "Planta", "forca": 100, "pontosMax": 3, "pontosPoder": 3 }
     ],
     "vidaOriginal": 120,
     "debilidades": [
@@ -114,12 +114,12 @@
     "tipos": ["Fogo", "semtipo"],
     "nome": "Charmander",
     "habilidades": [
-      { "nome": "Scratch", "tipo": "Normal", "forca": 10, "pontosPoder": 20 },
-      { "nome": "Mega Punch", "tipo": "Normal", "forca": 20, "pontosPoder": 18 },
-      { "nome": "Headbutt", "tipo": "Normal", "forca": 20, "pontosPoder": 18 },
-      { "nome": "Fire Punch", "tipo": "Fogo", "forca": 30, "pontosPoder": 15 },
-      { "nome": "Thunder Punch", "tipo": "Elétrico", "forca": 40, "pontosPoder": 12 },
-      { "nome": "Flamethrower", "tipo": "Fogo", "forca": 60, "pontosPoder": 6 }
+      { "nome": "Scratch", "tipo": "Normal", "forca": 10, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Mega Punch", "tipo": "Normal", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Headbutt", "tipo": "Normal", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Fire Punch", "tipo": "Fogo", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Thunder Punch", "tipo": "Elétrico", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Flamethrower", "tipo": "Fogo", "forca": 60, "pontosMax": 6, "pontosPoder": 6 }
     ],
     "vidaOriginal": 100,
     "debilidades": [
@@ -146,12 +146,12 @@
     "tipos": ["Fogo", "semtipo"],
     "nome": "Charmeleon",
     "habilidades": [
-      { "nome": "Mega Punch", "tipo": "Normal", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Fire Punch", "tipo": "Fogo", "forca": 40, "pontosPoder": 15 },
-      { "nome": "Thunder Punch", "tipo": "Elétrico", "forca": 40, "pontosPoder": 15 },
-      { "nome": "Ember", "tipo": "Fogo", "forca": 50, "pontosPoder": 12 },
-      { "nome": "Flamethrower", "tipo": "Fogo", "forca": 70, "pontosPoder": 10 },
-      { "nome": "Fire Spin", "tipo": "Fogo", "forca": 80, "pontosPoder": 5 }
+      { "nome": "Mega Punch", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Fire Punch", "tipo": "Fogo", "forca": 40, "pontosMax": 18, "pontosPoder": 15 },
+      { "nome": "Thunder Punch", "tipo": "Elétrico", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Ember", "tipo": "Fogo", "forca": 50, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Flamethrower", "tipo": "Fogo", "forca": 70, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Fire Spin", "tipo": "Fogo", "forca": 80, "pontosMax": 5, "pontosPoder": 5 }
     ],
     "vidaOriginal": 100,
     "debilidades": [
@@ -178,12 +178,12 @@
     "tipos": ["Fogo", "Voador"],
     "nome": "Charizard",
     "habilidades": [
-      { "nome": "Dragão Claw", "tipo": "Dragão", "forca": 40, "pontosPoder": 18 },
-      { "nome": "Wing Attack", "tipo": "Voador", "forca": 50, "pontosPoder": 15 },
-      { "nome": "Ember", "tipo": "Fogo", "forca": 60, "pontosPoder": 12 },
-      { "nome": "Flamethrower", "tipo": "Fogo", "forca": 80, "pontosPoder": 7 },
-      { "nome": "Fire Spin", "tipo": "Fogo", "forca": 90, "pontosPoder": 5 },
-      { "nome": "Flare Blitz", "tipo": "Fogo", "froca": 105, "pontosPoder": 3 }
+      { "nome": "Dragão Claw", "tipo": "Dragão", "forca": 40, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Wing Attack", "tipo": "Voador", "forca": 50, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Ember", "tipo": "Fogo", "forca": 60, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Flamethrower", "tipo": "Fogo", "forca": 80, "pontosMax": 7, "pontosPoder": 7 },
+      { "nome": "Fire Spin", "tipo": "Fogo", "forca": 90, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Flare Blitz", "tipo": "Fogo", "froca": 105, "pontosMax": 3, "pontosPoder": 3 }
     ],
     "vidaOriginal": 120,
     "debilidades": [
@@ -211,12 +211,12 @@
     "tipos": ["Água", "semtipo"],
     "nome": "Squirtle",
     "habilidades": [
-      { "nome": "Mega Punch", "tipo": "Normal", "forca": 10, "pontosPoder": 20 },
-      { "nome": "Ice Punch", "tipo": "Gelo", "forca": 20, "pontosPoder": 16 },
-      { "nome": "Bite", "tipo": "Sombrio", "forca": 30, "pontosPoder": 14 },
-      { "nome": "Bubble", "tipo": "Água", "forca": 40, "pontosPoder": 12 },
-      { "nome": "Water Gun", "tipo": "Água", "forca": 50, "pontosPoder": 10 },
-      { "nome": "Surf", "tipo": "Água", "forca": 60, "pontosPoder": 6 }
+      { "nome": "Mega Punch", "tipo": "Normal", "forca": 10, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Ice Punch", "tipo": "Gelo", "forca": 20, "pontosMax": 16, "pontosPoder": 16 },
+      { "nome": "Bite", "tipo": "Sombrio", "forca": 30, "pontosMax": 14, "pontosPoder": 14 },
+      { "nome": "Bubble", "tipo": "Água", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Water Gun", "tipo": "Água", "forca": 50, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Surf", "tipo": "Água", "forca": 60, "pontosMax": 6, "pontosPoder": 6 }
     ],
     "vidaOriginal": 100,
     "debilidades": [
@@ -245,12 +245,12 @@
     "tipos": ["Água", "semtipo"],
     "nome": "Wartortle",
     "habilidades": [
-      { "nome": "Bite", "tipo": "Sombrio", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Aqua Tail", "tipo": "Água", "forca": 50, "pontosPoder": 14 },
-      { "nome": "Water Gun", "tipo": "Água", "forca": 50, "pontosPoder": 14 },
-      { "nome": "Surf", "tipo": "Água", "forca": 60, "pontosPoder": 10 },
-      { "nome": "Ice Beam", "tipo": "Gelo", "forca": 80, "pontosPoder": 5 },
-      { "nome": "Hydro Pump", "tipo": "Água", "forca": 80, "pontosPoder": 5 }
+      { "nome": "Bite", "tipo": "Sombrio", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Aqua Tail", "tipo": "Água", "forca": 50, "pontosMax": 14, "pontosPoder": 14 },
+      { "nome": "Water Gun", "tipo": "Água", "forca": 50, "pontosMax": 14, "pontosPoder": 14 },
+      { "nome": "Surf", "tipo": "Água", "forca": 60, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Ice Beam", "tipo": "Gelo", "forca": 80, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Hydro Pump", "tipo": "Água", "forca": 80, "pontosMax": 5, "pontosPoder": 5 }
     ],
     "vidaOriginal": 100,
     "debilidades": [
@@ -279,12 +279,12 @@
     "tipos": ["Água", "semtipo"],
     "nome": "Blastoise",
     "habilidades": [
-      { "nome": "Aqua Tail", "tipo": "Água", "forca": 50, "pontosPoder": 15 },
-      { "nome": "Water Gun", "tipo": "Água", "forca": 50, "pontosPoder": 15 },
-      { "nome": "Surf", "tipo": "Água", "forca": 60, "pontosPoder": 12 },
-      { "nome": "Flash Cannon", "tipo": "Ferro", "forca": 90, "pontosPoder": 5 },
-      { "nome": "Hydro Pump", "tipo": "Água", "forca": 90, "pontosPoder": 5 },
-      { "nome": "Blizzard", "tipo": "Gelo", "forca": 110, "pontosPoder": 3 }
+      { "nome": "Aqua Tail", "tipo": "Água", "forca": 50, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Water Gun", "tipo": "Água", "forca": 50, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Surf", "tipo": "Água", "forca": 60, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Flash Cannon", "tipo": "Ferro", "forca": 90, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Hydro Pump", "tipo": "Água", "forca": 90, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Blizzard", "tipo": "Gelo", "forca": 110, "pontosMax": 3, "pontosPoder": 3 }
     ],
     "vidaOriginal": 120,
     "debilidades": [
@@ -313,10 +313,10 @@
     "tipos": ["Inseto", "semtipo"],
     "nome": "Caterpie",
     "habilidades": [
-      { "nome": "Tackle", "tipo": "Normal", "forca": 10, "pontosPoder": 20 },
-      { "nome": "String Shot", "tipo": "Inseto", "forca": 20, "pontosPoder": 18 },
-      { "nome": "Bug Bite", "tipo": "Inseto", "forca": 30, "pontosPoder": 15 },
-      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 30, "pontosPoder": 15 }
+      { "nome": "Tackle", "tipo": "Normal", "forca": 10, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "String Shot", "tipo": "Inseto", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Bug Bite", "tipo": "Inseto", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 30, "pontosMax": 15, "pontosPoder": 15 }
     ],
     "vidaOriginal": 70,
     "debilidades": [
@@ -345,9 +345,9 @@
     "tipos": ["Inseto", "semtipo"],
     "nome": "Metapod",
     "habilidades": [
-      { "nome": "String Shot", "tipo": "Inseto", "forca": 20, "pontosPoder": 20 },
-      { "nome": "Bug Bite", "tipo": "Inseto", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 30, "pontosPoder": 18 }
+      { "nome": "String Shot", "tipo": "Inseto", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Bug Bite", "tipo": "Inseto", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 30, "pontosMax": 18, "pontosPoder": 18 }
     ],
     "vidaOriginal": 70,
     "debilidades": [
@@ -376,12 +376,12 @@
     "tipos": ["Inseto", "Voador"],
     "nome": "Butterfree",
     "habilidades": [
-      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Silver Wind", "tipo": "Inseto", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Posison Powder", "tipo": "Veneno", "forca": 40, "pontosPoder": 15 },
-      { "nome": "Psybeam", "tipo": "Psíquico", "forca": 50, "pontosPoder": 12 },
-      { "nome": "Gust", "tipo": "Voador", "forca": 80, "pontosPoder": 8 },
-      { "nome": "Bug Buzz", "tipo": "Inseto", "forca": 90, "pontosPoder": 4 }
+      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Silver Wind", "tipo": "Inseto", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Posison Powder", "tipo": "Veneno", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Psybeam", "tipo": "Psíquico", "forca": 50, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Gust", "tipo": "Voador", "forca": 80, "pontosMax": 8, "pontosPoder": 8 },
+      { "nome": "Bug Buzz", "tipo": "Inseto", "forca": 90, "pontosMax": 4, "pontosPoder": 4 }
     ],
     "vidaOriginal": 90,
     "debilidades": [
@@ -413,10 +413,10 @@
     "tipos": ["Inseto", "Veneno"],
     "nome": "Weedle",
     "habilidades": [
-      { "nome": "Poison Sting", "tipo": "Veneno", "forca": 20, "pontosPoder": 20 },
-      { "nome": "String Shot", "tipo": "Inseto", "forca": 20, "pontosPoder": 20 },
-      { "nome": "Bug Bite", "tipo": "Inseto", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 30, "pontosPoder": 18 }
+      { "nome": "Poison Sting", "tipo": "Veneno", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "String Shot", "tipo": "Inseto", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Bug Bite", "tipo": "Inseto", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 30, "pontosMax": 18, "pontosPoder": 18 }
     ],
     "vidaOriginal": 70,
     "debilidades": [
@@ -446,9 +446,9 @@
     "tipos": ["Inseto", "Veneno"],
     "nome": "Kakuna",
     "habilidades": [
-      { "nome": "String Shot", "tipo": "Inseto", "forca": 30, "pontosPoder": 20 },
-      { "nome": "Bug Bite", "tipo": "Inseto", "forca": 40, "pontosPoder": 18 },
-      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 40, "pontosPoder": 18 }
+      { "nome": "String Shot", "tipo": "Inseto", "forca": 30, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Bug Bite", "tipo": "Inseto", "forca": 40, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 40, "pontosMax": 18, "pontosPoder": 18 }
     ],
     "vidaOriginal": 70,
     "debilidades": [
@@ -478,12 +478,12 @@
     "tipos": ["Inseto", "Veneno"],
     "nome": "Beedrill",
     "habilidades": [
-      { "nome": "Fury Attack", "tipo": "Normal", "forca": 30, "pontosPoder": 20 },
-      { "nome": "Peck", "tipo": "Voador", "forca": 30, "pontosPoder": 20 },
-      { "nome": "Pin Missile", "tipo": "Inseto", "forca": 40, "pontosPoder": 18 },
-      { "nome": "Twineedle", "tipo": "Inseto", "forca": 40, "pontosPoder": 18 },
-      { "nome": "Fell Stinger", "tipo": "Inseto", "forca": 50, "pontosPoder": 15 },
-      { "nome": "Poison Jab", "tipo": "Veneno", "forca": 80, "pontosPoder": 6 }
+      { "nome": "Fury Attack", "tipo": "Normal", "forca": 30, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Peck", "tipo": "Voador", "forca": 30, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Pin Missile", "tipo": "Inseto", "forca": 40, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Twineedle", "tipo": "Inseto", "forca": 40, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Fell Stinger", "tipo": "Inseto", "forca": 50, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Poison Jab", "tipo": "Veneno", "forca": 80, "pontosMax": 6, "pontosPoder": 6 }
     ],
     "vidaOriginal": 90,
     "debilidades": [
@@ -513,12 +513,12 @@
     "tipos": ["Normal", "Voador"],
     "nome": "Pidgey",
     "habilidades": [
-      { "nome": "Tackle", "tipo": "Normal", "forca": 20, "pontosPoder": 20 },
-      { "nome": "Quick Attack", "tipo": "Normal", "forca": 20, "pontosPoder": 20 },
-      { "nome": "Headbutt", "tipo": "Normal", "forca": 20, "pontosPoder": 20 },
-      { "nome": "Wing Attack", "tipo": "Voador", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Fly", "tipo": "Voador", "forca": 40, "pontosPoder": 15 },
-      { "nome": "Air Slash", "tipo": "Voador", "forca": 50, "pontosPoder": 10 }
+      { "nome": "Tackle", "tipo": "Normal", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Quick Attack", "tipo": "Normal", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Headbutt", "tipo": "Normal", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Wing Attack", "tipo": "Voador", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Fly", "tipo": "Voador", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Air Slash", "tipo": "Voador", "forca": 50, "pontosMax": 10, "pontosPoder": 10 }
     ],
     "vidaOriginal": 80,
     "debilidades": [
@@ -545,12 +545,12 @@
     "tipos": ["Normal", "Voador"],
     "nome": "Pidgeotto",
     "habilidades": [
-      { "nome": "Quick Attack", "tipo": "Normal", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Headbutt", "tipo": "Normal", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Wing Attack", "tipo": "Voador", "forca": 40, "pontosPoder": 15 },
-      { "nome": "Fly", "tipo": "Voador", "forca": 50, "pontosPoder": 12 },
-      { "nome": "Air Slash", "tipo": "Voador", "forca": 60, "pontosPoder": 10 },
-      { "nome": "Hurricane", "tipo": "Voador", "forca": 90, "pontosPoder": 4 }
+      { "nome": "Quick Attack", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Headbutt", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Wing Attack", "tipo": "Voador", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Fly", "tipo": "Voador", "forca": 50, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Air Slash", "tipo": "Voador", "forca": 60, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Hurricane", "tipo": "Voador", "forca": 90, "pontosMax": 4, "pontosPoder": 4 }
     ],
     "vidaOriginal": 100,
     "debilidades": [
@@ -577,12 +577,12 @@
     "tipos": ["Normal", "Voador"],
     "nome": "Pidgeot",
     "habilidades": [
-      { "nome": "Wing Attack", "tipo": "Voador", "forca": 40, "pontosPoder": 15 },
-      { "nome": "Twister", "tipo": "Dragão", "forca": 50, "pontosPoder": 13 },
-      { "nome": "Ominous Wind", "tipo": "Fantasma", "forca": 60, "pontosPoder": 10 },
-      { "nome": "Steel Wing", "tipo": "Ferro", "forca": 60, "pontosPoder": 10 },
-      { "nome": "Air Slash", "tipo": "Voador", "forca": 70, "pontosPoder": 8 },
-      { "nome": "Hurricane", "tipo": "Voador", "forca": 105, "pontosPoder": 3 }
+      { "nome": "Wing Attack", "tipo": "Voador", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Twister", "tipo": "Dragão", "forca": 50, "pontosMax": 13, "pontosPoder": 13 },
+      { "nome": "Ominous Wind", "tipo": "Fantasma", "forca": 60, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Steel Wing", "tipo": "Ferro", "forca": 60, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Air Slash", "tipo": "Voador", "forca": 70, "pontosMax": 8, "pontosPoder": 8 },
+      { "nome": "Hurricane", "tipo": "Voador", "forca": 105, "pontosMax": 3, "pontosPoder": 3 }
     ],
     "vidaOriginal": 120,
     "debilidades": [
@@ -609,10 +609,10 @@
     "tipos": ["Normal", "semtipo"],
     "nome": "Rattata",
     "habilidades": [
-      { "nome": "Headbutt", "tipo": "Normal", "forca": 10, "pontosPoder": 20 },
-      { "nome": "Tackle", "tipo": "Normal", "forca": 20, "pontosPoder": 18 },
-      { "nome": "Quick Attack", "tipo": "Normal", "forca": 30, "pontosPoder": 15 },
-      { "nome": "Hyper Fang", "tipo": "Normal", "forca": 50, "pontosPoder": 10 }
+      { "nome": "Headbutt", "tipo": "Normal", "forca": 10, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Tackle", "tipo": "Normal", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Quick Attack", "tipo": "Normal", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Hyper Fang", "tipo": "Normal", "forca": 50, "pontosMax": 10, "pontosPoder": 10 }
     ],
     "vidaOriginal": 70,
     "debilidades": [
@@ -632,11 +632,11 @@
     "tipos": ["Normal", "semtipo"],
     "nome": "Raticate",
     "habilidades": [
-      { "nome": "Quick Attack", "tipo": "Normal", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Hidden Power", "tipo": "Normal", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Thunder Wave", "tipo": "Elétrico", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Mud Slap", "tipo": "Terra", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Hyper Fang", "tipo": "Normal", "forca": 60, "pontosPoder": 10 }
+      { "nome": "Quick Attack", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Hidden Power", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Thunder Wave", "tipo": "Elétrico", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Mud Slap", "tipo": "Terra", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Hyper Fang", "tipo": "Normal", "forca": 60, "pontosMax": 10, "pontosPoder": 10 }
     ],
     "vidaOriginal": 80,
     "debilidades": [
@@ -656,12 +656,12 @@
     "tipos": ["Normal", "Voador"],
     "nome": "Spearow",
     "habilidades": [
-      { "nome": "Tackle", "tipo": "Normal", "forca": 20, "pontosPoder": 20 },
-      { "nome": "Quick Attack", "tipo": "Normal", "forca": 20, "pontosPoder": 20 },
-      { "nome": "Headbutt", "tipo": "Normal", "forca": 20, "pontosPoder": 20 },
-      { "nome": "Wing Attack", "tipo": "Voador", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Fly", "tipo": "Voador", "forca": 40, "pontosPoder": 15 },
-      { "nome": "Aerial Ace", "tipo": "Voador", "forca": 50, "pontosPoder": 10 }
+      { "nome": "Tackle", "tipo": "Normal", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Quick Attack", "tipo": "Normal", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Headbutt", "tipo": "Normal", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
+      { "nome": "Wing Attack", "tipo": "Voador", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Fly", "tipo": "Voador", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Aerial Ace", "tipo": "Voador", "forca": 50, "pontosMax": 10, "pontosPoder": 10 }
     ],
     "vidaOriginal": 80,
     "debilidades": [
@@ -688,12 +688,12 @@
     "tipos": ["Normal", "Voador"],
     "nome": "Fearow",
     "habilidades": [
-      { "nome": "Quick Attack", "tipo": "Normal", "forca": 30, "pontosPoder": 18 },
-      { "nome": "Fly", "tipo": "Voador", "forca": 40, "pontosPoder": 16 },
-      { "nome": "Wing Attack", "tipo": "Voador", "forca": 40, "pontosPoder": 16 },
-      { "nome": "Air Cutter", "tipo": "Voador", "forca": 60, "pontosPoder": 14 },
-      { "nome": "Aerial Ace", "tipo": "Voador", "forca": 70, "pontosPoder": 8 },
-      { "nome": "Drill Run", "tipo": "Terra", "forca": 80, "pontosPoder": 6 }
+      { "nome": "Quick Attack", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Fly", "tipo": "Voador", "forca": 40, "pontosMax": 16, "pontosPoder": 16 },
+      { "nome": "Wing Attack", "tipo": "Voador", "forca": 40, "pontosMax": 16, "pontosPoder": 16 },
+      { "nome": "Air Cutter", "tipo": "Voador", "forca": 60, "pontosMax": 14, "pontosPoder": 14 },
+      { "nome": "Aerial Ace", "tipo": "Voador", "forca": 70, "pontosMax": 8, "pontosPoder": 8 },
+      { "nome": "Drill Run", "tipo": "Terra", "forca": 80, "pontosMax": 6, "pontosPoder": 6 }
     ],
     "vidaOriginal": 100,
     "debilidades": [

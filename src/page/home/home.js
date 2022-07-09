@@ -86,22 +86,22 @@ const update = () => {
   if (keymap["ArrowLeft"]) {
     spritePersonagem.y = 1;
     spritePersonagem.posicaoX -= spritePersonagem.velocidade;
-    // verificarPokemonsSelvagem();
+    verificarPokemonsSelvagem();
   }
   if (keymap["ArrowRight"]) {
     spritePersonagem.y = 2;
     spritePersonagem.posicaoX += spritePersonagem.velocidade;
-    // verificarPokemonsSelvagem();
+    verificarPokemonsSelvagem();
   }
   if (keymap["ArrowUp"]) {
     spritePersonagem.y = 3;
     spritePersonagem.posicaoY -= spritePersonagem.velocidade;
-    // verificarPokemonsSelvagem();
+    verificarPokemonsSelvagem();
   }
   if (keymap["ArrowDown"]) {
     spritePersonagem.y = 0;
     spritePersonagem.posicaoY += spritePersonagem.velocidade;
-    // verificarPokemonsSelvagem();
+    verificarPokemonsSelvagem();
   }
 
   if (
@@ -110,6 +110,8 @@ const update = () => {
     spritePersonagem.posicaoY < 137 &&
     spritePersonagem.posicaoY > 110
   ) {
+    document.removeEventListener("keydown", apertarArrow);
+    spritePersonagem.posicaoY += 40;
     const main = document.querySelector("main");
     const divExistenteCentroPokemon = main.children.namedItem("centroPokemon");
     if (!!divExistenteCentroPokemon) {
@@ -118,7 +120,49 @@ const update = () => {
     const centroPokemon = document.createElement("div");
     centroPokemon.setAttribute("name", "centroPokemon");
     main.append(centroPokemon);
-    aparecerNurseJoy(centroPokemon);
+    // aparecerNurseJoy(centroPokemon);
+    const curarPokemonConteiner = document.createElement("div");
+    const mensagemConteiner = document.createElement("div");
+    const mensagemJoy = document.createElement("p");
+    const botoesCurarConteiner = document.createElement("div");
+    const botaoCurar = document.createElement("button");
+    const msgCurar = document.createElement("p");
+    const msgDisponivelCurar = document.createElement("p");
+    const botaoPokebolas = document.createElement("button");
+    const msgPokebolas = document.createElement("p");
+    const msgDisponivelPokebolas = document.createElement("p");
+    const botaoAceitar = document.createElement("button");
+    const imgNurseJoy = document.createElement("img");
+    const imgChansey = document.createElement("img");
+    centroPokemon.setAttribute("class", "centroPokemon-conteiner");
+    curarPokemonConteiner.setAttribute("class", "curarPokemon-conteiner");
+    mensagemConteiner.setAttribute("class", "msg-nurseJoy-conteiner");
+    mensagemJoy.setAttribute("class", "msg-nurseJoy");
+    botoesCurarConteiner.setAttribute("class", "botoes-curarPokemons-pokebolas");
+    msgDisponivelCurar.setAttribute("class", "msg-disponivel");
+    msgDisponivelPokebolas.setAttribute("class", "msg-disponivel");
+    botaoAceitar.setAttribute("class", "botao-aceitar");
+    imgNurseJoy.setAttribute("class", "img-nurseJoy");
+    imgNurseJoy.setAttribute("src", "../../../assets/imagem/nurseJoy.png");
+    imgChansey.setAttribute("class", "img-chansey");
+    imgChansey.setAttribute("src", "../../../assets/imagem/chansey.png");
+    centroPokemon.append(curarPokemonConteiner);
+    curarPokemonConteiner.append(mensagemConteiner, botoesCurarConteiner, botaoAceitar, imgNurseJoy, imgChansey);
+    mensagemConteiner.append(mensagemJoy);
+    botoesCurarConteiner.append(botaoCurar, botaoPokebolas);
+    botaoCurar.append(msgCurar, msgDisponivelCurar);
+    botaoPokebolas.append(msgPokebolas, msgDisponivelPokebolas);
+    curarPokemonConteiner.append(botaoAceitar);
+    mensagemJoy.innerText = "Olá! Eu sou a nurse Joy. Você deseja curar seus pokemons e receber pokebolas?";
+    msgCurar.innerText = "Curar";
+    msgDisponivelCurar.innerHTML = `Disponível em 5 min`;
+    msgPokebolas.innerText = "Pokebolas";
+    msgDisponivelPokebolas.innerHTML = `Disponível em 5 min`;
+    botaoAceitar.innerText = "Aceitar";
+    const fecharCentroPokemon = () => {
+      if (!!divExistenteCentroPokemon) main.removeChild(divExistenteCentroPokemon);
+    };
+    botaoAceitar.addEventListener("click", fecharCentroPokemon);
   }
 
   //Atualizar posicao da Camera
@@ -404,52 +448,46 @@ const adicionarPokemonDoDepoteNaBolsa = (pokemonDepote, botaoPokemonNoDepote, bo
   botaoPokemonNoDepote.addEventListener("click", posibilitarAdicionarPokemon);
 };
 
-const aparecerNurseJoy = (centroPokemon) => {
-  const curarPokemonConteiner = document.createElement("div");
-  const mensagemConteiner = document.createElement("div");
-  const mensagemJoy = document.createElement("p");
-  const botoesCurarConteiner = document.createElement("div");
-  const botaoCurar = document.createElement("button");
-  const msgCurar = document.createElement("p");
-  const msgDisponivelCurar = document.createElement("p");
-  const botaoPokebolas = document.createElement("button");
-  const msgPokebolas = document.createElement("p");
-  const msgDisponivelPokebolas = document.createElement("p");
-  const botaoAceitar = document.createElement("button");
-  const imgNurseJoy = document.createElement("img");
-  const imgChansey = document.createElement("img");
-  centroPokemon.setAttribute("class", "centroPokemon-conteiner");
-  curarPokemonConteiner.setAttribute("class", "curarPokemon-conteiner");
-  mensagemConteiner.setAttribute("class", "msg-nurseJoy-conteiner");
-  mensagemJoy.setAttribute("class", "msg-nurseJoy");
-  botoesCurarConteiner.setAttribute("class", "botoes-curarPokemons-pokebolas");
-  msgDisponivelCurar.setAttribute("class", "msg-disponivel");
-  msgDisponivelPokebolas.setAttribute("class", "msg-disponivel");
-  botaoAceitar.setAttribute("class", "botao-aceitar");
-  imgNurseJoy.setAttribute("class", "img-nurseJoy");
-  imgNurseJoy.setAttribute("src", "../../../assets/imagem/nurseJoy.png");
-  imgChansey.setAttribute("class", "img-chansey");
-  imgChansey.setAttribute("src", "../../../assets/imagem/chansey.png");
-  centroPokemon.append(curarPokemonConteiner);
-  curarPokemonConteiner.append(mensagemConteiner);
-  mensagemConteiner.append(mensagemJoy);
-  curarPokemonConteiner.append(botoesCurarConteiner);
-  botoesCurarConteiner.append(botaoCurar);
-  botaoCurar.append(msgCurar);
-  botaoCurar.append(msgDisponivelCurar);
-  botoesCurarConteiner.append(botaoPokebolas);
-  botaoPokebolas.append(msgPokebolas);
-  botaoPokebolas.append(msgDisponivelPokebolas);
-  curarPokemonConteiner.append(botaoAceitar);
-  curarPokemonConteiner.append(imgNurseJoy);
-  curarPokemonConteiner.append(imgChansey);
-  mensagemJoy.innerText = "Olá! Eu sou a nurse Joy. Você deseja curar seus pokemons e receber pokebolas?";
-  msgCurar.innerText = "Curar";
-  msgDisponivelCurar.innerHTML = `Disponível em 5 min`;
-  msgPokebolas.innerText = "Pokebolas";
-  msgDisponivelPokebolas.innerHTML = `Disponível em 5 min`;
-  botaoAceitar.innerText = "Aceitar";
-};
+// const aparecerNurseJoy = (centroPokemon) => {
+// const curarPokemonConteiner = document.createElement("div");
+// const mensagemConteiner = document.createElement("div");
+// const mensagemJoy = document.createElement("p");
+// const botoesCurarConteiner = document.createElement("div");
+// const botaoCurar = document.createElement("button");
+// const msgCurar = document.createElement("p");
+// const msgDisponivelCurar = document.createElement("p");
+// const botaoPokebolas = document.createElement("button");
+// const msgPokebolas = document.createElement("p");
+// const msgDisponivelPokebolas = document.createElement("p");
+// const botaoAceitar = document.createElement("button");
+// const imgNurseJoy = document.createElement("img");
+// const imgChansey = document.createElement("img");
+// centroPokemon.setAttribute("class", "centroPokemon-conteiner");
+// curarPokemonConteiner.setAttribute("class", "curarPokemon-conteiner");
+// mensagemConteiner.setAttribute("class", "msg-nurseJoy-conteiner");
+// mensagemJoy.setAttribute("class", "msg-nurseJoy");
+// botoesCurarConteiner.setAttribute("class", "botoes-curarPokemons-pokebolas");
+// msgDisponivelCurar.setAttribute("class", "msg-disponivel");
+// msgDisponivelPokebolas.setAttribute("class", "msg-disponivel");
+// botaoAceitar.setAttribute("class", "botao-aceitar");
+// imgNurseJoy.setAttribute("class", "img-nurseJoy");
+// imgNurseJoy.setAttribute("src", "../../../assets/imagem/nurseJoy.png");
+// imgChansey.setAttribute("class", "img-chansey");
+// imgChansey.setAttribute("src", "../../../assets/imagem/chansey.png");
+// centroPokemon.append(curarPokemonConteiner);
+// curarPokemonConteiner.append(mensagemConteiner, botoesCurarConteiner, botaoAceitar, imgNurseJoy, imgChansey);
+// mensagemConteiner.append(mensagemJoy);
+// botoesCurarConteiner.append(botaoCurar, botaoPokebolas);
+// botaoCurar.append(msgCurar, msgDisponivelCurar);
+// botaoPokebolas.append(msgPokebolas, msgDisponivelPokebolas);
+// curarPokemonConteiner.append(botaoAceitar);
+// mensagemJoy.innerText = "Olá! Eu sou a nurse Joy. Você deseja curar seus pokemons e receber pokebolas?";
+// msgCurar.innerText = "Curar";
+// msgDisponivelCurar.innerHTML = `Disponível em 5 min`;
+// msgPokebolas.innerText = "Pokebolas";
+// msgDisponivelPokebolas.innerHTML = `Disponível em 5 min`;
+// botaoAceitar.innerText = "Aceitar";
+// };
 
 // const curarPokemons = () => {
 //   const dataReal = new Date();

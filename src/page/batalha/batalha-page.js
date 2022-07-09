@@ -69,6 +69,8 @@ const renderGame = () => {
   imgCompetidorBatalha.setAttribute("src", urlBackDefault);
   imgCompetidorBatalha.setAttribute("id", "imgCompetidorBatalha");
   divCompetidorBatalha.append(imgCompetidorBatalha);
+
+  aparecerAtaques();
 };
 
 const renderizarMensagem = (msg) => {
@@ -108,12 +110,19 @@ const aparecerAtaques = () => {
     const iconTipo = document.createElement("img");
     const tipoHabilidade = habilidade.tipo.toLowerCase();
     const nomeAtaque = document.createElement("span");
+    const spanPontosPoder = document.createElement("span");
     botoesAtaque.append(ataqueBatalha);
     ataqueBatalha.append(nomeAtaque);
     ataqueBatalha.append(iconTipo);
-    nomeAtaque.innerText = `${habilidade.nome}`;
+    ataqueBatalha.append(spanPontosPoder);
     iconTipo.setAttribute("src", `../../../assets/icone/${tipoHabilidade}.png`);
     ataqueBatalha.setAttribute("class", `${tipoHabilidade}-color-ataque`);
+    spanPontosPoder.setAttribute("class", "pontosPoder");
+    nomeAtaque.innerText = `${habilidade.nome}`;
+    spanPontosPoder.innerText = `${habilidade.pontosPoder}/${habilidade.pontosMax}`;
+    if (habilidade.pontosPoder === 0) {
+      ataqueBatalha.classList.add("ataqueSemPontos");
+    }
     ataqueBatalha.addEventListener("click", () => usarHabilidade(habilidade));
   });
 };

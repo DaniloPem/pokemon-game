@@ -42,6 +42,8 @@ export class Pokemon {
       const danoBaseadoNoNivel = 1 + (this.level - pokemon.level) / 30;
       const vidaPokemon = pokemon.vida - Math.round(habilidade.forca * multiplicadorDano * danoBaseadoNoNivel);
       pokemon.vida = vidaPokemon > 0 ? vidaPokemon : 0;
+      habilidade.pontosPoder--;
+      console.log(habilidade.pontosPoder);
     }
   }
 
