@@ -86,22 +86,22 @@ const update = () => {
   if (keymap["ArrowLeft"]) {
     spritePersonagem.y = 1;
     spritePersonagem.posicaoX -= spritePersonagem.velocidade;
-    verificarPokemonsSelvagem();
+    // verificarPokemonsSelvagem();
   }
   if (keymap["ArrowRight"]) {
     spritePersonagem.y = 2;
     spritePersonagem.posicaoX += spritePersonagem.velocidade;
-    verificarPokemonsSelvagem();
+    // verificarPokemonsSelvagem();
   }
   if (keymap["ArrowUp"]) {
     spritePersonagem.y = 3;
     spritePersonagem.posicaoY -= spritePersonagem.velocidade;
-    verificarPokemonsSelvagem();
+    // verificarPokemonsSelvagem();
   }
   if (keymap["ArrowDown"]) {
     spritePersonagem.y = 0;
     spritePersonagem.posicaoY += spritePersonagem.velocidade;
-    verificarPokemonsSelvagem();
+    // verificarPokemonsSelvagem();
   }
 
   if (
@@ -118,7 +118,7 @@ const update = () => {
       main.removeChild(divExistenteCentroPokemon);
     }
     const centroPokemon = document.createElement("div");
-    centroPokemon.setAttribute("name", "centroPokemon");
+    centroPokemon.setAttribute("name", "centro-pokemon");
     main.append(centroPokemon);
     // aparecerNurseJoy(centroPokemon);
     const curarPokemonConteiner = document.createElement("div");
@@ -160,7 +160,8 @@ const update = () => {
     msgDisponivelPokebolas.innerHTML = `Disponível em 5 min`;
     botaoAceitar.innerText = "Aceitar";
     const fecharCentroPokemon = () => {
-      if (!!divExistenteCentroPokemon) main.removeChild(divExistenteCentroPokemon);
+      main.removeChild(main.children.namedItem("centro-pokemon"));
+      document.addEventListener("keydown", apertarArrow);
     };
     botaoAceitar.addEventListener("click", fecharCentroPokemon);
   }
