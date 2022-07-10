@@ -1,4 +1,5 @@
 import { Pokemon } from "./pokemon.model.js";
+import { buscarPokemonPorNome } from "../repository/pokemon.repository.js";
 
 export class PokemonCapturado extends Pokemon {
   pokemonInicial;
@@ -25,6 +26,12 @@ export class PokemonCapturado extends Pokemon {
     } else {
       this.experiencia = sumaDasExperiencias;
       this.experienciaGanhada = 0;
+    }
+    if (this.level > this.levelMax) {
+      const pokemonPrototipo = buscarPokemonPorNome(this.evolucao);
+      pokemonPrototipo.level = this.level;
+      pokemonPrototipo.experiencia = this.experiencia;
+      Object.assign(this, new PokemonCapturado(pokemonPrototipo));
     }
   }
 }

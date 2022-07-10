@@ -69,8 +69,6 @@ const renderGame = () => {
   imgCompetidorBatalha.setAttribute("src", urlBackDefault);
   imgCompetidorBatalha.setAttribute("id", "imgCompetidorBatalha");
   divCompetidorBatalha.append(imgCompetidorBatalha);
-
-  aparecerAtaques();
 };
 
 const renderizarMensagem = (msg) => {
@@ -119,11 +117,14 @@ const aparecerAtaques = () => {
     ataqueBatalha.setAttribute("class", `${tipoHabilidade}-color-ataque`);
     spanPontosPoder.setAttribute("class", "pontosPoder");
     nomeAtaque.innerText = `${habilidade.nome}`;
-    spanPontosPoder.innerText = `${habilidade.pontosPoder}/${habilidade.pontosMax}`;
+    atualizarPontosPoder(spanPontosPoder, habilidade);
     if (habilidade.pontosPoder === 0) {
       ataqueBatalha.classList.add("ataqueSemPontos");
     }
-    ataqueBatalha.addEventListener("click", () => usarHabilidade(habilidade));
+    ataqueBatalha.addEventListener("click", () => {
+      usarHabilidade(habilidade);
+      atualizarPontosPoder(spanPontosPoder, habilidade);
+    });
   });
 };
 botaoLutar.addEventListener("click", aparecerAtaques);
@@ -420,4 +421,7 @@ const estilarBotoesItemClick = (botaoPokebola) => {
     botao.classList.remove("pokebola-active");
   });
   botaoPokebola.classList.add("pokebola-active");
+};
+const atualizarPontosPoder = (spanPontosPoder, habilidade) => {
+  spanPontosPoder.innerText = `${habilidade.pontosPoder}/${habilidade.pontosMax}`;
 };

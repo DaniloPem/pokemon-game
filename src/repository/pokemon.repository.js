@@ -17,3 +17,7 @@ export const pegarPokemonsIniciais = () => {
   const listaPokemonsInicias = [listaPokemons[0], listaPokemons[3], listaPokemons[6]];
   return listaPokemonsInicias.map((pokeInicial) => new PokemonSelvagem(pokemons[pokeInicial]));
 };
+
+export const buscarPokemonPorNome = (nome) => {
+  return pokemons[nome];
+};
