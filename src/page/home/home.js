@@ -108,10 +108,14 @@ const update = () => {
   }
 
   if (
-    spritePersonagem.posicaoX > 2105 &&
-    spritePersonagem.posicaoX < 2150 &&
-    spritePersonagem.posicaoY < 137 &&
-    spritePersonagem.posicaoY > 110
+    (spritePersonagem.posicaoX > 2105 &&
+      spritePersonagem.posicaoX < 2150 &&
+      spritePersonagem.posicaoY < 137 &&
+      spritePersonagem.posicaoY > 110) ||
+    (spritePersonagem.posicaoX > 4949 &&
+      spritePersonagem.posicaoX < 5001 &&
+      spritePersonagem.posicaoY < 580 &&
+      spritePersonagem.posicaoY > 546)
   ) {
     document.removeEventListener("keydown", apertarArrow);
     spritePersonagem.posicaoY += 40;
@@ -124,77 +128,12 @@ const update = () => {
     const centroPokemon = document.createElement("div");
     centroPokemon.setAttribute("name", "centro-pokemon");
     main.append(centroPokemon);
-    // aparecerNurseJoy(centroPokemon);
-    const curarPokemonConteiner = document.createElement("div");
-    const mensagemConteiner = document.createElement("div");
-    const mensagemJoy = document.createElement("p");
-    const botoesCurarConteiner = document.createElement("div");
-    const botaoCurar = document.createElement("button");
-    const msgCurar = document.createElement("p");
-    const botaoPokebolas = document.createElement("button");
-    const msgPokebolas = document.createElement("p");
-    const msgDisponivelPokebolas = document.createElement("p");
-    const botaoAceitar = document.createElement("button");
-    const imgNurseJoy = document.createElement("img");
-    const imgChansey = document.createElement("img");
-    centroPokemon.setAttribute("class", "centroPokemon-conteiner");
-    curarPokemonConteiner.setAttribute("class", "curarPokemon-conteiner");
-    mensagemConteiner.setAttribute("class", "msg-nurseJoy-conteiner");
-    mensagemJoy.setAttribute("class", "msg-nurseJoy");
-    botoesCurarConteiner.setAttribute("class", "botoes-curarPokemons-pokebolas");
-    msgDisponivelPokebolas.setAttribute("class", "msg-disponivel");
-    botaoAceitar.setAttribute("class", "botao-aceitar");
-    imgNurseJoy.setAttribute("class", "img-nurseJoy");
-    imgNurseJoy.setAttribute("src", "../../../assets/imagem/nurseJoy.png");
-    imgChansey.setAttribute("class", "img-chansey");
-    imgChansey.setAttribute("src", "../../../assets/imagem/chansey.png");
-    centroPokemon.append(curarPokemonConteiner);
-    curarPokemonConteiner.append(mensagemConteiner, botoesCurarConteiner, botaoAceitar, imgNurseJoy, imgChansey);
-    mensagemConteiner.append(mensagemJoy);
-    botoesCurarConteiner.append(botaoCurar, botaoPokebolas);
-    botaoCurar.append(msgCurar);
-    botaoPokebolas.append(msgPokebolas, msgDisponivelPokebolas);
-    curarPokemonConteiner.append(botaoAceitar);
-    mensagemJoy.innerText = "Olá! Eu sou a nurse Joy. Você deseja curar seus pokemons e receber pokebolas?";
-    msgCurar.innerText = "Curar";
-    msgPokebolas.innerText = "Pokebolas";
-    botaoAceitar.innerText = "Aceitar";
-    const dataAtual = new Date();
-    const dataUltimaAdicao = new Date(localStorage.getItem("dataPokebola"));
-    const sustracaoDasDatas = 5 - Math.floor((dataAtual.getTime() - dataUltimaAdicao.getTime()) / (1000 * 60));
-    if (sustracaoDasDatas > 5) {
-      msgDisponivelPokebolas.innerHTML = `Disponível agora.`;
-    } else {
-      msgDisponivelPokebolas.innerHTML = `Disponível em ${sustracaoDasDatas} min.`;
-    }
-    const fecharCentroPokemon = () => {
-      main.removeChild(main.children.namedItem("centro-pokemon"));
-      spritePersonagem.img = imagemPersonagem;
-      document.addEventListener("keydown", apertarArrow);
-    };
-    botaoAceitar.addEventListener("click", fecharCentroPokemon);
-    const curarPokemons = () => {
-      pokemonsNaBolsaPersonagem.forEach((pokemon) => {
-        pokemon.vida = pokemon.vidaOriginal;
-        pokemon.habilidades.forEach((habilidade) => (habilidade.pontosPoder = habilidade.pontosMax));
-      });
-      mensagemJoy.innerText = `${personagem.nomeUser}, seus pokemons estão curados!`;
-    };
-    botaoCurar.addEventListener("click", curarPokemons);
-    const adicionarPokebolas = () => {
-      const dataAtual = new Date();
-      const dataUltimaAdicao = new Date(localStorage.getItem("dataPokebola")) || new Date();
-      dataUltimaAdicao.setMinutes(dataUltimaAdicao.getMinutes() + 5);
-      if (dataAtual > dataUltimaAdicao) {
-        personagem.itens.forEach((pokebola) => (pokebola.quantidade += 3));
-        localStorage.setItem("dataPokebola", dataAtual);
-        mensagemJoy.innerText = `${personagem.nomeUser}, você recebeu 3 pokebolas por cada tipo de pokeball!`;
-        msgDisponivelPokebolas.innerHTML = `Disponível em 5 min.`;
-      } else {
-        mensagemJoy.innerText = `${personagem.nomeUser}, você não pode receber pokebolas agora. Tente mais tarde.`;
-      }
-    };
-    botaoPokebolas.addEventListener("click", adicionarPokebolas);
+    const { msgDisponivelPokebolas, botaoAceitar, mensagemJoy, botaoCurar, botaoPokebolas } =
+      aparecerNurseJoy(centroPokemon);
+    temporizarBotaoPokebolas(msgDisponivelPokebolas);
+    sairDoCentroPokemon(main, botaoAceitar);
+    curarPokemonsDaBolsa(mensagemJoy, botaoCurar);
+    obterMaisPokebolas(mensagemJoy, msgDisponivelPokebolas, botaoPokebolas);
   }
 
   //Atualizar posicao da Camera
@@ -249,6 +188,7 @@ const render = () => {
     spritePersonagem.largura,
     spritePersonagem.altura
   );
+
   const emMovimento = Object.values(keymap).some((valor) => valor === true); // [false, false, false, false];
   if (emMovimento) {
     if (elapsed % 15 === 0) {
@@ -268,10 +208,14 @@ const render = () => {
 const verificarPokemonsSelvagem = () => {
   if (
     !(
-      spritePersonagem.posicaoX > 2049 &&
-      spritePersonagem.posicaoX < 2199 &&
-      spritePersonagem.posicaoY < 196 &&
-      spritePersonagem.posicaoY > 110
+      (spritePersonagem.posicaoX > 2105 &&
+        spritePersonagem.posicaoX < 2150 &&
+        spritePersonagem.posicaoY < 137 &&
+        spritePersonagem.posicaoY > 110) ||
+      (spritePersonagem.posicaoX > 4949 &&
+        spritePersonagem.posicaoX < 5001 &&
+        spritePersonagem.posicaoY < 580 &&
+        spritePersonagem.posicaoY > 546)
     )
   ) {
     const numeroConstante = 0.005;
@@ -486,6 +430,92 @@ const adicionarPokemonDoDepoteNaBolsa = (pokemonDepote, botaoPokemonNoDepote, bo
     }
   };
   botaoPokemonNoDepote.addEventListener("click", posibilitarAdicionarPokemon);
+};
+
+const aparecerNurseJoy = (centroPokemon) => {
+  const curarPokemonConteiner = document.createElement("div");
+  const mensagemConteiner = document.createElement("div");
+  const mensagemJoy = document.createElement("p");
+  const botoesCurarConteiner = document.createElement("div");
+  const botaoCurar = document.createElement("button");
+  const msgCurar = document.createElement("p");
+  const botaoPokebolas = document.createElement("button");
+  const msgPokebolas = document.createElement("p");
+  const msgDisponivelPokebolas = document.createElement("p");
+  const botaoAceitar = document.createElement("button");
+  const imgNurseJoy = document.createElement("img");
+  const imgChansey = document.createElement("img");
+  centroPokemon.setAttribute("class", "centroPokemon-conteiner");
+  curarPokemonConteiner.setAttribute("class", "curarPokemon-conteiner");
+  mensagemConteiner.setAttribute("class", "msg-nurseJoy-conteiner");
+  mensagemJoy.setAttribute("class", "msg-nurseJoy");
+  botoesCurarConteiner.setAttribute("class", "botoes-curarPokemons-pokebolas");
+  msgDisponivelPokebolas.setAttribute("class", "msg-disponivel");
+  botaoAceitar.setAttribute("class", "botao-aceitar");
+  imgNurseJoy.setAttribute("class", "img-nurseJoy");
+  imgNurseJoy.setAttribute("src", "../../../assets/imagem/nurseJoy.png");
+  imgChansey.setAttribute("class", "img-chansey");
+  imgChansey.setAttribute("src", "../../../assets/imagem/chansey.png");
+  centroPokemon.append(curarPokemonConteiner);
+  curarPokemonConteiner.append(mensagemConteiner, botoesCurarConteiner, botaoAceitar, imgNurseJoy, imgChansey);
+  mensagemConteiner.append(mensagemJoy);
+  botoesCurarConteiner.append(botaoCurar, botaoPokebolas);
+  botaoCurar.append(msgCurar);
+  botaoPokebolas.append(msgPokebolas, msgDisponivelPokebolas);
+  curarPokemonConteiner.append(botaoAceitar);
+  mensagemJoy.innerText = "Olá! Eu sou a nurse Joy. Você deseja curar seus pokemons e receber pokebolas?";
+  msgCurar.innerText = "Curar";
+  msgPokebolas.innerText = "Pokebolas";
+  botaoAceitar.innerText = "Aceitar";
+  return { msgDisponivelPokebolas, botaoAceitar, mensagemJoy, botaoCurar, botaoPokebolas };
+};
+
+const temporizarBotaoPokebolas = (msgDisponivelPokebolas) => {
+  const dataAtual = new Date();
+  const dataUltimaAdicao = new Date(localStorage.getItem("dataPokebola"));
+  const sustracaoDasDatas = 5 - Math.floor((dataAtual.getTime() - dataUltimaAdicao.getTime()) / (1000 * 60));
+  if (sustracaoDasDatas > 5) {
+    msgDisponivelPokebolas.innerHTML = `Disponível agora.`;
+  } else {
+    msgDisponivelPokebolas.innerHTML = `Disponível em ${sustracaoDasDatas} min.`;
+  }
+};
+
+const obterMaisPokebolas = (mensagemJoy, msgDisponivelPokebolas, botaoPokebolas) => {
+  const adicionarPokebolas = () => {
+    const dataAtual = new Date();
+    const dataUltimaAdicao = new Date(localStorage.getItem("dataPokebola")) || new Date();
+    dataUltimaAdicao.setMinutes(dataUltimaAdicao.getMinutes() + 5);
+    if (dataAtual > dataUltimaAdicao) {
+      personagem.itens.forEach((pokebola) => (pokebola.quantidade += 3));
+      localStorage.setItem("dataPokebola", dataAtual);
+      mensagemJoy.innerText = `${personagem.nomeUser}, você recebeu 3 pokebolas por cada tipo de pokeball!`;
+      msgDisponivelPokebolas.innerHTML = `Disponível em 5 min.`;
+    } else {
+      mensagemJoy.innerText = `${personagem.nomeUser}, você não pode receber pokebolas agora. Tente mais tarde.`;
+    }
+  };
+  botaoPokebolas.addEventListener("click", adicionarPokebolas);
+};
+
+const curarPokemonsDaBolsa = (mensagemJoy, botaoCurar) => {
+  const curarPokemons = () => {
+    pokemonsNaBolsaPersonagem.forEach((pokemon) => {
+      pokemon.vida = pokemon.vidaOriginal;
+      pokemon.habilidades.forEach((habilidade) => (habilidade.pontosPoder = habilidade.pontosMax));
+    });
+    mensagemJoy.innerText = `${personagem.nomeUser}, seus pokemons estão curados!`;
+  };
+  botaoCurar.addEventListener("click", curarPokemons);
+};
+
+const sairDoCentroPokemon = (main, botaoAceitar) => {
+  const fecharCentroPokemon = () => {
+    main.removeChild(main.children.namedItem("centro-pokemon"));
+    spritePersonagem.img = imagemPersonagem;
+    document.addEventListener("keydown", apertarArrow);
+  };
+  botaoAceitar.addEventListener("click", fecharCentroPokemon);
 };
 
 document.body.onload = function () {
