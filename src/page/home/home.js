@@ -158,8 +158,15 @@ const update = () => {
     mensagemJoy.innerText = "Olá! Eu sou a nurse Joy. Você deseja curar seus pokemons e receber pokebolas?";
     msgCurar.innerText = "Curar";
     msgPokebolas.innerText = "Pokebolas";
-    msgDisponivelPokebolas.innerHTML = `Disponível em 5 min`;
     botaoAceitar.innerText = "Aceitar";
+    const dataAtual = new Date();
+    const dataUltimaAdicao = new Date(localStorage.getItem("dataPokebola"));
+    const sustracaoDasDatas = 5 - Math.floor((dataAtual.getTime() - dataUltimaAdicao.getTime()) / (1000 * 60));
+    if (sustracaoDasDatas > 5) {
+      msgDisponivelPokebolas.innerHTML = `Disponível agora.`;
+    } else {
+      msgDisponivelPokebolas.innerHTML = `Disponível em ${sustracaoDasDatas} min.`;
+    }
     const fecharCentroPokemon = () => {
       main.removeChild(main.children.namedItem("centro-pokemon"));
       spritePersonagem.img = imagemPersonagem;
@@ -182,6 +189,7 @@ const update = () => {
         personagem.itens.forEach((pokebola) => (pokebola.quantidade += 3));
         localStorage.setItem("dataPokebola", dataAtual);
         mensagemJoy.innerText = `${personagem.nomeUser}, você recebeu 3 pokebolas por cada tipo de pokeball!`;
+        msgDisponivelPokebolas.innerHTML = `Disponível em 5 min.`;
       } else {
         mensagemJoy.innerText = `${personagem.nomeUser}, você não pode receber pokebolas agora. Tente mais tarde.`;
       }
@@ -241,7 +249,6 @@ const render = () => {
     spritePersonagem.largura,
     spritePersonagem.altura
   );
-  console.log(spritePersonagem.posicaoX, spritePersonagem.posicaoY);
   const emMovimento = Object.values(keymap).some((valor) => valor === true); // [false, false, false, false];
   if (emMovimento) {
     if (elapsed % 15 === 0) {
@@ -481,17 +488,16 @@ const adicionarPokemonDoDepoteNaBolsa = (pokemonDepote, botaoPokemonNoDepote, bo
   botaoPokemonNoDepote.addEventListener("click", posibilitarAdicionarPokemon);
 };
 
-// document.body.onload = function () {
-//   spritePersonagem.posicaoX = personagem.posicaoX;
-//   spritePersonagem.posicaoY = personagem.posicaoY;
-//   setInterval(() => {
-//     personagem.posicaoX = spritePersonagem.posicaoX;
-//     personagem.posicaoY = spritePersonagem.posicaoY;
-//     localStorage.setItem("personagem", JSON.stringify(personagem));
-//     console.log("save");
-//   }, 5000);
-// };
-// loop();
+document.body.onload = function () {
+  spritePersonagem.posicaoX = personagem.posicaoX;
+  spritePersonagem.posicaoY = personagem.posicaoY;
+  setInterval(() => {
+    personagem.posicaoX = spritePersonagem.posicaoX;
+    personagem.posicaoY = spritePersonagem.posicaoY;
+    localStorage.setItem("personagem", JSON.stringify(personagem));
+  }, 5000);
+};
+loop();
 
 //Soundtrack
 //1, 2, 17,18,20,23,24,25,26?,28,34?,43?,46,50,83,85,
