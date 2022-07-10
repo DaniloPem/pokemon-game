@@ -188,7 +188,7 @@ const render = () => {
     spritePersonagem.largura,
     spritePersonagem.altura
   );
-
+  console.log(spritePersonagem.posicaoX, spritePersonagem.posicaoY);
   const emMovimento = Object.values(keymap).some((valor) => valor === true); // [false, false, false, false];
   if (emMovimento) {
     if (elapsed % 15 === 0) {
@@ -208,14 +208,14 @@ const render = () => {
 const verificarPokemonsSelvagem = () => {
   if (
     !(
-      (spritePersonagem.posicaoX > 2105 &&
-        spritePersonagem.posicaoX < 2150 &&
-        spritePersonagem.posicaoY < 137 &&
-        spritePersonagem.posicaoY > 110) ||
-      (spritePersonagem.posicaoX > 4949 &&
-        spritePersonagem.posicaoX < 5001 &&
-        spritePersonagem.posicaoY < 580 &&
-        spritePersonagem.posicaoY > 546)
+      (spritePersonagem.posicaoX > 2085 &&
+        spritePersonagem.posicaoX < 2172 &&
+        spritePersonagem.posicaoY < 180 &&
+        spritePersonagem.posicaoY > 100) ||
+      (spritePersonagem.posicaoX > 4925 &&
+        spritePersonagem.posicaoX < 5030 &&
+        spritePersonagem.posicaoY < 600 &&
+        spritePersonagem.posicaoY > 520)
     )
   ) {
     const numeroConstante = 0.005;
@@ -473,11 +473,11 @@ const aparecerNurseJoy = (centroPokemon) => {
 const temporizarBotaoPokebolas = (msgDisponivelPokebolas) => {
   const dataAtual = new Date();
   const dataUltimaAdicao = new Date(localStorage.getItem("dataPokebola"));
-  const sustracaoDasDatas = 5 - Math.floor((dataAtual.getTime() - dataUltimaAdicao.getTime()) / (1000 * 60));
+  const sustracaoDasDatas = Math.floor((dataAtual.getTime() - dataUltimaAdicao.getTime()) / (1000 * 60));
   if (sustracaoDasDatas > 5) {
     msgDisponivelPokebolas.innerHTML = `Disponível agora.`;
   } else {
-    msgDisponivelPokebolas.innerHTML = `Disponível em ${sustracaoDasDatas} min.`;
+    msgDisponivelPokebolas.innerHTML = `Disponível em ${5 - sustracaoDasDatas} min.`;
   }
 };
 
