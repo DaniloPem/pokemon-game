@@ -51,8 +51,26 @@ function aparecerListaPokemonInicial(nomePersonagem) {
       const personagem = Personagem.criarPersonagemInicial(nomePersonagem, pokeInicial);
       pokeInicial.level = 1;
       pokeInicial.experiencia = 0;
-      localStorage.setItem("personagem", JSON.stringify(personagem));
-      location.href = "../home/home.html";
+      const divTransicao = document.createElement("div");
+      divTransicao.setAttribute("class", "divTransicao");
+      divTransicao.setAttribute("id", "divTransicao");
+      telaInicio.append(divTransicao);
+      gsap.to("#divTransicao", {
+        opacity: 1,
+        repeat: 3,
+        yoyo: true,
+        duration: 0.4,
+        onComplete() {
+          gsap.to("#divTransicao", {
+            opacity: 1,
+            duration: 0.4,
+            onComplete() {
+              localStorage.setItem("personagem", JSON.stringify(personagem));
+              location.href = "../home/home.html";
+            },
+          });
+        },
+      });
     };
     botaoPokemonInicial.addEventListener("click", escolherPokemonInicial);
   });

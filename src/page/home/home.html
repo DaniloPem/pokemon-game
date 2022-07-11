@@ -12,6 +12,21 @@
   <body>
     <main>
       <canvas height="600" width="1000" id="canvas" class="canvas"> </canvas>
+      <div
+        id="divTransicao"
+        style="
+          background-color: black;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: 0 auto;
+          width: 1000px;
+          height: 600px;
+          opacity: 0;
+        "
+      ></div>
       <button id="botaoPokemons" class="botao-listaPokemons">
         <span>Pokemons</span>
         <div>
@@ -20,28 +35,13 @@
           />
         </div>
       </button>
-
-      <!-- <div class="centroPokemon-conteiner">
-        <div class="curarPokemon-conteiner">
-          <div class="msg-nurseJoy-conteiner">
-            <p class="msg-nurseJoy">Olá! Eu sou a nurse Joy. Você deseja curar seus pokemons e receber pokebolas?</p>
-          </div>
-          <div class="botoes-curarPokemons-pokebolas">
-            <button id="curar">
-              <p>Curar</p>
-              <p class="msg-disponivel">Disponível em 5 min</p>
-            </button>
-            <button>
-              <p>Pokebolas</p>
-              <p class="msg-disponivel">Disponível em 5 min</p>
-            </button>
-          </div>
-          <button class="botao-aceitar">Aceitar</button>
-          <img class="img-nurseJoy" src="../../../assets/imagem/nurseJoy.png" />
-          <img class="img-chansey" src="../../../assets/imagem/chansey.png" />
-        </div>
-      </div> -->
     </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+      integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script type="module" src="home.js"></script>
   </body>
 </html>

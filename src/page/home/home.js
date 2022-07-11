@@ -77,6 +77,8 @@ const soltarArrow = (evento) => {
 document.addEventListener("keydown", apertarArrow);
 document.addEventListener("keyup", soltarArrow);
 
+let podeAndar = true;
+
 //Rodando infinitamente
 const loop = () => {
   window.requestAnimationFrame(loop, canvas);
@@ -86,54 +88,56 @@ const loop = () => {
 
 //Pra fazer atualizacoes
 const update = () => {
-  if (keymap["ArrowLeft"]) {
-    spritePersonagem.y = 1;
-    spritePersonagem.posicaoX -= spritePersonagem.velocidade;
-    verificarPokemonsSelvagem();
-  }
-  if (keymap["ArrowRight"]) {
-    spritePersonagem.y = 2;
-    spritePersonagem.posicaoX += spritePersonagem.velocidade;
-    verificarPokemonsSelvagem();
-  }
-  if (keymap["ArrowUp"]) {
-    spritePersonagem.y = 3;
-    spritePersonagem.posicaoY -= spritePersonagem.velocidade;
-    verificarPokemonsSelvagem();
-  }
-  if (keymap["ArrowDown"]) {
-    spritePersonagem.y = 0;
-    spritePersonagem.posicaoY += spritePersonagem.velocidade;
-    verificarPokemonsSelvagem();
-  }
-
-  if (
-    (spritePersonagem.posicaoX > 2105 &&
-      spritePersonagem.posicaoX < 2150 &&
-      spritePersonagem.posicaoY < 137 &&
-      spritePersonagem.posicaoY > 110) ||
-    (spritePersonagem.posicaoX > 4949 &&
-      spritePersonagem.posicaoX < 5001 &&
-      spritePersonagem.posicaoY < 580 &&
-      spritePersonagem.posicaoY > 546)
-  ) {
-    document.removeEventListener("keydown", apertarArrow);
-    spritePersonagem.posicaoY += 40;
-    spritePersonagem.img = imagemTransparente;
-    const main = document.querySelector("main");
-    const divExistenteCentroPokemon = main.children.namedItem("centroPokemon");
-    if (!!divExistenteCentroPokemon) {
-      main.removeChild(divExistenteCentroPokemon);
+  if (podeAndar) {
+    if (keymap["ArrowLeft"]) {
+      spritePersonagem.y = 1;
+      spritePersonagem.posicaoX -= spritePersonagem.velocidade;
+      verificarPokemonsSelvagem();
     }
-    const centroPokemon = document.createElement("div");
-    centroPokemon.setAttribute("name", "centro-pokemon");
-    main.append(centroPokemon);
-    const { msgDisponivelPokebolas, botaoAceitar, mensagemJoy, botaoCurar, botaoPokebolas } =
-      aparecerNurseJoy(centroPokemon);
-    temporizarBotaoPokebolas(msgDisponivelPokebolas);
-    sairDoCentroPokemon(main, botaoAceitar);
-    curarPokemonsDaBolsa(mensagemJoy, botaoCurar);
-    obterMaisPokebolas(mensagemJoy, msgDisponivelPokebolas, botaoPokebolas);
+    if (keymap["ArrowRight"]) {
+      spritePersonagem.y = 2;
+      spritePersonagem.posicaoX += spritePersonagem.velocidade;
+      verificarPokemonsSelvagem();
+    }
+    if (keymap["ArrowUp"]) {
+      spritePersonagem.y = 3;
+      spritePersonagem.posicaoY -= spritePersonagem.velocidade;
+      verificarPokemonsSelvagem();
+    }
+    if (keymap["ArrowDown"]) {
+      spritePersonagem.y = 0;
+      spritePersonagem.posicaoY += spritePersonagem.velocidade;
+      verificarPokemonsSelvagem();
+    }
+
+    if (
+      (spritePersonagem.posicaoX > 2105 &&
+        spritePersonagem.posicaoX < 2150 &&
+        spritePersonagem.posicaoY < 137 &&
+        spritePersonagem.posicaoY > 110) ||
+      (spritePersonagem.posicaoX > 4949 &&
+        spritePersonagem.posicaoX < 5001 &&
+        spritePersonagem.posicaoY < 580 &&
+        spritePersonagem.posicaoY > 546)
+    ) {
+      podeAndar = false;
+      spritePersonagem.posicaoY += 40;
+      spritePersonagem.img = imagemTransparente;
+      const main = document.querySelector("main");
+      const divExistenteCentroPokemon = main.children.namedItem("centroPokemon");
+      if (!!divExistenteCentroPokemon) {
+        main.removeChild(divExistenteCentroPokemon);
+      }
+      const centroPokemon = document.createElement("div");
+      centroPokemon.setAttribute("name", "centro-pokemon");
+      main.append(centroPokemon);
+      const { msgDisponivelPokebolas, botaoAceitar, mensagemJoy, botaoCurar, botaoPokebolas } =
+        aparecerNurseJoy(centroPokemon);
+      temporizarBotaoPokebolas(msgDisponivelPokebolas);
+      sairDoCentroPokemon(main, botaoAceitar);
+      curarPokemonsDaBolsa(mensagemJoy, botaoCurar);
+      obterMaisPokebolas(mensagemJoy, msgDisponivelPokebolas, botaoPokebolas);
+    }
   }
 
   //Atualizar posicao da Camera
@@ -188,7 +192,7 @@ const render = () => {
     spritePersonagem.largura,
     spritePersonagem.altura
   );
-  console.log(spritePersonagem.posicaoX, spritePersonagem.posicaoY);
+
   const emMovimento = Object.values(keymap).some((valor) => valor === true); // [false, false, false, false];
   if (emMovimento) {
     if (elapsed % 15 === 0) {
@@ -223,8 +227,23 @@ const verificarPokemonsSelvagem = () => {
     if (numeroAleatorio <= numeroConstante) {
       personagem.posicaoX = spritePersonagem.posicaoX;
       personagem.posicaoY = spritePersonagem.posicaoY;
-      localStorage.setItem("personagem", JSON.stringify(personagem));
-      location.href = "../batalha/batalha-page.html";
+      podeAndar = false;
+      gsap.to("#divTransicao", {
+        opacity: 1,
+        repeat: 3,
+        yoyo: true,
+        duration: 0.4,
+        onComplete() {
+          gsap.to("#divTransicao", {
+            opacity: 1,
+            duration: 0.4,
+            onComplete() {
+              localStorage.setItem("personagem", JSON.stringify(personagem));
+              location.href = "../batalha/batalha-page.html";
+            },
+          });
+        },
+      });
     }
   }
 };
@@ -433,6 +452,7 @@ const adicionarPokemonDoDepoteNaBolsa = (pokemonDepote, botaoPokemonNoDepote, bo
 };
 
 const aparecerNurseJoy = (centroPokemon) => {
+  podeAndar = false;
   const curarPokemonConteiner = document.createElement("div");
   const mensagemConteiner = document.createElement("div");
   const mensagemJoy = document.createElement("p");
@@ -513,7 +533,7 @@ const sairDoCentroPokemon = (main, botaoAceitar) => {
   const fecharCentroPokemon = () => {
     main.removeChild(main.children.namedItem("centro-pokemon"));
     spritePersonagem.img = imagemPersonagem;
-    document.addEventListener("keydown", apertarArrow);
+    podeAndar = true;
   };
   botaoAceitar.addEventListener("click", fecharCentroPokemon);
 };
