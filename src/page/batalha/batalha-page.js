@@ -61,6 +61,7 @@ export function iniciarBatalha() {
     const urlFrontDefault = pokemonOponente.frontDefault;
     imgOponenteBatalha.setAttribute("class", "img-oponente");
     imgOponenteBatalha.setAttribute("src", urlFrontDefault);
+    imgOponenteBatalha.setAttribute("id", "imgOponenteBatalha");
     divOponenteBatalha.append(imgOponenteBatalha);
 
     const divCompetidorBatalha = document.querySelector("#competidor-batalha");
@@ -229,10 +230,66 @@ export function iniciarBatalha() {
       });
       infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonCompetidor.nome}</span> usou <span style="font-weight: bold">${habilidade.nome}</span>`;
       pokemonCompetidor.atacar(habilidade, pokemonOponente);
+      gsap.to("#imgCompetidorBatalha", {
+        x: -20,
+        onComplete() {
+          gsap.to("#imgCompetidorBatalha", {
+            x: 40,
+            duration: 0.1,
+            onComplete: () => {
+              gsap.to("#imgOponenteBatalha", {
+                x: 10,
+                yoyo: true,
+                repeat: 5,
+                duration: 0.08,
+              });
+
+              gsap.to("#imgCompetidorBatalha", {
+                x: 0,
+              });
+
+              gsap.to("#imgOponenteBatalha", {
+                opacity: 0,
+                repeat: 5,
+                yoyo: true,
+                duration: 0.08,
+              });
+            },
+          });
+        },
+      });
       renderGame();
       setTimeout(() => {
         if (pokemonCompetidor.vida > 0 && pokemonOponente.vida > 0) {
           const ataqueUtilizado = pokemonOponente.atacarAleatorio(pokemonCompetidor);
+          gsap.to("#imgOponenteBatalha", {
+            x: 20,
+            onComplete() {
+              gsap.to("#imgOponenteBatalha", {
+                x: -40,
+                duration: 0.1,
+                onComplete: () => {
+                  gsap.to("#imgCompetidorBatalha", {
+                    x: -10,
+                    yoyo: true,
+                    repeat: 5,
+                    duration: 0.08,
+                  });
+
+                  gsap.to("#imgOponenteBatalha", {
+                    x: 0,
+                  });
+
+                  gsap.to("#imgCompetidorBatalha", {
+                    opacity: 0,
+                    repeat: 5,
+                    yoyo: true,
+                    duration: 0.08,
+                  });
+                },
+              });
+            },
+          });
           infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonOponente.nome}</span> usou <span style="font-weight: bold">${ataqueUtilizado.nome}</span>`;
         }
         botoesAtaque.forEach((botao) => {
