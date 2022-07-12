@@ -1,0 +1,69 @@
+CADASTRO DO USUARIO
+-Cadastrar usuario com localStorage: username
+-Escolher um pokemon inicial entre bulbasaur, charmander e squirtle
+-O pokemon inicial comeca desde o nivel 1 e experiencia 0
+
+MOVIMENTACAO DO PERSONAGEM
+-Animacoes de andar do personagem
+-Movimento do personagem dentro de um mapa usando as flechas UP, DOWN, RIGHT, LEFT
+
+-O personagem emcontra pokemons selvagens aleatorios enquando ele se movimenta pelo mapa e entram na tela de batalha
+-Na tela batalha aparecem as imagens dos dois pokemons na luta (Pokemon competidor que o personagem está usando e o pokemon selvagem)
+-Cada Pokemon tem uma bara de informacao (vida, nivel, nome, icone)
+-Cada pokemon tem uma barra de nivel que se renderiza enquanto os pokemons atacam
+-Na tela de batalha tem um quadro de texto na parte inferior isquerda que narra o que tá acontecendo na batalha
+-Na tela de batalha tem botoes: Lutar, Pokemon, Itens e fugir
+	a)Lutar: Quando foi clicado, aparecem os ataques do pokemon usado
+	b)Pokemon: Quando for clicado, aparecem a lista de pokemons que podem ser usados
+	c)Itens: Quando for clicado, aparecem as pokebolas
+	d)Fugir: Quando for clicado, o personagem volta pra tela do mapa
+
+SOBRE OS POKEMONS
+-Os pokemons selvagens tem niveis aleatorios de 1 a 30 
+-Cada pokemon tem tipo (agua, fogo, planta, terra, eletrico...)
+-Cada pokemon tem fraquezas e fortalezas que dependem do tipo dele
+-Cada Pokemon tem máximo 6 habilidades
+-Cada habilidade tem tipos (agua, fogo, planta, terra, eletrico...)
+-Cada habilidade tem forca
+-Cada habilidade tem pontos de poder que depende da forca dele
+-Os pontos de poder disminui quando a habilidade é usada
+-Uma habilidade pode ser usada quando os pontos de poder nao é cero
+-Os pokemons selvagens podem ser capturados
+-O método de captura é o seguinte:
+	a) Cada pokemon tem um ratio de captura (quanto mais baixo o ratio, mais dificl de capturar)
+	b) Cada pokebola tem um ratio de captura (quanto mais alto o ratio, mais fácil de capturar um pokemon):
+		Ratio da pokeball: 1
+		Ratio da greatball: 2
+		Ratio da ultraball: 3
+	c) Quanto mais debilitado está o pokemon, é mais fácil de capturar
+-O pokemon ganha experiencia quando consegue tirar a vida total ou um porcentagem da vida total do pokemon selvagem 
+-O pokemon ganha experiencia extra quando o pokemon selvagem foi capturado
+-O pokemon sube de nivel enquanto ganha experiencia
+-Cada pokemon é evoluido quando alcanza um certo nivel
+-O nivel que o pokemon é evoluido depende de cada pokemon
+-O personagem tem pokemons da bolsa e do depote:
+	a) Os pokemons da bolsa: 
+		Sao pokemons capturados que podem ser usados na batalha
+		Sao máximo 6 pokemons
+	b) Os pokemons do depote:
+		Sao pokemons capturados que nao podem ser usados na batalha
+		Nao tem quantidade máxima
+-Os pokemons da bolsa podem ser removidos e guardados na lista de pokemons do depote
+-Os pokemons do depote podem ser adicionados na lista de pokemons da bolsa, sempre e quando cumpla o requisito de ser máximo 6 pokemons
+
+SOBRE O CENTRO POKEMON
+-No mapa tem dois centros pokemons
+-O personagem pode entrar no centro pokemon quando ele estiver acima da porta/entrada 
+-O personagem pode curar (vida cheia e pontos poder de cada ataque no máximo) os pokemons da bolsa no centro pokemon
+-O personagem pode obter 3 pokebolas por cada tipo de pokeball no centro pokemon
+-As pokebolas só podem ser obtidas 5 min depois da ultima obtencao
+
+ANIMACOES 
+-Efeito de transicao da tela do cadastro pra tela do mapa
+-Efeito de transicao da tela do mapa pra tela de batalha
+
+AUDIO
+-Música de fondo na tela do cadastro do usuario
+-Efeito de som no click dos botoes
+-Música de fondo na tela do mapa
+-Música de fondo na tela de batalha

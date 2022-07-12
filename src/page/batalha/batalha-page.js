@@ -1,3 +1,4 @@
+import { audio } from "../../../sounds/audio.js";
 import { criarBotaoPokemon } from "../../components/batalha/botaoPokemon.js";
 import { Personagem } from "../../model/personagem.model.js";
 import { buscarPokemonAleatorio } from "../../repository/pokemon.repository.js";
@@ -8,9 +9,8 @@ export function iniciarBatalha() {
     localStorage.getItem("personagem") !== null
       ? Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")))
       : Personagem.criarPersonagemInicial();
-  const pokemonsPersonagem = personagem.pokemonsNaBolsa;
 
-  let pokemonCompetidor = pokemonsPersonagem[0];
+  let pokemonCompetidor = personagem.pokemonsNaBolsa.find((pokemon) => pokemon.vida > 0);
   const pokemonOponente = buscarPokemonAleatorio();
 
   const renderGame = () => {
@@ -87,6 +87,9 @@ export function iniciarBatalha() {
     infoBatalha.innerHTML = msg;
   };
 
+  const botoesTodos = document.querySelectorAll("button");
+  botoesTodos.forEach((botao) => (botao.disabled = false));
+
   //Botao Lutar
   const botaoLutar = document.querySelector("#botao-lutar");
   const aparecerAtaques = () => {
@@ -139,7 +142,7 @@ export function iniciarBatalha() {
     divListaPokemons.setAttribute("class", "lista-pokemons-batalha");
     acoesBatalha.append(divListaPokemons);
     divListaPokemons.innerHTML = "";
-    pokemonsPersonagem.forEach((poke) => {
+    personagem.pokemonsNaBolsa.forEach((poke) => {
       const button = criarBotaoPokemon(poke);
       button.setAttribute("id", "button-pokemon");
       divListaPokemons.append(button);
@@ -204,8 +207,12 @@ export function iniciarBatalha() {
     const mapaDoJogo = document.querySelector("main");
     const divTransicao = document.querySelector("#divTransicao");
     pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
-    pokemonCompetidor.sumarExperiencia();
+    pokemonCompetidor.somarExperiencia();
+    botaoLutar.classList.remove("pokemonSemVida");
+    const botoesTodos = document.querySelectorAll("button");
+    botoesTodos.forEach((botao) => (botao.disabled = false));
     localStorage.setItem("personagem", JSON.stringify(personagem));
+    audio.batalha.stop();
     atualizarPodeAndar(true);
     telaBatalha.style.display = "none";
     divTransicao.style.display = "none";
@@ -232,6 +239,7 @@ export function iniciarBatalha() {
           botao.disabled = false;
         });
         renderGame();
+        localStorage.setItem("personagem", JSON.stringify(personagem));
       }, 3000);
     }
     setTimeout(() => {
@@ -334,10 +342,8 @@ export function iniciarBatalha() {
     cancelarCaptura
   ) => {
     setTimeout(() => {
-      const numRandom = Math.random();
-      const numAleatorioA = Math.round(numRandom * 9 + 1);
-      const numAleatorioB = Math.round(Math.random() * 9 + 1);
       if (probabilidadeDeCaptura >= 1) {
+        const numAleatorioA = Math.round(Math.random() * 10);
         if (numAleatorioA < 7) {
           personagem.capturar(pokemonOponente);
           aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} foi capturado!`);
@@ -346,10 +352,12 @@ export function iniciarBatalha() {
           const mapaDoJogo = document.querySelector("main");
           const divTransicao = document.querySelector("#divTransicao");
           pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
-          pokemonCompetidor.sumarExperiencia();
+          pokemonCompetidor.somarExperiencia();
           localStorage.setItem("personagem", JSON.stringify(personagem));
           setTimeout(() => {
+            botaoLutar.classList.remove("pokemonSemVida");
             botoesTodos.forEach((botao) => (botao.disabled = false));
+            audio.batalha.stop();
             atualizarPodeAndar(true);
             divTransicao.style.display = "none";
             telaBatalha.style.display = "none";
@@ -365,52 +373,64 @@ export function iniciarBatalha() {
           });
           verificarItemEMostrarMensagem(item, botaoCapturar, capturarPokemon, botaoCancelar, cancelarCaptura);
         }
-      } else if (numRandom <= probabilidadeDeCaptura) {
-        personagem.capturar(pokemonOponente);
-        aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} foi capturado!`);
-        const bonusCaptura = 0.5;
-        const telaBatalha = document.getElementById("tela-batalha");
-        const mapaDoJogo = document.querySelector("main");
-        const divTransicao = document.querySelector("#divTransicao");
-        pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
-        pokemonCompetidor.sumarExperiencia();
-        localStorage.setItem("personagem", JSON.stringify(personagem));
-        setTimeout(() => {
-          botoesTodos.forEach((botao) => (botao.disabled = false));
-          atualizarPodeAndar(true);
-          divTransicao.style.display = "none";
-          telaBatalha.style.display = "none";
-          mapaDoJogo.style.display = "block";
-        }, 2000);
       } else {
-        if (numAleatorioB < 6) {
-          const { botaoCapturar, botaoCancelar } = aparecerMensagemItem(
-            divMensagemItems,
-            `${pokemonOponente.nome} saiu da pokebola. Quer tentar capturar?`
-          );
-          botoesTodos.forEach((botao) => {
-            botao.disabled = false;
-          });
-          verificarItemEMostrarMensagem(item, botaoCapturar, capturarPokemon, botaoCancelar, cancelarCaptura);
-        } else {
-          aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} fugiu!`);
-          const bonusCaptura = 0;
+        const numRandom = Math.random();
+        if (numRandom <= probabilidadeDeCaptura) {
+          personagem.capturar(pokemonOponente);
+          aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} foi capturado!`);
+          const bonusCaptura = 0.5;
           const telaBatalha = document.getElementById("tela-batalha");
           const mapaDoJogo = document.querySelector("main");
           const divTransicao = document.querySelector("#divTransicao");
           pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
-          pokemonCompetidor.sumarExperiencia();
+          pokemonCompetidor.somarExperiencia();
           localStorage.setItem("personagem", JSON.stringify(personagem));
+          console.log(JSON.stringify(personagem));
           setTimeout(() => {
+            botaoLutar.classList.remove("pokemonSemVida");
+            botoesTodos.forEach((botao) => (botao.disabled = false));
+            audio.batalha.stop();
             atualizarPodeAndar(true);
             divTransicao.style.display = "none";
             telaBatalha.style.display = "none";
             mapaDoJogo.style.display = "block";
           }, 2000);
+        } else {
+          const numAleatorioB = Math.round(Math.random() * 10);
+          if (numAleatorioB < 6) {
+            const { botaoCapturar, botaoCancelar } = aparecerMensagemItem(
+              divMensagemItems,
+              `${pokemonOponente.nome} saiu da pokebola. Quer tentar capturar?`
+            );
+            botoesTodos.forEach((botao) => {
+              botao.disabled = false;
+            });
+            verificarItemEMostrarMensagem(item, botaoCapturar, capturarPokemon, botaoCancelar, cancelarCaptura);
+          } else {
+            aparecerMensagemItem(divMensagemItems, `${pokemonOponente.nome} fugiu!`);
+            const bonusCaptura = 0;
+            const telaBatalha = document.getElementById("tela-batalha");
+            const mapaDoJogo = document.querySelector("main");
+            const divTransicao = document.querySelector("#divTransicao");
+            pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
+            pokemonCompetidor.somarExperiencia();
+            localStorage.setItem("personagem", JSON.stringify(personagem));
+            console.log(JSON.stringify(personagem));
+            setTimeout(() => {
+              const botoesTodos = document.querySelectorAll("button");
+              botoesTodos.forEach((botao) => (botao.disabled = false));
+              botaoLutar.classList.remove("pokemonSemVida");
+              audio.batalha.stop();
+              atualizarPodeAndar(true);
+              divTransicao.style.display = "none";
+              telaBatalha.style.display = "none";
+              mapaDoJogo.style.display = "block";
+            }, 2000);
+          }
         }
       }
-    }, 3000);
-  };
+    }, 3000); //setTimeOut
+  }; //handleCaptura
 
   const verificarItemEMostrarMensagem = (item, botaoCapturar, capturarPokemon, botaoCancelar, cancelarCaptura) => {
     if (item.quantidade > 0) {

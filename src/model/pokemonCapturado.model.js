@@ -13,7 +13,7 @@ export class PokemonCapturado extends Pokemon {
     this.experienciaGanhada = 4 * pokemon.level * (1 - pokemon.vida / pokemon.vidaOriginal) * (1 + bonusCaptura);
   }
 
-  sumarExperiencia() {
+  somarExperiencia() {
     const sumaDasExperiencias = this.experiencia + this.experienciaGanhada;
     if (sumaDasExperiencias > 100) {
       this.level += 1;
@@ -27,7 +27,7 @@ export class PokemonCapturado extends Pokemon {
       this.experiencia = sumaDasExperiencias;
       this.experienciaGanhada = 0;
     }
-    if (this.level > this.levelMax) {
+    if (this.level > this.levelMax && !!this.evolucao) {
       const pokemonPrototipo = buscarPokemonPorNome(this.evolucao);
       pokemonPrototipo.level = this.level;
       pokemonPrototipo.experiencia = this.experiencia;

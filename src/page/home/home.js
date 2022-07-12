@@ -1,3 +1,4 @@
+import { audio } from "../../../sounds/audio.js";
 import { Personagem } from "../../model/personagem.model.js";
 import { buscarPokemonAleatorio } from "../../repository/pokemon.repository.js";
 import { iniciarBatalha } from "../batalha/batalha-page.js";
@@ -230,6 +231,8 @@ const verificarPokemonsSelvagem = () => {
       divTransicao.style.display = "block";
       divTransicao.style.opacity = 0;
       podeAndar = false;
+      audio.transicaoPraBatalha.play();
+      setTimeout(() => audio.batalha.play(), 3000);
       gsap.to("#divTransicao", {
         opacity: 1,
         repeat: 3,
@@ -548,15 +551,18 @@ const sairDoCentroPokemon = (main, botaoAceitar) => {
 export const atualizarPodeAndar = (valor) => {
   podeAndar = valor;
   personagem = Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")));
+  console.log(personagem);
 };
 
 document.body.onload = function () {
   spritePersonagem.posicaoX = personagem.posicaoX;
   spritePersonagem.posicaoY = personagem.posicaoY;
   setInterval(() => {
-    personagem.posicaoX = spritePersonagem.posicaoX;
-    personagem.posicaoY = spritePersonagem.posicaoY;
-    localStorage.setItem("personagem", JSON.stringify(personagem));
+    if (podeAndar) {
+      personagem.posicaoX = spritePersonagem.posicaoX;
+      personagem.posicaoY = spritePersonagem.posicaoY;
+      localStorage.setItem("personagem", JSON.stringify(personagem));
+    }
   }, 5000);
 };
 loop();
