@@ -1,4 +1,6 @@
 import { Personagem } from "../../model/personagem.model.js";
+import { buscarPokemonAleatorio } from "../../repository/pokemon.repository.js";
+import { iniciarBatalha } from "../batalha/batalha-page.js";
 
 const canvas = document.querySelector("#canvas");
 const contexto = canvas.getContext("2d");
@@ -26,13 +28,10 @@ const cenario = {
 };
 sprites.push(cenario);
 
-const personagem =
+let personagem =
   localStorage.getItem("personagem") !== null
     ? Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")))
     : Personagem.criarPersonagemInicial();
-
-const pokemonsNaBolsaPersonagem = personagem.pokemonsNaBolsa;
-const pokemonsNoDepotePersonagem = personagem.pokemonsNoDepote;
 
 const spritePersonagem = {
   img: imagemPersonagem,
@@ -227,6 +226,9 @@ const verificarPokemonsSelvagem = () => {
     if (numeroAleatorio <= numeroConstante) {
       personagem.posicaoX = spritePersonagem.posicaoX;
       personagem.posicaoY = spritePersonagem.posicaoY;
+      const divTransicao = document.querySelector("#divTransicao");
+      divTransicao.style.display = "block";
+      divTransicao.style.opacity = 0;
       podeAndar = false;
       gsap.to("#divTransicao", {
         opacity: 1,
@@ -239,7 +241,12 @@ const verificarPokemonsSelvagem = () => {
             duration: 0.4,
             onComplete() {
               localStorage.setItem("personagem", JSON.stringify(personagem));
-              location.href = "../batalha/batalha-page.html";
+              iniciarBatalha();
+              const telaBatalha = document.getElementById("tela-batalha");
+              const mapaDoJogo = document.querySelector("main");
+              telaBatalha.style.display = "block";
+              mapaDoJogo.style.display = "none";
+              // location.href = "../batalha/batalha-page.html";
             },
           });
         },
@@ -262,19 +269,19 @@ const aparecerListaPokemons = () => {
   divListaPokemons.setAttribute("name", "listaPokemons");
   main.append(divListaPokemons);
   const { botaoRemover, listaPokemonBolsa } = aparecerListaPokemonsNaBolsa(divListaPokemons);
-  if (pokemonsNaBolsaPersonagem.length === 1) {
+  if (personagem.pokemonsNaBolsa.length === 1) {
     botaoRemover.classList.add("botaoDesabilitado");
   }
-  pokemonsNaBolsaPersonagem.forEach((pokemonBolsa) => {
+  personagem.pokemonsNaBolsa.forEach((pokemonBolsa) => {
     const botaoPokemonNaBolsa = aparecerBotoesPokemonBolsa(pokemonBolsa, listaPokemonBolsa);
     removerPokemonDaBolsaNoDepote(pokemonBolsa, botaoPokemonNaBolsa, botaoRemover);
   });
-  if (pokemonsNoDepotePersonagem.length != 0) {
+  if (personagem.pokemonsNoDepote.length != 0) {
     const { botaoAdicionar, listaPokemonDepote, divPokemonDepote } = aparecerListaPokemonsDepote(divListaPokemons);
-    if (pokemonsNaBolsaPersonagem.length === 6) {
+    if (personagem.pokemonsNaBolsa.length === 6) {
       botaoAdicionar.classList.add("botaoDesabilitado");
     }
-    pokemonsNoDepotePersonagem.forEach((pokemonDepote) => {
+    personagem.pokemonsNoDepote.forEach((pokemonDepote) => {
       const botaoPokemonNoDepote = aparecerBotoesPokemonDepote(pokemonDepote, listaPokemonDepote);
       adicionarPokemonDoDepoteNaBolsa(pokemonDepote, botaoPokemonNoDepote, botaoAdicionar);
     });
@@ -306,7 +313,7 @@ const atualizarBarraVida = (pokemon, vidaPokemon) => {
 };
 
 const adicionarOverflowNoPokemonDepote = (divPokemonDepote, listaPokemonDepote) => {
-  if (pokemonsNoDepotePersonagem.length >= 6) {
+  if (personagem.pokemonsNoDepote.length >= 6) {
     divPokemonDepote.classList.add("pokemon-depote-altura");
     listaPokemonDepote.classList.add("pokemon-depote-overflow");
   }
@@ -395,10 +402,10 @@ const aparecerBotoesPokemonDepote = (pokemonDepote, listaPokemonDepote) => {
 
 const removerPokemonDaBolsa = (pokemonBolsa, botaoRemover) => {
   const removerPokemon = () => {
-    if (pokemonsNaBolsaPersonagem.length > 1) {
-      const index = pokemonsNaBolsaPersonagem.findIndex((poke) => poke === pokemonBolsa);
-      pokemonsNaBolsaPersonagem.splice(index, 1);
-      pokemonsNoDepotePersonagem.unshift(pokemonBolsa);
+    if (personagem.pokemonsNaBolsa.length > 1) {
+      const index = personagem.pokemonsNaBolsa.findIndex((poke) => poke === pokemonBolsa);
+      personagem.pokemonsNaBolsa.splice(index, 1);
+      personagem.pokemonsNoDepote.unshift(pokemonBolsa);
       pokemonPreRemovido.length = 0;
       localStorage.setItem("personagem", JSON.stringify(personagem));
       aparecerListaPokemons();
@@ -409,9 +416,9 @@ const removerPokemonDaBolsa = (pokemonBolsa, botaoRemover) => {
 
 const adicionarPokemonNaBolsa = (pokemonDepote, botaoAdicionar) => {
   const adicionarPokemon = () => {
-    const index = pokemonsNoDepotePersonagem.findIndex((poke) => poke === pokemonDepote);
-    pokemonsNoDepotePersonagem.splice(index, 1);
-    pokemonsNaBolsaPersonagem.push(pokemonDepote);
+    const index = personagem.pokemonsNoDepote.findIndex((poke) => poke === pokemonDepote);
+    personagem.pokemonsNoDepote.splice(index, 1);
+    personagem.pokemonsNaBolsa.push(pokemonDepote);
     pokemonPreAdicionado.length = 0;
     localStorage.setItem("personagem", JSON.stringify(personagem));
     aparecerListaPokemons();
@@ -427,7 +434,7 @@ const removerPokemonDaBolsaNoDepote = (pokemonBolsa, botaoPokemonNaBolsa, botaoR
     if (pokemonPreRemovido.includes(pokemonBolsa)) {
       botaoPokemonNaBolsa.classList.add("botaoPokemon-active");
     }
-    if (pokemonsNaBolsaPersonagem.length > 1) {
+    if (personagem.pokemonsNaBolsa.length > 1) {
       botaoRemover.classList.remove("botaoDesabilitado");
       removerPokemonDaBolsa(pokemonBolsa, botaoRemover);
     }
@@ -437,13 +444,13 @@ const removerPokemonDaBolsaNoDepote = (pokemonBolsa, botaoPokemonNaBolsa, botaoR
 
 const adicionarPokemonDoDepoteNaBolsa = (pokemonDepote, botaoPokemonNoDepote, botaoAdicionar) => {
   const posibilitarAdicionarPokemon = () => {
-    if (pokemonsNaBolsaPersonagem.length + pokemonPreAdicionado.length < 6) {
+    if (personagem.pokemonsNaBolsa.length + pokemonPreAdicionado.length < 6) {
       pokemonPreAdicionado.push(pokemonDepote);
     }
     if (pokemonPreAdicionado.includes(pokemonDepote)) {
       botaoPokemonNoDepote.classList.add("botaoPokemon-active");
     }
-    if (pokemonsNaBolsaPersonagem.length < 6 && pokemonPreAdicionado.includes(pokemonDepote)) {
+    if (personagem.pokemonsNaBolsa.length < 6 && pokemonPreAdicionado.includes(pokemonDepote)) {
       botaoAdicionar.classList.remove("botaoDesabilitado");
       adicionarPokemonNaBolsa(pokemonDepote, botaoAdicionar);
     }
@@ -520,7 +527,7 @@ const obterMaisPokebolas = (mensagemJoy, msgDisponivelPokebolas, botaoPokebolas)
 
 const curarPokemonsDaBolsa = (mensagemJoy, botaoCurar) => {
   const curarPokemons = () => {
-    pokemonsNaBolsaPersonagem.forEach((pokemon) => {
+    personagem.pokemonsNaBolsa.forEach((pokemon) => {
       pokemon.vida = pokemon.vidaOriginal;
       pokemon.habilidades.forEach((habilidade) => (habilidade.pontosPoder = habilidade.pontosMax));
     });
@@ -536,6 +543,11 @@ const sairDoCentroPokemon = (main, botaoAceitar) => {
     podeAndar = true;
   };
   botaoAceitar.addEventListener("click", fecharCentroPokemon);
+};
+
+export const atualizarPodeAndar = (valor) => {
+  podeAndar = valor;
+  personagem = Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")));
 };
 
 document.body.onload = function () {

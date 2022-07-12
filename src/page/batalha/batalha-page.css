@@ -3,9 +3,12 @@ body {
 }
 
 .batalha {
+    position: absolute;
     width: 700px;
     height: 560px;
     margin: auto;
+    top: calc((600px - 560px)/2);
+    left: calc((100% - 700px)/2);
 }
 
 body::before {
@@ -404,7 +407,7 @@ body::before {
     transition: 0.3s;
 }
 
-.agua-color-ataque {
+.água-color-ataque {
     background-color: rgba(33, 101, 247, 0.75);
 }
 
@@ -456,7 +459,7 @@ body::before {
     background-color: rgba(38, 141, 38, 0.75);
 }
 
-.psiquico-color-ataque {
+.psíquico-color-ataque {
     background-color: rgba(255, 101, 101, 0.75);
 }
 

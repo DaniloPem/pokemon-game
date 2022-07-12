@@ -1,5 +1,9 @@
+import { audio } from "../../../sounds/audio.js";
 import { Personagem } from "../../model/personagem.model.js";
 import { pegarPokemonsIniciais } from "../../repository/pokemon.repository.js";
+
+// const musicaTelaInicio = document.querySelector("#musica-tela-inicio");
+// musicaTelaInicio.play();
 const pokemonsIniciais = pegarPokemonsIniciais();
 
 const telaInicio = document.querySelector("#tela-inicio");
@@ -17,6 +21,8 @@ inputUsuario.required = true;
 paragrafoUsuarioNome.innerText = "Qual é o seu nome, treinador?";
 botaoProximo.innerText = "Próximo";
 const clicarBotaoProximo = () => {
+  audio.click.play();
+  audio.telaInicio.play();
   if (inputUsuario.value.length > 4 && inputUsuario.value.length < 13) {
     const nomePersonagem = inputUsuario.value;
     divUsuarioNome.style.visibility = "hidden";
@@ -27,7 +33,7 @@ const clicarBotaoProximo = () => {
 };
 botaoProximo.addEventListener("click", clicarBotaoProximo);
 
-function aparecerListaPokemonInicial(nomePersonagem) {
+const aparecerListaPokemonInicial = (nomePersonagem) => {
   const divElecaoPokemonInicial = document.createElement("div");
   const paragrafoElecaoPokemonInicial = document.createElement("p");
   const divListaPokemonInicial = document.createElement("div");
@@ -48,6 +54,7 @@ function aparecerListaPokemonInicial(nomePersonagem) {
     botaoPokemonInicial.append(nomePokemonInicial);
     nomePokemonInicial.innerHTML = `${pokeInicial.nome}`;
     const escolherPokemonInicial = () => {
+      audio.click.play();
       const personagem = Personagem.criarPersonagemInicial(nomePersonagem, pokeInicial);
       pokeInicial.level = 1;
       pokeInicial.experiencia = 0;
@@ -74,4 +81,4 @@ function aparecerListaPokemonInicial(nomePersonagem) {
     };
     botaoPokemonInicial.addEventListener("click", escolherPokemonInicial);
   });
-}
+};

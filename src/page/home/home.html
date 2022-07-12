@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" &amp;gt; />
     <title>Home-Pokemon</title>
     <link rel="stylesheet" href="../style-global/reset.css" />
+    <link rel="stylesheet" href="../batalha/batalha-page.css" />
     <link rel="stylesheet" href="home.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;600&display=swap" rel="stylesheet" />
   </head>
@@ -27,6 +28,7 @@
           opacity: 0;
         "
       ></div>
+
       <button id="botaoPokemons" class="botao-listaPokemons">
         <span>Pokemons</span>
         <div>
@@ -36,6 +38,118 @@
         </div>
       </button>
     </main>
+    <div id="tela-batalha" class="batalha" style="display: none">
+      <section class="campo-luta">
+        <div class="barra-versus">
+          <div class="barra-competidor">
+            <div id="icon-pokemon-competidor" class="icon-pokemon-batalha">
+              <!-- <img
+                class="img-icon-pokemon-competidor"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png"
+                alt="icon-pokemon-competidor"
+              /> -->
+            </div>
+            <div class="div-barra-hp">
+              <div class="conteiner-barra-hp">
+                <div id="barra-vida-competidor" class="barra-hp-competidor"></div>
+              </div>
+            </div>
+            <div id="info-competidor-batalha" class="info-barra-batalha">
+              <!-- <span>CHARMANDER 1</span>
+              <span>Lv X</span> -->
+            </div>
+          </div>
+
+          <div class="barra-oponente">
+            <div id="icon-pokemon-oponente" class="icon-pokemon-batalha">
+              <!-- <img
+                class="img-icon-pokemon-oponente"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png"
+                alt="icon-pokemon-competidor"
+              /> -->
+            </div>
+            <div class="div-barra-hp">
+              <div class="conteiner-barra-hp">
+                <div id="barra-vida-oponente" class="barra-hp-oponente"></div>
+              </div>
+            </div>
+            <div id="info-oponente-batalha" class="info-barra-batalha">
+              <!-- <span>CHARMANDER 2</span>
+              <span>Lv X</span> -->
+            </div>
+          </div>
+        </div>
+
+        <div id="competidor-batalha" class="competidor-batalha">
+          <!-- <img
+            class="img-competidor"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png"
+            alt="imagem-competidor-charmander"
+          /> -->
+        </div>
+
+        <div id="oponente-batalha" class="oponente-batalha">
+          <!-- <img
+            class="img-oponente"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+            alt="imagem-oponente-charmander"
+          /> -->
+        </div>
+      </section>
+
+      <section id="acoes" class="acoes">
+        <div id="acoesDosBotoes" class="acoesDosBotoes">
+          <!-- <div class="mensagem-itens">
+            <div class="mensagem-captura-conteiner">
+              <span class="mensagem-captura">Você quer tentar capturar Charmander?</span>
+              <div class="botoes-capturar-cancelar">
+                <button>Capturar</button>
+                <button>Cancelar</button>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="itens-conteiner">
+            <div class="item">
+              <button><img src="../../../assets/icone/pokeball.png" /></button>
+              <span>10</span>
+            </div>
+
+            <div class="iten">
+              <button><img src="../../../assets/icone/greatball.png" /></button>
+              <span>10</span>
+            </div>
+
+            <div class="iten">
+              <button><img src="../../../assets/icone/ultraball.png" /></button>
+              <span>10</span>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="acoes-competidor">
+          <button id="botao-lutar">
+            <p>Lutar</p>
+            <img src="../../../assets/icone/iconobatalla.png" />
+          </button>
+          <button id="botao-pokemon">
+            <p>Pokemon</p>
+            <img
+              class="icon-pikachu"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/25.png"
+            />
+          </button>
+          <button id="botao-items">
+            <p>Items</p>
+            <img src="../../../assets/icone/iconopokebola.png" />
+          </button>
+          <button id="botao-fugir">
+            <p>Fugir</p>
+            <img src="../../../assets/icone/iconofugir.png" />
+          </button>
+        </div>
+      </section>
+    </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
       integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
