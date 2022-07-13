@@ -21,4 +21,15 @@ export const audio = {
     volume: 0.4,
     loop: true,
   }),
+  ataque: new Howl({
+    src: "../../../assets/musicas/ataque.wav",
+    html5: true,
+    volume: 0.7,
+  }),
+  mapa: new Howl({
+    src: "../../../assets/musicas/mapa.mp3",
+    html5: true,
+    volume: 0.4,
+    loop: true,
+  }),
 };

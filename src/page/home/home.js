@@ -1,7 +1,7 @@
 import { audio } from "../../../sounds/audio.js";
 import { Personagem } from "../../model/personagem.model.js";
-import { buscarPokemonAleatorio } from "../../repository/pokemon.repository.js";
 import { iniciarBatalha } from "../batalha/batalha-page.js";
+import { aparecerTelaInicial } from "../inicio/inicio-page.js";
 
 const canvas = document.querySelector("#canvas");
 const contexto = canvas.getContext("2d");
@@ -29,10 +29,7 @@ const cenario = {
 };
 sprites.push(cenario);
 
-let personagem =
-  localStorage.getItem("personagem") !== null
-    ? Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")))
-    : Personagem.criarPersonagemInicial();
+let personagem;
 
 const spritePersonagem = {
   img: imagemPersonagem,
@@ -83,6 +80,7 @@ let podeAndar = true;
 const loop = () => {
   window.requestAnimationFrame(loop, canvas);
   update();
+  console.log(spritePersonagem);
   render();
 };
 
@@ -231,6 +229,7 @@ const verificarPokemonsSelvagem = () => {
       divTransicao.style.display = "block";
       divTransicao.style.opacity = 0;
       podeAndar = false;
+      audio.mapa.stop();
       audio.transicaoPraBatalha.play();
       setTimeout(() => audio.batalha.play(), 3000);
       gsap.to("#divTransicao", {
@@ -554,9 +553,11 @@ export const atualizarPodeAndar = (valor) => {
   console.log(personagem);
 };
 
-document.body.onload = function () {
+export const carregarJogo = () => {
+  personagem = Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")));
   spritePersonagem.posicaoX = personagem.posicaoX;
   spritePersonagem.posicaoY = personagem.posicaoY;
+  loop();
   setInterval(() => {
     if (podeAndar) {
       personagem.posicaoX = spritePersonagem.posicaoX;
@@ -565,7 +566,10 @@ document.body.onload = function () {
     }
   }, 5000);
 };
-loop();
 
-//Soundtrack
-//1, 2, 17,18,20,23,24,25,26?,28,34?,43?,46,50,83,85,
+const infosPersonagemSalvas = localStorage.getItem("personagem");
+if (!!infosPersonagemSalvas) {
+  carregarJogo();
+} else {
+  aparecerTelaInicial();
+}
