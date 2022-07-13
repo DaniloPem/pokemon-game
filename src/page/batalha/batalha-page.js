@@ -91,6 +91,8 @@ export function iniciarBatalha() {
   const botoesTodos = document.querySelectorAll("button");
   botoesTodos.forEach((botao) => (botao.disabled = false));
 
+  let atacar = false;
+
   //Botao Lutar
   const botaoLutar = document.querySelector("#botao-lutar");
   const aparecerAtaques = () => {
@@ -230,6 +232,7 @@ export function iniciarBatalha() {
       });
       infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonCompetidor.nome}</span> usou <span style="font-weight: bold">${habilidade.nome}</span>`;
       pokemonCompetidor.atacar(habilidade, pokemonOponente);
+      atacar = true;
       gsap.to("#imgCompetidorBatalha", {
         x: -20,
         onComplete() {
@@ -262,6 +265,7 @@ export function iniciarBatalha() {
       setTimeout(() => {
         if (pokemonCompetidor.vida > 0 && pokemonOponente.vida > 0) {
           const ataqueUtilizado = pokemonOponente.atacarAleatorio(pokemonCompetidor);
+          atacar = true;
           gsap.to("#imgOponenteBatalha", {
             x: 20,
             onComplete() {
@@ -328,22 +332,39 @@ export function iniciarBatalha() {
           aparecerItems();
         }, 2000);
       }
-    }, 3000);
+    }, 4000);
   };
 
   const atualizarBarraVida = (barraVida, pokemon) => {
     const porVidaPokemon = (pokemon.vida / pokemon.vidaOriginal) * 100;
-    if (porVidaPokemon >= 0) {
-      barraVida.style.width = `${porVidaPokemon}%`;
-      if (porVidaPokemon > 50) {
-        barraVida.style.backgroundColor = "green";
-      } else if (porVidaPokemon > 20) {
-        barraVida.style.backgroundColor = "#D8DC00";
+    if (atacar === false) {
+      if (porVidaPokemon >= 0) {
+        barraVida.style.width = `${porVidaPokemon}%`;
+        if (porVidaPokemon > 50) {
+          barraVida.style.backgroundColor = "green";
+        } else if (porVidaPokemon > 20) {
+          barraVida.style.backgroundColor = "#D8DC00";
+        } else {
+          barraVida.style.backgroundColor = "red";
+        }
       } else {
-        barraVida.style.backgroundColor = "red";
+        barraVida.style.width = "0";
       }
     } else {
-      barraVida.style.width = "0";
+      setTimeout(() => {
+        if (porVidaPokemon >= 0) {
+          barraVida.style.width = `${porVidaPokemon}%`;
+          if (porVidaPokemon > 50) {
+            barraVida.style.backgroundColor = "green";
+          } else if (porVidaPokemon > 20) {
+            barraVida.style.backgroundColor = "#D8DC00";
+          } else {
+            barraVida.style.backgroundColor = "red";
+          }
+        } else {
+          barraVida.style.width = "0";
+        }
+      }, 2000);
     }
   };
 
@@ -486,8 +507,8 @@ export function iniciarBatalha() {
           }
         }
       }
-    }, 3000); //setTimeOut
-  }; //handleCaptura
+    }, 3000);
+  };
 
   const verificarItemEMostrarMensagem = (item, botaoCapturar, capturarPokemon, botaoCancelar, cancelarCaptura) => {
     if (item.quantidade > 0) {
