@@ -90,8 +90,9 @@ const update = () => {
     let podeMover = true;
     if (keymap["ArrowLeft"]) {
       spritePersonagem.y = 1;
+      const personagemProjetado = { ...spritePersonagem, posicaoX: spritePersonagem.posicaoX - 3 };
       for (let i = 0; i < spritesColisoes.length; i++) {
-        if (isColidindo(spritesColisoes[i])) {
+        if (vaiColidir(spritesColisoes[i], personagemProjetado)) {
           podeMover = false;
           break;
         }
@@ -103,8 +104,9 @@ const update = () => {
     }
     if (keymap["ArrowRight"]) {
       spritePersonagem.y = 2;
+      const personagemProjetado = { ...spritePersonagem, posicaoX: spritePersonagem.posicaoX + 3 };
       for (let i = 0; i < spritesColisoes.length; i++) {
-        if (isColidindo(spritesColisoes[i])) {
+        if (vaiColidir(spritesColisoes[i], personagemProjetado)) {
           podeMover = false;
           break;
         }
@@ -116,8 +118,9 @@ const update = () => {
     }
     if (keymap["ArrowUp"]) {
       spritePersonagem.y = 3;
+      const personagemProjetado = { ...spritePersonagem, posicaoY: spritePersonagem.posicaoY - 3 };
       for (let i = 0; i < spritesColisoes.length; i++) {
-        if (isColidindo(spritesColisoes[i])) {
+        if (vaiColidir(spritesColisoes[i], personagemProjetado)) {
           podeMover = false;
           break;
         }
@@ -129,8 +132,9 @@ const update = () => {
     }
     if (keymap["ArrowDown"]) {
       spritePersonagem.y = 0;
+      const personagemProjetado = { ...spritePersonagem, posicaoY: spritePersonagem.posicaoY + 3 };
       for (let i = 0; i < spritesColisoes.length; i++) {
-        if (isColidindo(spritesColisoes[i])) {
+        if (vaiColidir(spritesColisoes[i], personagemProjetado)) {
           podeMover = false;
           break;
         }
@@ -225,20 +229,8 @@ const render = () => {
   );
 
   spritesColisoes.forEach((colisao) => {
-    contexto.drawImage(
-      colisao.img,
-      colisao.x,
-      colisao.y,
-      colisao.largura,
-      colisao.altura,
-      colisao.posicaoX,
-      colisao.posicaoY,
-      colisao.largura,
-      colisao.altura
-    );
-    // if (isColidindo(colisao)) {
-    //   console.log("a");
-    // }
+    contexto.fillStyle = "rgba(255, 0, 0, 0)";
+    contexto.fillRect(colisao.posicaoX, colisao.posicaoY, colisao.largura, colisao.altura);
   });
 
   const emMovimento = Object.values(keymap).some((valor) => valor === true); // [false, false, false, false];
@@ -259,7 +251,6 @@ const render = () => {
 
 const verificarPokemonsSelvagem = () => {
   if (
-    false &&
     !(
       (spritePersonagem.posicaoX > 2085 &&
         spritePersonagem.posicaoX < 2172 &&
@@ -299,7 +290,6 @@ const verificarPokemonsSelvagem = () => {
               const mapaDoJogo = document.querySelector("main");
               telaBatalha.style.display = "block";
               mapaDoJogo.style.display = "none";
-              // location.href = "../batalha/batalha-page.html";
             },
           });
         },
@@ -349,6 +339,7 @@ botaoPokemons.addEventListener("click", () => {
     pokemonPreRemovido.length = 0;
     pokemonPreAdicionado.length = 0;
   } else {
+    audio.click.play();
     aparecerListaPokemons();
   }
 });
@@ -598,25 +589,6 @@ const sairDoCentroPokemon = (main, botaoAceitar) => {
   botaoAceitar.addEventListener("click", fecharCentroPokemon);
 };
 
-export const atualizarPodeAndar = (valor) => {
-  podeAndar = valor;
-  personagem = Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")));
-};
-
-export const carregarJogo = () => {
-  personagem = Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")));
-  spritePersonagem.posicaoX = personagem.posicaoX;
-  spritePersonagem.posicaoY = personagem.posicaoY;
-  loop();
-  setInterval(() => {
-    if (podeAndar) {
-      personagem.posicaoX = spritePersonagem.posicaoX;
-      personagem.posicaoY = spritePersonagem.posicaoY;
-      localStorage.setItem("personagem", JSON.stringify(personagem));
-    }
-  }, 5000);
-};
-
 const mapaColisoes = [];
 for (let i = 0; i < colisoes.length; i += 176) {
   const linhaColisoes = colisoes.slice(i, i + 176);
@@ -640,14 +612,32 @@ mapaColisoes.forEach((linha, y) => {
   });
 });
 
-function isColidindo(colisao) {
+const vaiColidir = (colisao, personagemProjetado) => {
   return (
-    spritePersonagem.posicaoX + spritePersonagem.largura > colisao.posicaoX &&
-    spritePersonagem.posicaoX < colisao.posicaoX + colisao.largura &&
-    spritePersonagem.posicaoY + spritePersonagem.altura > colisao.posicaoY &&
-    spritePersonagem.posicaoY < colisao.posicaoY + colisao.altura
+    personagemProjetado.posicaoX + personagemProjetado.largura * (3.5 / 5) >= colisao.posicaoX &&
+    personagemProjetado.posicaoX + personagemProjetado.largura * (2 / 5) <= colisao.posicaoX + colisao.largura &&
+    personagemProjetado.posicaoY + personagemProjetado.altura * (4 / 5) >= colisao.posicaoY &&
+    personagemProjetado.posicaoY + personagemProjetado.largura * (8.5 / 10) <= colisao.posicaoY + colisao.altura
   );
-}
+};
+export const atualizarPodeAndar = (valor) => {
+  podeAndar = valor;
+  personagem = Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")));
+};
+
+export const carregarJogo = () => {
+  personagem = Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")));
+  spritePersonagem.posicaoX = personagem.posicaoX;
+  spritePersonagem.posicaoY = personagem.posicaoY;
+  loop();
+  setInterval(() => {
+    if (podeAndar) {
+      personagem.posicaoX = spritePersonagem.posicaoX;
+      personagem.posicaoY = spritePersonagem.posicaoY;
+      localStorage.setItem("personagem", JSON.stringify(personagem));
+    }
+  }, 5000);
+};
 
 const infosPersonagemSalvas = localStorage.getItem("personagem");
 if (!!infosPersonagemSalvas) {

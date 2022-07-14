@@ -134,11 +134,15 @@ export function iniciarBatalha() {
       });
     });
   };
-  botaoLutar.addEventListener("click", aparecerAtaques);
+  botaoLutar.addEventListener("click", () => {
+    audio.click.play();
+    aparecerAtaques();
+  });
 
   //Botao Pokemon
   const botaoPokemon = document.querySelector("#botao-pokemon");
   const aparecerPokemons = () => {
+    audio.click.play();
     const acoesBatalha = document.querySelector("#acoesDosBotoes");
     acoesBatalha.innerHTML = "";
     const divListaPokemons = document.createElement("div");
@@ -168,11 +172,15 @@ export function iniciarBatalha() {
       button.addEventListener("click", pegarPokemonCompetidor);
     });
   };
-  botaoPokemon.addEventListener("click", aparecerPokemons);
+  botaoPokemon.addEventListener("click", () => {
+    audio.click.play();
+    aparecerPokemons();
+  });
 
   //Botao Items
   const botaoItems = document.querySelector("#botao-items");
   const aparecerItems = () => {
+    audio.click.play();
     const acoesBatalha = document.querySelector("#acoesDosBotoes");
     acoesBatalha.innerHTML = "";
     const divMensagemItems = document.createElement("div");
@@ -200,11 +208,15 @@ export function iniciarBatalha() {
       registrarCaptura(botaoItem, item, numItem);
     });
   };
-  botaoItems.addEventListener("click", aparecerItems);
+  botaoItems.addEventListener("click", () => {
+    audio.click.play();
+    aparecerItems();
+  });
 
   // //Botao Fugir
   const botaoFugir = document.querySelector("#botao-fugir");
   const fugirPraTelaHome = () => {
+    audio.click.play();
     const bonusCaptura = 0;
     pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
     pokemonCompetidor.somarExperiencia();
@@ -461,7 +473,6 @@ export function iniciarBatalha() {
           pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
           pokemonCompetidor.somarExperiencia();
           localStorage.setItem("personagem", JSON.stringify(personagem));
-          console.log(JSON.stringify(personagem));
           setTimeout(() => {
             botaoLutar.classList.remove("pokemonSemVida");
             botoesTodos.forEach((botao) => (botao.disabled = false));
@@ -484,7 +495,6 @@ export function iniciarBatalha() {
             pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
             pokemonCompetidor.somarExperiencia();
             localStorage.setItem("personagem", JSON.stringify(personagem));
-            console.log(JSON.stringify(personagem));
             setTimeout(() => {
               const botoesTodos = document.querySelectorAll("button");
               botoesTodos.forEach((botao) => (botao.disabled = false));

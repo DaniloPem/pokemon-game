@@ -18,7 +18,7 @@ export const audio = {
   batalha: new Howl({
     src: "../../../assets/musicas/batalha.mp3",
     html5: true,
-    volume: 0.4,
+    volume: 0.3,
     loop: true,
   }),
   ataque: new Howl({
@@ -29,7 +29,7 @@ export const audio = {
   mapa: new Howl({
     src: "../../../assets/musicas/mapa.mp3",
     html5: true,
-    volume: 0.4,
+    volume: 0.3,
     loop: true,
   }),
 };
