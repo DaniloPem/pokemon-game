@@ -1,4 +1,5 @@
 import { audio } from "../../../sounds/audio.js";
+import { colisoes } from "../../model/colisoes.js";
 import { Personagem } from "../../model/personagem.model.js";
 import { iniciarBatalha } from "../batalha/batalha-page.js";
 import { aparecerTelaInicial } from "../inicio/inicio-page.js";
@@ -80,32 +81,64 @@ let podeAndar = true;
 const loop = () => {
   window.requestAnimationFrame(loop, canvas);
   update();
-  console.log(spritePersonagem);
   render();
 };
 
 //Pra fazer atualizacoes
 const update = () => {
   if (podeAndar) {
+    let podeMover = true;
     if (keymap["ArrowLeft"]) {
       spritePersonagem.y = 1;
-      spritePersonagem.posicaoX -= spritePersonagem.velocidade;
-      verificarPokemonsSelvagem();
+      for (let i = 0; i < spritesColisoes.length; i++) {
+        if (isColidindo(spritesColisoes[i])) {
+          podeMover = false;
+          break;
+        }
+      }
+      if (podeMover) {
+        spritePersonagem.posicaoX -= spritePersonagem.velocidade;
+        verificarPokemonsSelvagem();
+      }
     }
     if (keymap["ArrowRight"]) {
       spritePersonagem.y = 2;
-      spritePersonagem.posicaoX += spritePersonagem.velocidade;
-      verificarPokemonsSelvagem();
+      for (let i = 0; i < spritesColisoes.length; i++) {
+        if (isColidindo(spritesColisoes[i])) {
+          podeMover = false;
+          break;
+        }
+      }
+      if (podeMover) {
+        spritePersonagem.posicaoX += spritePersonagem.velocidade;
+        verificarPokemonsSelvagem();
+      }
     }
     if (keymap["ArrowUp"]) {
       spritePersonagem.y = 3;
-      spritePersonagem.posicaoY -= spritePersonagem.velocidade;
-      verificarPokemonsSelvagem();
+      for (let i = 0; i < spritesColisoes.length; i++) {
+        if (isColidindo(spritesColisoes[i])) {
+          podeMover = false;
+          break;
+        }
+      }
+      if (podeMover) {
+        spritePersonagem.posicaoY -= spritePersonagem.velocidade;
+        verificarPokemonsSelvagem();
+      }
     }
     if (keymap["ArrowDown"]) {
       spritePersonagem.y = 0;
-      spritePersonagem.posicaoY += spritePersonagem.velocidade;
-      verificarPokemonsSelvagem();
+      for (let i = 0; i < spritesColisoes.length; i++) {
+        if (isColidindo(spritesColisoes[i])) {
+          podeMover = false;
+          break;
+        }
+      }
+      if (podeMover) {
+        spritePersonagem.posicaoY += spritePersonagem.velocidade;
+        verificarPokemonsSelvagem();
+      }
     }
 
     if (
@@ -191,6 +224,23 @@ const render = () => {
     spritePersonagem.altura
   );
 
+  spritesColisoes.forEach((colisao) => {
+    contexto.drawImage(
+      colisao.img,
+      colisao.x,
+      colisao.y,
+      colisao.largura,
+      colisao.altura,
+      colisao.posicaoX,
+      colisao.posicaoY,
+      colisao.largura,
+      colisao.altura
+    );
+    // if (isColidindo(colisao)) {
+    //   console.log("a");
+    // }
+  });
+
   const emMovimento = Object.values(keymap).some((valor) => valor === true); // [false, false, false, false];
   if (emMovimento) {
     if (elapsed % 15 === 0) {
@@ -209,6 +259,7 @@ const render = () => {
 
 const verificarPokemonsSelvagem = () => {
   if (
+    false &&
     !(
       (spritePersonagem.posicaoX > 2085 &&
         spritePersonagem.posicaoX < 2172 &&
@@ -550,7 +601,6 @@ const sairDoCentroPokemon = (main, botaoAceitar) => {
 export const atualizarPodeAndar = (valor) => {
   podeAndar = valor;
   personagem = Personagem.criarAPartirDoLocalStorage(JSON.parse(localStorage.getItem("personagem")));
-  console.log(personagem);
 };
 
 export const carregarJogo = () => {
@@ -566,6 +616,38 @@ export const carregarJogo = () => {
     }
   }, 5000);
 };
+
+const mapaColisoes = [];
+for (let i = 0; i < colisoes.length; i += 176) {
+  const linhaColisoes = colisoes.slice(i, i + 176);
+  mapaColisoes.push(linhaColisoes);
+}
+const spritesColisoes = [];
+mapaColisoes.forEach((linha, y) => {
+  linha.forEach((ladrilho, x) => {
+    if (ladrilho !== 0) {
+      const colisao = {
+        img: imagemPersonagem,
+        x: x,
+        y: y,
+        posicaoX: x * 32,
+        posicaoY: y * 32,
+        largura: 32,
+        altura: 32,
+      };
+      spritesColisoes.push(colisao);
+    }
+  });
+});
+
+function isColidindo(colisao) {
+  return (
+    spritePersonagem.posicaoX + spritePersonagem.largura > colisao.posicaoX &&
+    spritePersonagem.posicaoX < colisao.posicaoX + colisao.largura &&
+    spritePersonagem.posicaoY + spritePersonagem.altura > colisao.posicaoY &&
+    spritePersonagem.posicaoY < colisao.posicaoY + colisao.altura
+  );
+}
 
 const infosPersonagemSalvas = localStorage.getItem("personagem");
 if (!!infosPersonagemSalvas) {
