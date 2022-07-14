@@ -6,6 +6,7 @@ CADASTRO DO USUARIO
 MOVIMENTACAO DO PERSONAGEM
 -Animacoes de andar do personagem
 -Movimento do personagem dentro de um mapa usando as flechas UP, DOWN, RIGHT, LEFT
+-O personagem colide em objetos do mapa (arvores, predios, casas, entre outros)
 
 -O personagem emcontra pokemons selvagens aleatorios enquando ele se movimenta pelo mapa e entram na tela de batalha
 -Na tela batalha aparecem as imagens dos dois pokemons na luta (Pokemon competidor que o personagem está usando e o pokemon selvagem)
@@ -61,9 +62,11 @@ SOBRE O CENTRO POKEMON
 ANIMACOES 
 -Efeito de transicao da tela do cadastro pra tela do mapa
 -Efeito de transicao da tela do mapa pra tela de batalha
+-Efeitos de ataques dos pokemons
 
 AUDIO
 -Música de fondo na tela do cadastro do usuario
 -Efeito de som no click dos botoes
 -Música de fondo na tela do mapa
 -Música de fondo na tela de batalha
+

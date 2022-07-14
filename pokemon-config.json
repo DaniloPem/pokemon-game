@@ -2,6 +2,7 @@
   "bulbasaur": {
     "tipos": ["Planta", "Veneno"],
     "nome": "Bulbasaur",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Tackle", "tipo": "Normal", "forca": 10, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "Headbutt", "tipo": "Normal", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
@@ -39,6 +40,7 @@
   "ivysaur": {
     "tipos": ["Planta", "Veneno"],
     "nome": "Ivysaur",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Headbutt", "tipo": "Normal", "forca": 30, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "Vine Whip", "tipo": "Planta", "forca": 40, "pontosMax": 18, "pontosPoder": 18 },
@@ -76,6 +78,7 @@
   "venusaur": {
     "tipos": ["Planta", "Veneno"],
     "nome": "Venusaur",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Headbutt", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
       { "nome": "Vine Whip", "tipo": "Planta", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
@@ -113,6 +116,7 @@
   "charmander": {
     "tipos": ["Fogo", "semtipo"],
     "nome": "Charmander",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Scratch", "tipo": "Normal", "forca": 10, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "Mega Punch", "tipo": "Normal", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
@@ -145,6 +149,7 @@
   "charmeleon": {
     "tipos": ["Fogo", "semtipo"],
     "nome": "Charmeleon",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Mega Punch", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
       { "nome": "Fire Punch", "tipo": "Fogo", "forca": 40, "pontosMax": 18, "pontosPoder": 15 },
@@ -177,6 +182,7 @@
   "charizard": {
     "tipos": ["Fogo", "Voador"],
     "nome": "Charizard",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Dragão Claw", "tipo": "Dragão", "forca": 40, "pontosMax": 18, "pontosPoder": 18 },
       { "nome": "Wing Attack", "tipo": "Voador", "forca": 50, "pontosMax": 15, "pontosPoder": 15 },
@@ -210,6 +216,7 @@
   "squirtle": {
     "tipos": ["Água", "semtipo"],
     "nome": "Squirtle",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Mega Punch", "tipo": "Normal", "forca": 10, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "Ice Punch", "tipo": "Gelo", "forca": 20, "pontosMax": 16, "pontosPoder": 16 },
@@ -244,6 +251,7 @@
   "wartortle": {
     "tipos": ["Água", "semtipo"],
     "nome": "Wartortle",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Bite", "tipo": "Sombrio", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
       { "nome": "Aqua Tail", "tipo": "Água", "forca": 50, "pontosMax": 14, "pontosPoder": 14 },
@@ -278,6 +286,7 @@
   "blastoise": {
     "tipos": ["Água", "semtipo"],
     "nome": "Blastoise",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Aqua Tail", "tipo": "Água", "forca": 50, "pontosMax": 15, "pontosPoder": 15 },
       { "nome": "Water Gun", "tipo": "Água", "forca": 50, "pontosMax": 15, "pontosPoder": 15 },
@@ -312,6 +321,7 @@
   "caterpie": {
     "tipos": ["Inseto", "semtipo"],
     "nome": "Caterpie",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Tackle", "tipo": "Normal", "forca": 10, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "String Shot", "tipo": "Inseto", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
@@ -344,6 +354,7 @@
   "metapod": {
     "tipos": ["Inseto", "semtipo"],
     "nome": "Metapod",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "String Shot", "tipo": "Inseto", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "Bug Bite", "tipo": "Inseto", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
@@ -375,6 +386,7 @@
   "butterfree": {
     "tipos": ["Inseto", "Voador"],
     "nome": "Butterfree",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Electroweb", "tipo": "Elétrico", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
       { "nome": "Silver Wind", "tipo": "Inseto", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
@@ -412,6 +424,7 @@
   "weedle": {
     "tipos": ["Inseto", "Veneno"],
     "nome": "Weedle",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Poison Sting", "tipo": "Veneno", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "String Shot", "tipo": "Inseto", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
@@ -445,6 +458,7 @@
   "kakuna": {
     "tipos": ["Inseto", "Veneno"],
     "nome": "Kakuna",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "String Shot", "tipo": "Inseto", "forca": 30, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "Bug Bite", "tipo": "Inseto", "forca": 40, "pontosMax": 18, "pontosPoder": 18 },
@@ -477,6 +491,7 @@
   "beedrill": {
     "tipos": ["Inseto", "Veneno"],
     "nome": "Beedrill",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Fury Attack", "tipo": "Normal", "forca": 30, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "Peck", "tipo": "Voador", "forca": 30, "pontosMax": 20, "pontosPoder": 20 },
@@ -512,6 +527,7 @@
   "pidgey": {
     "tipos": ["Normal", "Voador"],
     "nome": "Pidgey",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Tackle", "tipo": "Normal", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "Quick Attack", "tipo": "Normal", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
@@ -544,6 +560,7 @@
   "pidgeotto": {
     "tipos": ["Normal", "Voador"],
     "nome": "Pidgeotto",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Quick Attack", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
       { "nome": "Headbutt", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
@@ -576,6 +593,7 @@
   "pidgeot": {
     "tipos": ["Normal", "Voador"],
     "nome": "Pidgeot",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Wing Attack", "tipo": "Voador", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
       { "nome": "Twister", "tipo": "Dragão", "forca": 50, "pontosMax": 13, "pontosPoder": 13 },
@@ -608,6 +626,7 @@
   "rattata": {
     "tipos": ["Normal", "semtipo"],
     "nome": "Rattata",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Headbutt", "tipo": "Normal", "forca": 10, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "Tackle", "tipo": "Normal", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
@@ -631,6 +650,7 @@
   "raticate": {
     "tipos": ["Normal", "semtipo"],
     "nome": "Raticate",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Quick Attack", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
       { "nome": "Hidden Power", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
@@ -655,6 +675,7 @@
   "spearow": {
     "tipos": ["Normal", "Voador"],
     "nome": "Spearow",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Tackle", "tipo": "Normal", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
       { "nome": "Quick Attack", "tipo": "Normal", "forca": 20, "pontosMax": 20, "pontosPoder": 20 },
@@ -687,6 +708,7 @@
   "fearow": {
     "tipos": ["Normal", "Voador"],
     "nome": "Fearow",
+    "sexosPossiveis": ["fêmea", "masculino"],
     "habilidades": [
       { "nome": "Quick Attack", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
       { "nome": "Fly", "tipo": "Voador", "forca": 40, "pontosMax": 16, "pontosPoder": 16 },
@@ -715,5 +737,190 @@
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/22.png",
     "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/22.gif"
+  },
+  "ekans": {
+    "tipos": ["Veneno", "semtipo"],
+    "nome": "Ekans",
+    "sexosPossiveis": ["fêmea", "masculino"],
+    "habilidades": [
+      { "nome": "Wrap", "tipo": "Normal", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Poison Fang", "tipo": "Veneno", "forca": 30, "pontosMax": 14, "pontosPoder": 14 },
+      { "nome": "Poison Tail", "tipo": "Veneno", "forca": 30, "pontosMax": 14, "pontosPoder": 14 },
+      { "nome": "Strength", "tipo": "Normal", "forca": 50, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Poison Jab", "tipo": "Veneno", "forca": 50, "pontosMax": 10, "pontosPoder": 10 }
+    ],
+    "vidaOriginal": 80,
+    "debilidades": [
+      { "tipo": "Terra", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Luta", "dano": 0.6 },
+      { "tipo": "Veneno", "dano": 0.6 },
+      { "tipo": "Inseto", "dano": 0.6 },
+      { "tipo": "Planta", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 }
+    ],
+    "evolucao": "arbok",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 255,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/23.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/23.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/23.gif"
+  },
+  "arbok": {
+    "tipos": ["Veneno", "semtipo"],
+    "nome": "Arbok",
+    "sexosPossiveis": ["fêmea", "masculino"],
+    "habilidades": [
+      { "nome": "Bite", "tipo": "Sombrio", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Iron Tail", "tipo": "Ferro", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Poison Fang", "tipo": "Veneno", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Poison Tail", "tipo": "Veneno", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Poison Jab", "tipo": "Veneno", "forca": 60, "pontosMax": 7, "pontosPoder": 7 },
+      { "nome": "Gunk Shot", "tipo": "Veneno", "forca": 80, "pontosMax": 5, "pontosPoder": 5 }
+    ],
+    "vidaOriginal": 90,
+    "debilidades": [
+      { "tipo": "Terra", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Luta", "dano": 0.6 },
+      { "tipo": "Veneno", "dano": 0.6 },
+      { "tipo": "Inseto", "dano": 0.6 },
+      { "tipo": "Planta", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 }
+    ],
+    "evolucao": null,
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 90,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/24.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/24.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/24.gif"
+  },
+  "pikachu": {
+    "tipos": ["Elétrico", "semtipo"],
+    "nome": "Pikachu",
+    "sexosPossiveis": ["fêmea", "masculino"],
+    "habilidades": [
+      { "nome": "Thunder Shock", "tipo": "Elétrico", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Iron Tail", "tipo": "Ferro", "forca": 60, "pontosMax": 9, "pontosPoder": 9 },
+      { "nome": "Brick Break", "tipo": "Luta", "forca": 60, "pontosMax": 9, "pontosPoder": 9 },
+      { "nome": "Thunder", "tipo": "Elétrico", "forca": 70, "pontosMax": 4, "pontosPoder": 4 },
+      { "nome": "Volt Tackle", "tipo": "Elétrico", "forca": 100, "pontosMax": 3, "pontosPoder": 3 }
+    ],
+    "vidaOriginal": 100,
+    "debilidades": [
+      { "tipo": "Terra", "dano": 1.6 },
+      { "tipo": "Pedra", "dano": 1.2 },
+      { "tipo": "Voador", "dano": 0.6 },
+      { "tipo": "Ferro", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 }
+    ],
+    "evolucao": "raichu",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 100,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/25.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif"
+  },
+  "raichu": {
+    "tipos": ["Elétrico", "semtipo"],
+    "nome": "Raichu",
+    "sexosPossiveis": ["fêmea", "masculino"],
+    "habilidades": [
+      { "nome": "Thunder Shock", "tipo": "Elétrico", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Electroweb", "tipo": "Elétrico", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Charm", "tipo": "Fada", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Iron Tail", "tipo": "Ferro", "forca": 60, "pontosMax": 9, "pontosPoder": 9 },
+      { "nome": "Thunder", "tipo": "Elétrico", "forca": 80, "pontosMax": 4, "pontosPoder": 4 },
+      { "nome": "Volt Tackle", "tipo": "Elétrico", "forca": 100, "pontosMax": 3, "pontosPoder": 3 }
+    ],
+    "vidaOriginal": 100,
+    "debilidades": [
+      { "tipo": "Terra", "dano": 1.6 },
+      { "tipo": "Pedra", "dano": 1.2 },
+      { "tipo": "Voador", "dano": 0.6 },
+      { "tipo": "Ferro", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 }
+    ],
+    "evolucao": null,
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 60,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/26.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/26.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/26.gif"
+  },
+  "sandshrew": {
+    "tipos": ["Terra", "semtipo"],
+    "nome": "Sandshrew",
+    "sexosPossiveis": ["fêmea", "masculino"],
+    "habilidades": [
+      { "nome": "Scratch", "tipo": "Normal", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Slash", "tipo": "Normal", "forca": 30, "pontosMax": 16, "pontosPoder": 16 },
+      { "nome": "Bulldoze", "tipo": "Terra", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Dig", "tipo": "Terra", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Rock Slide", "tipo": "Pedra", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Rock Tomb", "tipo": "Pedra", "forca": 40, "pontosMax": 12, "pontosPoder": 12 }
+    ],
+    "vidaOriginal": 90,
+    "debilidades": [
+      { "tipo": "Água", "dano": 1.6 },
+      { "tipo": "Planta", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Veneno", "dano": 0.6 },
+      { "tipo": "Voador", "dano": 0.6 },
+      { "tipo": "Pedra", "dano": 0.5 },
+      { "tipo": "Ferro", "dano": 0.5 },
+      { "tipo": "Elétrico", "dano": 0.3 }
+    ],
+    "evolucao": "sandslash",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 255,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/27.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/27.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/27.gif"
+  },
+  "sandslash": {
+    "tipos": ["Terra", "semtipo"],
+    "nome": "Sandslash",
+    "sexosPossiveis": ["fêmea", "masculino"],
+    "habilidades": [
+      { "nome": "Metal Claw", "tipo": "Ferro", "forca": 40, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Rock Slide", "tipo": "Pedra", "forca": 50, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Rock Tomb", "tipo": "Pedra", "forca": 50, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Bulldoze", "tipo": "Terra", "forca": 60, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Dig", "tipo": "Terra", "forca": 60, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Earthquake", "tipo": "Terra", "forca": 80, "pontosMax": 5, "pontosPoder": 5 }
+    ],
+    "vidaOriginal": 90,
+    "debilidades": [
+      { "tipo": "Água", "dano": 1.6 },
+      { "tipo": "Planta", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Veneno", "dano": 0.6 },
+      { "tipo": "Voador", "dano": 0.6 },
+      { "tipo": "Pedra", "dano": 0.5 },
+      { "tipo": "Ferro", "dano": 0.5 },
+      { "tipo": "Elétrico", "dano": 0.3 }
+    ],
+    "evolucao": null,
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 90,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/28.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/28.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/28.gif"
   }
 }

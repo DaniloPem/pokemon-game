@@ -142,7 +142,6 @@ export function iniciarBatalha() {
   //Botao Pokemon
   const botaoPokemon = document.querySelector("#botao-pokemon");
   const aparecerPokemons = () => {
-    audio.click.play();
     const acoesBatalha = document.querySelector("#acoesDosBotoes");
     acoesBatalha.innerHTML = "";
     const divListaPokemons = document.createElement("div");
@@ -180,7 +179,6 @@ export function iniciarBatalha() {
   //Botao Items
   const botaoItems = document.querySelector("#botao-items");
   const aparecerItems = () => {
-    audio.click.play();
     const acoesBatalha = document.querySelector("#acoesDosBotoes");
     acoesBatalha.innerHTML = "";
     const divMensagemItems = document.createElement("div");

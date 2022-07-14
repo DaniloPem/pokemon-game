@@ -9,7 +9,7 @@ export const criarBotaoPokemon = (pokemon) => {
       <div class="nome-sexo-tipo-pokemon">
         <div>
           <span>${pokemon.nome}</span>
-          <img class="icone-sexo" src="../../../assets/icone/icone-masculino.svg" style="color: blue" />
+          <img class="icone-sexo" src="../../../assets/icone/icone-${pokemon.sexo}.svg" style="color: blue" />
         </div>
         <div class="icone-tipos-pokemon">
           <img src="../../../assets/icone/${pokemon.tipos[1].toLowerCase()}.png" />

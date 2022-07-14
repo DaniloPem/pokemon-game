@@ -268,6 +268,7 @@ const verificarPokemonsSelvagem = () => {
       personagem.posicaoX = spritePersonagem.posicaoX;
       personagem.posicaoY = spritePersonagem.posicaoY;
       const divTransicao = document.querySelector("#divTransicao");
+      const telaInicio = document.querySelector("#tela-inicio");
       divTransicao.style.display = "block";
       divTransicao.style.opacity = 0;
       podeAndar = false;
@@ -288,8 +289,9 @@ const verificarPokemonsSelvagem = () => {
               iniciarBatalha();
               const telaBatalha = document.getElementById("tela-batalha");
               const mapaDoJogo = document.querySelector("main");
-              telaBatalha.style.display = "block";
               mapaDoJogo.style.display = "none";
+              telaInicio.style.display = "none";
+              telaBatalha.style.display = "block";
             },
           });
         },
@@ -300,8 +302,8 @@ const verificarPokemonsSelvagem = () => {
 
 //Botao Pokemons
 const botaoPokemons = document.querySelector("#botaoPokemons");
-const pokemonPreRemovido = [];
-const pokemonPreAdicionado = [];
+const pokemonPreRemovido = new Set();
+const pokemonPreAdicionado = new Set();
 const aparecerListaPokemons = () => {
   const main = document.querySelector("main");
   const divExistenteListaPokemons = main.children.namedItem("listaPokemons");
@@ -336,8 +338,8 @@ botaoPokemons.addEventListener("click", () => {
   const divExistenteListaPokemons = main.children.namedItem("listaPokemons");
   if (!!divExistenteListaPokemons) {
     main.removeChild(divExistenteListaPokemons);
-    pokemonPreRemovido.length = 0;
-    pokemonPreAdicionado.length = 0;
+    pokemonPreRemovido.clear();
+    pokemonPreAdicionado.clear();
   } else {
     audio.click.play();
     aparecerListaPokemons();
@@ -450,7 +452,7 @@ const removerPokemonDaBolsa = (pokemonBolsa, botaoRemover) => {
       const index = personagem.pokemonsNaBolsa.findIndex((poke) => poke === pokemonBolsa);
       personagem.pokemonsNaBolsa.splice(index, 1);
       personagem.pokemonsNoDepote.unshift(pokemonBolsa);
-      pokemonPreRemovido.length = 0;
+      pokemonPreRemovido.clear();
       localStorage.setItem("personagem", JSON.stringify(personagem));
       aparecerListaPokemons();
     }
@@ -463,7 +465,7 @@ const adicionarPokemonNaBolsa = (pokemonDepote, botaoAdicionar) => {
     const index = personagem.pokemonsNoDepote.findIndex((poke) => poke === pokemonDepote);
     personagem.pokemonsNoDepote.splice(index, 1);
     personagem.pokemonsNaBolsa.push(pokemonDepote);
-    pokemonPreAdicionado.length = 0;
+    pokemonPreAdicionado.clear();
     localStorage.setItem("personagem", JSON.stringify(personagem));
     aparecerListaPokemons();
   };
@@ -472,13 +474,13 @@ const adicionarPokemonNaBolsa = (pokemonDepote, botaoAdicionar) => {
 
 const removerPokemonDaBolsaNoDepote = (pokemonBolsa, botaoPokemonNaBolsa, botaoRemover) => {
   const posibilitarRemoverPokemon = () => {
-    if (pokemonPreRemovido.length < 5) {
-      pokemonPreRemovido.push(pokemonBolsa);
+    if (pokemonPreRemovido.size < 5) {
+      pokemonPreRemovido.add(pokemonBolsa);
     }
-    if (pokemonPreRemovido.includes(pokemonBolsa)) {
+    if (pokemonPreRemovido.has(pokemonBolsa)) {
       botaoPokemonNaBolsa.classList.add("botaoPokemon-active");
     }
-    if (personagem.pokemonsNaBolsa.length > 1) {
+    if (personagem.pokemonsNaBolsa.length > 1 && pokemonPreRemovido.has(pokemonBolsa)) {
       botaoRemover.classList.remove("botaoDesabilitado");
       removerPokemonDaBolsa(pokemonBolsa, botaoRemover);
     }
@@ -488,13 +490,13 @@ const removerPokemonDaBolsaNoDepote = (pokemonBolsa, botaoPokemonNaBolsa, botaoR
 
 const adicionarPokemonDoDepoteNaBolsa = (pokemonDepote, botaoPokemonNoDepote, botaoAdicionar) => {
   const posibilitarAdicionarPokemon = () => {
-    if (personagem.pokemonsNaBolsa.length + pokemonPreAdicionado.length < 6) {
-      pokemonPreAdicionado.push(pokemonDepote);
+    if (personagem.pokemonsNaBolsa.length + pokemonPreAdicionado.size < 6) {
+      pokemonPreAdicionado.add(pokemonDepote);
     }
-    if (pokemonPreAdicionado.includes(pokemonDepote)) {
+    if (pokemonPreAdicionado.has(pokemonDepote)) {
       botaoPokemonNoDepote.classList.add("botaoPokemon-active");
     }
-    if (personagem.pokemonsNaBolsa.length < 6 && pokemonPreAdicionado.includes(pokemonDepote)) {
+    if (personagem.pokemonsNaBolsa.length < 6 && pokemonPreAdicionado.add(pokemonDepote)) {
       botaoAdicionar.classList.remove("botaoDesabilitado");
       adicionarPokemonNaBolsa(pokemonDepote, botaoAdicionar);
     }

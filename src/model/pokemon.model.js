@@ -1,6 +1,8 @@
 export class Pokemon {
   tipos;
   nome;
+  sexosPossiveis;
+  sexo;
   habilidades;
   vidaOriginal;
   vida;
@@ -19,6 +21,8 @@ export class Pokemon {
   constructor(pokemonPrototipo) {
     this.tipos = pokemonPrototipo.tipos;
     this.nome = pokemonPrototipo.nome;
+    this.sexosPossiveis = pokemonPrototipo.sexosPossiveis;
+    this.sexo = pokemonPrototipo.sexo;
     this.habilidades = pokemonPrototipo.habilidades;
     this.vidaOriginal = pokemonPrototipo.vidaOriginal;
     this.vida = pokemonPrototipo.vida !== undefined ? pokemonPrototipo.vida : pokemonPrototipo.vidaOriginal;
