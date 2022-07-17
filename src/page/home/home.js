@@ -314,22 +314,23 @@ const aparecerListaPokemons = () => {
   divListaPokemons.setAttribute("name", "listaPokemons");
   main.append(divListaPokemons);
   const { botaoRemover, listaPokemonBolsa } = aparecerListaPokemonsNaBolsa(divListaPokemons);
-  if (personagem.pokemonsNaBolsa.length === 1) {
-    botaoRemover.classList.add("botaoDesabilitado");
-  }
   personagem.pokemonsNaBolsa.forEach((pokemonBolsa) => {
     const botaoPokemonNaBolsa = aparecerBotoesPokemonBolsa(pokemonBolsa, listaPokemonBolsa);
-    removerPokemonDaBolsaNoDepote(pokemonBolsa, botaoPokemonNaBolsa, botaoRemover);
+    registrarListenerRemoverPokemonDaBolsa(pokemonBolsa, botaoPokemonNaBolsa);
   });
+
+  if (personagem.pokemonsNaBolsa.length > 1) {
+    removerPokemonDaBolsa(botaoRemover);
+  }
   if (personagem.pokemonsNoDepote.length != 0) {
     const { botaoAdicionar, listaPokemonDepote, divPokemonDepote } = aparecerListaPokemonsDepote(divListaPokemons);
-    if (personagem.pokemonsNaBolsa.length === 6) {
-      botaoAdicionar.classList.add("botaoDesabilitado");
-    }
     personagem.pokemonsNoDepote.forEach((pokemonDepote) => {
       const botaoPokemonNoDepote = aparecerBotoesPokemonDepote(pokemonDepote, listaPokemonDepote);
-      adicionarPokemonDoDepoteNaBolsa(pokemonDepote, botaoPokemonNoDepote, botaoAdicionar);
+      registrarListenerAdicionarPokemonNaBolsa(pokemonDepote, botaoPokemonNoDepote);
     });
+    if (personagem.pokemonsNaBolsa.length < 6) {
+      adicionarPokemonNaBolsa(botaoAdicionar);
+    }
     adicionarOverflowNoPokemonDepote(divPokemonDepote, listaPokemonDepote);
   }
 };
@@ -446,13 +447,13 @@ const aparecerBotoesPokemonDepote = (pokemonDepote, listaPokemonDepote) => {
   return botaoPokemonNoDepote;
 };
 
-const removerPokemonDaBolsa = (pokemonBolsa, botaoRemover) => {
+const removerPokemonDaBolsa = (botaoRemover) => {
   const removerPokemon = () => {
-    if (personagem.pokemonsNaBolsa.length > 1) {
-      const index = personagem.pokemonsNaBolsa.findIndex((poke) => poke === pokemonBolsa);
-      personagem.pokemonsNaBolsa.splice(index, 1);
-      personagem.pokemonsNoDepote.unshift(pokemonBolsa);
+    if (personagem.pokemonsNaBolsa.length - pokemonPreRemovido.size > 0) {
+      personagem.pokemonsNaBolsa = personagem.pokemonsNaBolsa.filter((pokemon) => !pokemonPreRemovido.has(pokemon));
+      personagem.pokemonsNoDepote = [...personagem.pokemonsNoDepote, ...pokemonPreRemovido];
       pokemonPreRemovido.clear();
+      pokemonPreAdicionado.clear();
       localStorage.setItem("personagem", JSON.stringify(personagem));
       aparecerListaPokemons();
     }
@@ -460,45 +461,39 @@ const removerPokemonDaBolsa = (pokemonBolsa, botaoRemover) => {
   botaoRemover.addEventListener("click", removerPokemon);
 };
 
-const adicionarPokemonNaBolsa = (pokemonDepote, botaoAdicionar) => {
+const adicionarPokemonNaBolsa = (botaoAdicionar) => {
   const adicionarPokemon = () => {
-    const index = personagem.pokemonsNoDepote.findIndex((poke) => poke === pokemonDepote);
-    personagem.pokemonsNoDepote.splice(index, 1);
-    personagem.pokemonsNaBolsa.push(pokemonDepote);
-    pokemonPreAdicionado.clear();
+    personagem.pokemonsNoDepote = personagem.pokemonsNoDepote.filter((pokemon) => !pokemonPreAdicionado.has(pokemon));
+    personagem.pokemonsNaBolsa = [...personagem.pokemonsNaBolsa, ...pokemonPreAdicionado];
     localStorage.setItem("personagem", JSON.stringify(personagem));
+    pokemonPreAdicionado.clear();
+    pokemonPreRemovido.clear();
     aparecerListaPokemons();
   };
   botaoAdicionar.addEventListener("click", adicionarPokemon);
 };
 
-const removerPokemonDaBolsaNoDepote = (pokemonBolsa, botaoPokemonNaBolsa, botaoRemover) => {
+const registrarListenerRemoverPokemonDaBolsa = (pokemonBolsa, botaoPokemonNaBolsa) => {
   const posibilitarRemoverPokemon = () => {
-    if (pokemonPreRemovido.size < 5) {
-      pokemonPreRemovido.add(pokemonBolsa);
-    }
     if (pokemonPreRemovido.has(pokemonBolsa)) {
+      pokemonPreRemovido.delete(pokemonBolsa);
+      botaoPokemonNaBolsa.classList.remove("botaoPokemon-active");
+    } else if (pokemonPreRemovido.size < 5) {
+      pokemonPreRemovido.add(pokemonBolsa);
       botaoPokemonNaBolsa.classList.add("botaoPokemon-active");
-    }
-    if (personagem.pokemonsNaBolsa.length > 1 && pokemonPreRemovido.has(pokemonBolsa)) {
-      botaoRemover.classList.remove("botaoDesabilitado");
-      removerPokemonDaBolsa(pokemonBolsa, botaoRemover);
     }
   };
   botaoPokemonNaBolsa.addEventListener("click", posibilitarRemoverPokemon);
 };
 
-const adicionarPokemonDoDepoteNaBolsa = (pokemonDepote, botaoPokemonNoDepote, botaoAdicionar) => {
+const registrarListenerAdicionarPokemonNaBolsa = (pokemonDepote, botaoPokemonNoDepote) => {
   const posibilitarAdicionarPokemon = () => {
-    if (personagem.pokemonsNaBolsa.length + pokemonPreAdicionado.size < 6) {
-      pokemonPreAdicionado.add(pokemonDepote);
-    }
     if (pokemonPreAdicionado.has(pokemonDepote)) {
+      pokemonPreAdicionado.delete(pokemonDepote);
+      botaoPokemonNoDepote.classList.remove("botaoPokemon-active");
+    } else if (personagem.pokemonsNaBolsa.length + pokemonPreAdicionado.size < 6) {
       botaoPokemonNoDepote.classList.add("botaoPokemon-active");
-    }
-    if (personagem.pokemonsNaBolsa.length < 6 && pokemonPreAdicionado.add(pokemonDepote)) {
-      botaoAdicionar.classList.remove("botaoDesabilitado");
-      adicionarPokemonNaBolsa(pokemonDepote, botaoAdicionar);
+      pokemonPreAdicionado.add(pokemonDepote);
     }
   };
   botaoPokemonNoDepote.addEventListener("click", posibilitarAdicionarPokemon);
