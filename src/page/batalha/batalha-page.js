@@ -1,7 +1,7 @@
 import { audio } from "../../../sounds/audio.js";
 import { criarBotaoPokemon } from "../../components/batalha/botaoPokemon.js";
 import { Personagem } from "../../model/personagem.model.js";
-import { buscarPokemonAleatorio } from "../../repository/pokemon.repository.js";
+import { buscarPokemonAleatorioPorNivel } from "../../repository/pokemon.repository.js";
 import { atualizarPodeAndar } from "../home/home.js";
 
 export function iniciarBatalha() {
@@ -11,7 +11,9 @@ export function iniciarBatalha() {
       : Personagem.criarPersonagemInicial();
 
   let pokemonCompetidor = personagem.pokemonsNaBolsa.find((pokemon) => pokemon.vida > 0);
-  const pokemonOponente = buscarPokemonAleatorio();
+
+  const levelsPokemonsNaBolsa = personagem.pokemonsNaBolsa.map((pokemon) => pokemon.level);
+  const pokemonOponente = buscarPokemonAleatorioPorNivel(Math.max(...levelsPokemonsNaBolsa));
 
   const renderGame = () => {
     //Barras Versus
