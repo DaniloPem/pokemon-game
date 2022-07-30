@@ -136,10 +136,7 @@ export function iniciarBatalha() {
       });
     });
   };
-  botaoLutar.addEventListener("click", () => {
-    audio.click.play();
-    aparecerAtaques();
-  });
+  botaoLutar.addEventListener("click", aparecerAtaques);
 
   //Botao Pokemon
   const botaoPokemon = document.querySelector("#botao-pokemon");
@@ -173,10 +170,7 @@ export function iniciarBatalha() {
       button.addEventListener("click", pegarPokemonCompetidor);
     });
   };
-  botaoPokemon.addEventListener("click", () => {
-    audio.click.play();
-    aparecerPokemons();
-  });
+  botaoPokemon.addEventListener("click", aparecerPokemons);
 
   //Botao Items
   const botaoItems = document.querySelector("#botao-items");
@@ -208,15 +202,11 @@ export function iniciarBatalha() {
       registrarCaptura(botaoItem, item, numItem);
     });
   };
-  botaoItems.addEventListener("click", () => {
-    audio.click.play();
-    aparecerItems();
-  });
+  botaoItems.addEventListener("click", aparecerItems);
 
   // //Botao Fugir
   const botaoFugir = document.querySelector("#botao-fugir");
   const fugirPraTelaHome = () => {
-    audio.click.play();
     const bonusCaptura = 0;
     pokemonCompetidor.adicionarExperienciaGanhada(pokemonOponente, bonusCaptura);
     pokemonCompetidor.somarExperiencia();
@@ -549,26 +539,26 @@ export function iniciarBatalha() {
   };
 
   aparecerAtaques();
+  const voltarProMapa = () => {
+    const mapaDoJogo = document.querySelector("main");
+    const divTransicao = document.querySelector("#divTransicao");
+    const telaBatalha = document.getElementById("tela-batalha");
+    audio.batalha.stop();
+    botaoFugir.removeEventListener("click", fugirPraTelaHome);
+    audio.mapa.play();
+    telaBatalha.style.display = "none";
+    mapaDoJogo.style.display = "block";
+    gsap.to("#divTransicao", {
+      opacity: 1,
+      onComplete() {
+        gsap.to("#divTransicao", {
+          opacity: 0,
+          onComplete() {
+            divTransicao.style.display = "none";
+            atualizarPodeAndar(true);
+          },
+        });
+      },
+    });
+  };
 }
-
-const voltarProMapa = () => {
-  const mapaDoJogo = document.querySelector("main");
-  const divTransicao = document.querySelector("#divTransicao");
-  const telaBatalha = document.getElementById("tela-batalha");
-  audio.batalha.stop();
-  audio.mapa.play();
-  telaBatalha.style.display = "none";
-  mapaDoJogo.style.display = "block";
-  gsap.to("#divTransicao", {
-    opacity: 1,
-    onComplete() {
-      gsap.to("#divTransicao", {
-        opacity: 0,
-        onComplete() {
-          divTransicao.style.display = "none";
-          atualizarPodeAndar(true);
-        },
-      });
-    },
-  });
-};

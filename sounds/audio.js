@@ -2,7 +2,7 @@ export const audio = {
   telaInicio: new Howl({
     src: "../../../assets/musicas/tela-inicio.mp3",
     html5: true,
-    volume: 0.4,
+    volume: 0.3,
     loop: true,
   }),
   click: new Howl({
@@ -18,7 +18,7 @@ export const audio = {
   batalha: new Howl({
     src: "../../../assets/musicas/batalha.mp3",
     html5: true,
-    volume: 0.3,
+    volume: 0.2,
     loop: true,
   }),
   ataque: new Howl({
@@ -29,7 +29,12 @@ export const audio = {
   mapa: new Howl({
     src: "../../../assets/musicas/mapa.mp3",
     html5: true,
-    volume: 0.3,
+    volume: 0.2,
     loop: true,
+  }),
+  select: new Howl({
+    src: "../../../assets/musicas/select.mp3",
+    html5: true,
+    volume: 0.7,
   }),
 };

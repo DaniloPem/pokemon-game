@@ -25,10 +25,7 @@ export class PokemonSelvagem extends Pokemon {
   }
 
   gerarSexo() {
-    const pegarSexoAleatorio = () => {
-      return Math.floor(Math.random() * this.sexosPossiveis.length);
-    };
-    const sexoAleatorio = this.sexosPossiveis[pegarSexoAleatorio()];
+    const sexoAleatorio = this.sexosPossiveis[Math.floor(Math.random() * this.sexosPossiveis.length)];
     return sexoAleatorio;
   }
 }

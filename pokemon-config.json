@@ -80,12 +80,12 @@
     "nome": "Venusaur",
     "sexosPossiveis": ["fêmea", "macho"],
     "habilidades": [
-      { "nome": "Headbutt", "tipo": "Normal", "forca": 30, "pontosMax": 18, "pontosPoder": 18 },
       { "nome": "Vine Whip", "tipo": "Planta", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
       { "nome": "Razor Leaf", "tipo": "Planta", "forca": 60, "pontosMax": 12, "pontosPoder": 12 },
       { "nome": "Toxic", "tipo": "Veneno", "forca": 70, "pontosMax": 9, "pontosPoder": 9 },
       { "nome": "Petal Dance", "tipo": "Planta", "forca": 80, "pontosMax": 6, "pontosPoder": 6 },
-      { "nome": "Solar Beam", "tipo": "Planta", "forca": 100, "pontosMax": 3, "pontosPoder": 3 }
+      { "nome": "Sludge Bomb", "tipo": "Veneno", "forca": 90, "pontosMax": 3, "pontosPoder": 3 },
+      { "nome": "Solar Beam", "tipo": "Planta", "forca": 110, "pontosMax": 2, "pontosPoder": 2 }
     ],
     "vidaOriginal": 120,
     "debilidades": [
@@ -291,9 +291,9 @@
       { "nome": "Aqua Tail", "tipo": "Água", "forca": 50, "pontosMax": 15, "pontosPoder": 15 },
       { "nome": "Water Gun", "tipo": "Água", "forca": 50, "pontosMax": 15, "pontosPoder": 15 },
       { "nome": "Surf", "tipo": "Água", "forca": 60, "pontosMax": 12, "pontosPoder": 12 },
-      { "nome": "Flash Cannon", "tipo": "Ferro", "forca": 90, "pontosMax": 5, "pontosPoder": 5 },
-      { "nome": "Hydro Pump", "tipo": "Água", "forca": 90, "pontosMax": 5, "pontosPoder": 5 },
-      { "nome": "Blizzard", "tipo": "Gelo", "forca": 110, "pontosMax": 3, "pontosPoder": 3 }
+      { "nome": "Flash Cannon", "tipo": "Ferro", "forca": 90, "pontosMax": 3, "pontosPoder": 3 },
+      { "nome": "Hydro Pump", "tipo": "Água", "forca": 90, "pontosMax": 3, "pontosPoder": 3 },
+      { "nome": "Blizzard", "tipo": "Gelo", "forca": 110, "pontosMax": 2, "pontosPoder": 2 }
     ],
     "vidaOriginal": 120,
     "debilidades": [
@@ -1205,5 +1205,267 @@
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/37.png",
     "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/37.gif"
+  },
+  "ninetales": {
+    "tipos": ["Fogo", "semtipo"],
+    "nome": "Ninetales",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Charm", "tipo": "Fada", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Ember", "tipo": "Fogo", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Fire Spin", "tipo": "Fogo", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Psyshock", "tipo": "Terra", "forca": 70, "pontosMax": 7, "pontosPoder": 7 },
+      { "nome": "Flamethrower", "tipo": "Fogo", "forca": 80, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Inferno", "tipo": "Fogo", "forca": 100, "pontosMax": 3, "pontosPoder": 3 }
+    ],
+    "vidaOriginal": 100,
+    "debilidades": [
+      { "tipo": "Terra", "dano": 1.6 },
+      { "tipo": "Pedra", "dano": 1.6 },
+      { "tipo": "Água", "dano": 1.6 },
+      { "tipo": "Inseto", "dano": 0.5 },
+      { "tipo": "Ferro", "dano": 0.5 },
+      { "tipo": "Fogo", "dano": 0.6 },
+      { "tipo": "Planta", "dano": 0.6 },
+      { "tipo": "Gelo", "dano": 0.5 },
+      { "tipo": "Fada", "dano": 0.6 }
+    ],
+    "evolucao": null,
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 60,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/38.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/38.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/38.gif"
+  },
+  "jigglypuff": {
+    "tipos": ["Normal", "Fada"],
+    "nome": "Jigglypuff",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Disarming Voice", "tipo": "Fada", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Echoed Voice", "tipo": "Normal", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Telekinesis", "tipo": "Psíquico", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Pound", "tipo": "Normal", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Mega Punch", "tipo": "Normal", "forca": 50, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Psychic", "tipo": "Psíquico", "forca": 60, "pontosMax": 5, "pontosPoder": 5 }
+    ],
+    "vidaOriginal": 100,
+    "debilidades": [
+      { "tipo": "Veneno", "dano": 1.6 },
+      { "tipo": "Ferro", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.4 },
+      { "tipo": "Inseto", "dano": 0.6 },
+      { "tipo": "Sombrio", "dano": 0.5 },
+      { "tipo": "Fantasma", "dano": 0.3 },
+      { "tipo": "Dragão", "dano": 0.3 }
+    ],
+    "evolucao": "wigglytuff",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 120,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/39.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/39.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/39.gif"
+  },
+  "wigglytuff": {
+    "tipos": ["Normal", "Fada"],
+    "nome": "Wigglytuff",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Charm", "tipo": "Fada", "forca": 40, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Strength", "tipo": "Normal", "forca": 60, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Ice Punch", "tipo": "Gelo", "forca": 70, "pontosMax": 8, "pontosPoder": 8 },
+      { "nome": "Psychic", "tipo": "Psíquico", "forca": 80, "pontosMax": 6, "pontosPoder": 6 },
+      { "nome": "Play Rough", "tipo": "Fada", "forca": 90, "pontosMax": 3, "pontosPoder": 3 },
+      { "nome": "Hyper Beam", "tipo": "Normal", "forca": 110, "pontosMax": 2, "pontosPoder": 2 }
+    ],
+    "vidaOriginal": 110,
+    "debilidades": [
+      { "tipo": "Veneno", "dano": 1.6 },
+      { "tipo": "Ferro", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.4 },
+      { "tipo": "Inseto", "dano": 0.6 },
+      { "tipo": "Sombrio", "dano": 0.5 },
+      { "tipo": "Fantasma", "dano": 0.3 },
+      { "tipo": "Dragão", "dano": 0.3 }
+    ],
+    "evolucao": null,
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 50,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/40.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/40.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/40.gif"
+  },
+  "zubat": {
+    "tipos": ["Veneno", "Voador"],
+    "nome": "Zubat",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Quick Attack", "tipo": "Normal", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Poison Fang", "tipo": "Veneno", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Aerial Ace", "tipo": "Voador", "forca": 35, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Wing Attack", "tipo": "Voador", "forca": 35, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Sludge Bomb", "tipo": "Veneno", "forca": 40, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Fly", "tipo": "Voador", "forca": 50, "pontosMax": 6, "pontosPoder": 6 }
+    ],
+    "vidaOriginal": 80,
+    "debilidades": [
+      { "tipo": "Pedra", "dano": 1.6 },
+      { "tipo": "Elétrico", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Terra", "dano": 0.6 },
+      { "tipo": "Veneno", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 },
+      { "tipo": "Luta", "dano": 0.3 },
+      { "tipo": "Inseto", "dano": 0.3 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": "golbat",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 255,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/41.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/41.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/41.gif"
+  },
+  "golbat": {
+    "tipos": ["Veneno", "Voador"],
+    "nome": "Golbat",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Poison Fang", "tipo": "Veneno", "forca": 50, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Aerial Ace", "tipo": "Voador", "forca": 60, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Wing Attack", "tipo": "Voador", "forca": 60, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Sludge Bomb", "tipo": "Veneno", "forca": 75, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Fly", "tipo": "Voador", "forca": 80, "pontosMax": 4, "pontosPoder": 4 },
+      { "nome": "Shadow Ball", "tipo": "Fantasma", "forca": 90, "pontosMax": 3, "pontosPoder": 3 }
+    ],
+    "vidaOriginal": 100,
+    "debilidades": [
+      { "tipo": "Pedra", "dano": 1.6 },
+      { "tipo": "Elétrico", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Terra", "dano": 0.6 },
+      { "tipo": "Veneno", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 },
+      { "tipo": "Luta", "dano": 0.3 },
+      { "tipo": "Inseto", "dano": 0.3 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": null,
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 90,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/42.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/42.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/42.gif"
+  },
+  "oddish": {
+    "tipos": ["Planta", "Veneno"],
+    "nome": "Oddish",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Acid", "tipo": "Veneno", "forca": 20, "pontosMax": 18, "pontosPoder": 18 },
+      { "nome": "Razor Leaf", "tipo": "Planta", "forca": 25, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Venoshock", "tipo": "Veneno", "forca": 35, "pontosMax": 13, "pontosPoder": 13 },
+      { "nome": "Seed Bomb", "tipo": "Planta", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Sludge Bomb", "tipo": "Veneno", "forca": 50, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Energy Ball", "tipo": "Planta", "forca": 50, "pontosMax": 10, "pontosPoder": 10 }
+    ],
+    "vidaOriginal": 80,
+    "debilidades": [
+      { "tipo": "Voador", "dano": 1.6 },
+      { "tipo": "Fogo", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Luta", "dano": 0.6 },
+      { "tipo": "Agua", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": "gloom",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 255,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/43.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/43.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/43.gif"
+  },
+  "gloom": {
+    "tipos": ["Planta", "Veneno"],
+    "nome": "Gloom",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Acid", "tipo": "Veneno", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Razor Leaf", "tipo": "Planta", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Venoshock", "tipo": "Veneno", "forca": 50, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Sludge Bomb", "tipo": "Veneno", "forca": 70, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Energy Ball", "tipo": "Planta", "forca": 70, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Petal Blizzard", "tipo": "Planta", "forca": 80, "pontosMax": 4, "pontosPoder": 4 }
+    ],
+    "vidaOriginal": 90,
+    "debilidades": [
+      { "tipo": "Voador", "dano": 1.6 },
+      { "tipo": "Fogo", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Luta", "dano": 0.6 },
+      { "tipo": "Agua", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": "vileplume",
+    "levelMin": 11,
+    "levelMax": 20,
+    "ratioCaptura": 110,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/44.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/44.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/44.gif"
+  },
+  "vileplume": {
+    "tipos": ["Planta", "Veneno"],
+    "nome": "Gloom",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Acid", "tipo": "Veneno", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Razor Leaf", "tipo": "Planta", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Venoshock", "tipo": "Veneno", "forca": 50, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Sludge Bomb", "tipo": "Veneno", "forca": 75, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Moonblast", "tipo": "Fada", "forca": 95, "pontosMax": 3, "pontosPoder": 3 },
+      { "nome": "Solar Beam", "tipo": "Planta", "forca": 110, "pontosMax": 2, "pontosPoder": 2 }
+    ],
+    "vidaOriginal": 110,
+    "debilidades": [
+      { "tipo": "Voador", "dano": 1.6 },
+      { "tipo": "Fogo", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Luta", "dano": 0.6 },
+      { "tipo": "Agua", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": null,
+    "levelMin": 21,
+    "levelMax": 30,
+    "ratioCaptura": 110,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/45.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/45.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/45.gif"
   }
 }
