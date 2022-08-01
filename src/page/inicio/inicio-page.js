@@ -25,8 +25,8 @@ export function aparecerTelaInicial() {
   botaoProximo.innerText = "Próximo";
   const clicarBotaoProximo = () => {
     audio.click.play();
-    audio.telaInicio.play();
     if (inputUsuario.value.length > 4 && inputUsuario.value.length < 13) {
+      audio.telaInicio.play();
       const nomePersonagem = inputUsuario.value;
       divUsuarioNome.style.visibility = "hidden";
       aparecerListaPokemonInicial(nomePersonagem);
