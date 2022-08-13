@@ -14,7 +14,7 @@
     "vidaOriginal": 100,
     "debilidades": [
       { "tipo": "Planta", "dano": "0.3" },
-      { "tipo": "Agua", "dano": "0.6" },
+      { "tipo": "Água", "dano": "0.6" },
       { "tipo": "Luta", "dano": "0.6" },
       { "tipo": "Elétrico", "dano": "0.6" },
       { "tipo": "Fada", "dano": "0.6" },
@@ -52,7 +52,7 @@
     "vidaOriginal": 100,
     "debilidades": [
       { "tipo": "Planta", "dano": "0.3" },
-      { "tipo": "Agua", "dano": "0.6" },
+      { "tipo": "Água", "dano": "0.6" },
       { "tipo": "Luta", "dano": "0.6" },
       { "tipo": "Elétrico", "dano": "0.6" },
       { "tipo": "Fada", "dano": "0.6" },
@@ -89,7 +89,7 @@
     ],
     "vidaOriginal": 120,
     "debilidades": [
-      { "tipo": "Agua", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
       { "tipo": "Planta", "dano": 0.3 },
       { "tipo": "Luta", "dano": 0.6 },
       { "tipo": "Elétrico", "dano": 0.6 },
@@ -127,7 +127,7 @@
     ],
     "vidaOriginal": 100,
     "debilidades": [
-      { "tipo": "Agua", "dano": 1.6 },
+      { "tipo": "Água", "dano": 1.6 },
       { "tipo": "Terra", "dano": 1.6 },
       { "tipo": "Pedra", "dano": 1.6 },
       { "tipo": "Inseto", "dano": 0.6 },
@@ -160,7 +160,7 @@
     ],
     "vidaOriginal": 100,
     "debilidades": [
-      { "tipo": "Agua", "dano": 1.6 },
+      { "tipo": "Água", "dano": 1.6 },
       { "tipo": "Terra", "dano": 1.6 },
       { "tipo": "Pedra", "dano": 1.6 },
       { "tipo": "Inseto", "dano": 0.6 },
@@ -194,7 +194,7 @@
     "vidaOriginal": 120,
     "debilidades": [
       { "tipo": "Pedra", "dano": 2.5 },
-      { "tipo": "Agua", "dano": 1.6 },
+      { "tipo": "Água", "dano": 1.6 },
       { "tipo": "Elétrico", "dano": 1.6 },
       { "tipo": "Terra", "dano": 0.6 },
       { "tipo": "Luta", "dano": 0.6 },
@@ -228,7 +228,7 @@
     "vidaOriginal": 100,
     "debilidades": [
       { "tipo": "Planta", "dano": 1.6 },
-      { "tipo": "Agua", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
       { "tipo": "Luta", "dano": 0.8 },
       { "tipo": "Elétrico", "dano": 1.6 },
       { "tipo": "Fogo", "dano": 0.5 },
@@ -263,7 +263,7 @@
     "vidaOriginal": 100,
     "debilidades": [
       { "tipo": "Planta", "dano": 1.6 },
-      { "tipo": "Agua", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
       { "tipo": "Luta", "dano": 0.8 },
       { "tipo": "Elétrico", "dano": 1.6 },
       { "tipo": "Fogo", "dano": 0.5 },
@@ -298,7 +298,7 @@
     "vidaOriginal": 120,
     "debilidades": [
       { "tipo": "Planta", "dano": 1.6 },
-      { "tipo": "Agua", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
       { "tipo": "Luta", "dano": 0.8 },
       { "tipo": "Elétrico", "dano": 1.6 },
       { "tipo": "Fogo", "dano": 0.5 },
@@ -331,7 +331,7 @@
     "vidaOriginal": 70,
     "debilidades": [
       { "tipo": "Planta", "dano": 0.6 },
-      { "tipo": "Agua", "dano": 1.2 },
+      { "tipo": "Água", "dano": 1.2 },
       { "tipo": "Fada", "dano": 1.2 },
       { "tipo": "Psíquico", "dano": 0.6 },
       { "tipo": "Sombrio", "dano": 0.6 },
@@ -363,7 +363,7 @@
     "vidaOriginal": 70,
     "debilidades": [
       { "tipo": "Planta", "dano": 0.6 },
-      { "tipo": "Agua", "dano": 1.2 },
+      { "tipo": "Água", "dano": 1.2 },
       { "tipo": "Fada", "dano": 1.2 },
       { "tipo": "Psíquico", "dano": 0.6 },
       { "tipo": "Sombrio", "dano": 0.6 },
@@ -406,7 +406,7 @@
       { "tipo": "Planta", "dano": 0.3 },
       { "tipo": "Luta", "dano": 0.3 },
       { "tipo": "Terra", "dano": 0.25 },
-      { "tipo": "Agua", "dano": 1.2 },
+      { "tipo": "Água", "dano": 1.2 },
       { "tipo": "Fada", "dano": 1.2 },
       { "tipo": "Psíquico", "dano": 0.6 },
       { "tipo": "Sombrio", "dano": 0.6 },
@@ -442,7 +442,7 @@
       { "tipo": "Fada", "dano": 0.6 },
       { "tipo": "Luta", "dano": 0.4 },
       { "tipo": "Planta", "dano": 0.4 },
-      { "tipo": "Agua", "dano": 1.2 },
+      { "tipo": "Água", "dano": 1.2 },
       { "tipo": "Sombrio", "dano": 0.6 },
       { "tipo": "Terra", "dano": 0.8 }
     ],
@@ -475,7 +475,7 @@
       { "tipo": "Fada", "dano": 0.6 },
       { "tipo": "Luta", "dano": 0.4 },
       { "tipo": "Planta", "dano": 0.4 },
-      { "tipo": "Agua", "dano": 1.2 },
+      { "tipo": "Água", "dano": 1.2 },
       { "tipo": "Sombrio", "dano": 0.6 },
       { "tipo": "Terra", "dano": 0.8 }
     ],
@@ -511,7 +511,7 @@
       { "tipo": "Fada", "dano": 0.6 },
       { "tipo": "Luta", "dano": 0.4 },
       { "tipo": "Planta", "dano": 0.4 },
-      { "tipo": "Agua", "dano": 1.2 },
+      { "tipo": "Água", "dano": 1.2 },
       { "tipo": "Sombrio", "dano": 0.6 },
       { "tipo": "Terra", "dano": 0.8 }
     ],
@@ -1388,7 +1388,7 @@
       { "tipo": "Gelo", "dano": 1.6 },
       { "tipo": "Psíquico", "dano": 1.6 },
       { "tipo": "Luta", "dano": 0.6 },
-      { "tipo": "Agua", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
       { "tipo": "Elétrico", "dano": 0.6 },
       { "tipo": "Fada", "dano": 0.6 },
       { "tipo": "Planta", "dano": 0.3 }
@@ -1421,7 +1421,7 @@
       { "tipo": "Gelo", "dano": 1.6 },
       { "tipo": "Psíquico", "dano": 1.6 },
       { "tipo": "Luta", "dano": 0.6 },
-      { "tipo": "Agua", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
       { "tipo": "Elétrico", "dano": 0.6 },
       { "tipo": "Fada", "dano": 0.6 },
       { "tipo": "Planta", "dano": 0.3 }
@@ -1454,7 +1454,7 @@
       { "tipo": "Gelo", "dano": 1.6 },
       { "tipo": "Psíquico", "dano": 1.6 },
       { "tipo": "Luta", "dano": 0.6 },
-      { "tipo": "Agua", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
       { "tipo": "Elétrico", "dano": 0.6 },
       { "tipo": "Fada", "dano": 0.6 },
       { "tipo": "Planta", "dano": 0.3 }
@@ -1467,5 +1467,164 @@
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/45.png",
     "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/45.gif"
+  },
+  "paras": {
+    "tipos": ["Inseto", "Planta"],
+    "nome": "Paras",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Bullet Seed", "tipo": "Planta", "forca": 20, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Fell Stinger", "tipo": "Inseto", "forca": 40, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Seed Bomb", "tipo": "Planta", "forca": 50, "pontosMax": 6, "pontosPoder": 6 },
+      { "nome": "Sludge Bomb", "tipo": "Veneno", "forca": 50, "pontosMax": 6, "pontosPoder": 6 }
+    ],
+    "vidaOriginal": 80,
+    "debilidades": [
+      { "tipo": "Voador", "dano": 2.5 },
+      { "tipo": "Fogo", "dano": 2.5 },
+      { "tipo": "Veneno", "dano": 1.6 },
+      { "tipo": "Pedra", "dano": 1.6 },
+      { "tipo": "Inseto", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Luta", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.6 },
+      { "tipo": "Terra", "dano": 0.3 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": "parasect",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 190,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/46.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/46.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/46.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/46.gif"
+  },
+  "parasect": {
+    "tipos": ["Inseto", "Planta"],
+    "nome": "Parasect",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Bullet Seed", "tipo": "Planta", "forca": 30, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Fell Stinger", "tipo": "Inseto", "forca": 50, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Seed Bomb", "tipo": "Planta", "forca": 80, "pontosMax": 4, "pontosPoder": 4 },
+      { "nome": "Sludge Bomb", "tipo": "Veneno", "forca": 80, "pontosMax": 4, "pontosPoder": 4 },
+      { "nome": "X-Scissor", "tipo": "Inseto", "forca": 80, "pontosMax": 4, "pontosPoder": 4 }
+    ],
+    "vidaOriginal": 90,
+    "debilidades": [
+      { "tipo": "Voador", "dano": 2.5 },
+      { "tipo": "Fogo", "dano": 2.5 },
+      { "tipo": "Veneno", "dano": 1.6 },
+      { "tipo": "Pedra", "dano": 1.6 },
+      { "tipo": "Inseto", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Luta", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.6 },
+      { "tipo": "Terra", "dano": 0.3 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": null,
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 75,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/47.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/47.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/47.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/47.gif"
+  },
+  "venonat": {
+    "tipos": ["Inseto", "Veneno"],
+    "nome": "Venonat",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Toxic", "tipo": "Veneno", "forca": 20, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Poison Powder", "tipo": "Veneno", "forca": 30, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Confusion", "tipo": "Psíquico", "forca": 50, "pontosMax": 6, "pontosPoder": 6 },
+      { "nome": "Bug Bite", "tipo": "Inseto", "forca": 50, "pontosMax": 6, "pontosPoder": 6 }
+    ],
+    "vidaOriginal": 80,
+    "debilidades": [
+      { "tipo": "Voador", "dano": 1.6 },
+      { "tipo": "Fogo", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Pedra", "dano": 1.6 },
+      { "tipo": "Veneno", "dano": 0.6 },
+      { "tipo": "Inseto", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 },
+      { "tipo": "Luta", "dano": 0.3 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": "venomoth",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 190,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/48.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/48.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/48.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/48.gif"
+  },
+  "venomoth": {
+    "tipos": ["Inseto", "Veneno"],
+    "nome": "Venomoth",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Poison Fang", "tipo": "Veneno", "forca": 50, "pontosMax": 7, "pontosPoder": 7 },
+      { "nome": "Confusion", "tipo": "Psíquico", "forca": 50, "pontosMax": 7, "pontosPoder": 7 },
+      { "nome": "Bug Bite", "tipo": "Inseto", "forca": 50, "pontosMax": 7, "pontosPoder": 7 },
+      { "nome": "Signal Beam", "tipo": "Inseto", "forca": 75, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Sludge Bomb", "tipo": "Veneno", "forca": 90, "pontosMax": 3, "pontosPoder": 3 }
+    ],
+    "vidaOriginal": 90,
+    "debilidades": [
+      { "tipo": "Voador", "dano": 1.6 },
+      { "tipo": "Fogo", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Pedra", "dano": 1.6 },
+      { "tipo": "Veneno", "dano": 0.6 },
+      { "tipo": "Inseto", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 },
+      { "tipo": "Luta", "dano": 0.3 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": null,
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 75,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/49.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/49.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/49.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/49.gif"
+  },
+  "diglett": {
+    "tipos": ["Terra", "semtipo"],
+    "nome": "Diglett",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Mud Slap", "tipo": "Terra", "forca": 20, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Rock Smash", "tipo": "Luta", "forca": 30, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Aerial Ace", "tipo": "Voador", "forca": 40, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Bulldoze", "tipo": "Terra", "forca": 40, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Slash", "tipo": "Normal", "forca": 50, "pontosMax": 6, "pontosPoder": 6 }
+    ],
+    "vidaOriginal": 90,
+    "debilidades": [
+      { "tipo": "Água", "dano": 1.6 },
+      { "tipo": "Planta", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Veneno", "dano": 0.6 },
+      { "tipo": "Pedra", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.3 }
+    ],
+    "evolucao": "dugtrio",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 255,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/50.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/50.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/50.gif"
   }
 }
