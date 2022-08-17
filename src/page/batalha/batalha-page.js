@@ -158,6 +158,7 @@ export function iniciarBatalha() {
         button.classList.add("pokemonSemVida");
       }
       const pegarPokemonCompetidor = () => {
+        atacar = false;
         const buttonPokemon = document.querySelectorAll("#button-pokemon");
         botaoLutar.classList.remove("pokemonSemVida");
         buttonPokemon.forEach((botao) => {
@@ -347,34 +348,25 @@ export function iniciarBatalha() {
 
   const atualizarBarraVida = (barraVida, pokemon) => {
     const porVidaPokemon = (pokemon.vida / pokemon.vidaOriginal) * 100;
-    if (atacar === false) {
-      if (porVidaPokemon >= 0) {
-        barraVida.style.width = `${porVidaPokemon}%`;
-        if (porVidaPokemon > 50) {
-          barraVida.style.backgroundColor = "green";
-        } else if (porVidaPokemon > 20) {
-          barraVida.style.backgroundColor = "#D8DC00";
-        } else {
-          barraVida.style.backgroundColor = "red";
-        }
+    const timer = !!atacar ? 2000 : 0;
+    setTimeout(() => {
+      barraVida.style.transition = !!atacar ? "1s" : "none";
+      atualizarValorBarraVida(barraVida, porVidaPokemon);
+    }, timer);
+  };
+
+  const atualizarValorBarraVida = (barraVida, porVidaPokemon) => {
+    if (porVidaPokemon >= 0) {
+      barraVida.style.width = `${porVidaPokemon}%`;
+      if (porVidaPokemon > 50) {
+        barraVida.style.backgroundColor = "green";
+      } else if (porVidaPokemon > 20) {
+        barraVida.style.backgroundColor = "#D8DC00";
       } else {
-        barraVida.style.width = "0";
+        barraVida.style.backgroundColor = "red";
       }
     } else {
-      setTimeout(() => {
-        if (porVidaPokemon >= 0) {
-          barraVida.style.width = `${porVidaPokemon}%`;
-          if (porVidaPokemon > 50) {
-            barraVida.style.backgroundColor = "green";
-          } else if (porVidaPokemon > 20) {
-            barraVida.style.backgroundColor = "#D8DC00";
-          } else {
-            barraVida.style.backgroundColor = "red";
-          }
-        } else {
-          barraVida.style.width = "0";
-        }
-      }, 2000);
+      barraVida.style.width = "0";
     }
   };
 
