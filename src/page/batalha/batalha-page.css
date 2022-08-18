@@ -113,12 +113,14 @@ body::before {
     width: 350px;
     height: 350px;
     display: inline-block;
+    image-rendering: pixelated;
 }
 
 .img-oponente {
     width: 250px;
     height: 250px;
-    display: inline-block
+    display: inline-block;
+    image-rendering: pixelated;
 }
 
 .acoes {

@@ -1626,5 +1626,143 @@
     "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png",
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/50.png",
     "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/50.gif"
+  },
+  "dugtrio": {
+    "tipos": ["Terra", "semtipo"],
+    "nome": "Dugtrio",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Mud Slap", "tipo": "Terra", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Rock Smash", "tipo": "Luta", "forca": 40, "pontosMax": 9, "pontosPoder": 9 },
+      { "nome": "Aerial Ace", "tipo": "Voador", "forca": 60, "pontosMax": 6, "pontosPoder": 6 },
+      { "nome": "Earth Power", "tipo": "Terra", "forca": 90, "pontosMax": 3, "pontosPoder": 3 },
+      { "nome": "Earthquake", "tipo": "Terra", "forca": 105, "pontosMax": 2, "pontosPoder": 2 }
+    ],
+    "vidaOriginal": 90,
+    "debilidades": [
+      { "tipo": "Água", "dano": 1.6 },
+      { "tipo": "Planta", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Veneno", "dano": 0.6 },
+      { "tipo": "Pedra", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.3 }
+    ],
+    "evolucao": null,
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 50,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/51.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/51.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/51.gif"
+  },
+  "meowth": {
+    "tipos": ["Normal", "semtipo"],
+    "nome": "Meowth",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Scratch", "tipo": "Normal", "forca": 20, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Cut", "tipo": "Normal", "forca": 30, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Slash", "tipo": "Normal", "forca": 50, "pontosMax": 6, "pontosPoder": 6 },
+      { "nome": "Night Slash", "tipo": "Sombrio", "forca": 50, "pontosMax": 6, "pontosPoder": 6 }
+    ],
+    "vidaOriginal": 80,
+    "debilidades": [
+      { "tipo": "Luta", "dano": 1.6 },
+      { "tipo": "Fantasma", "dano": 0.3 }
+    ],
+    "evolucao": "persian",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 255,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/52.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/52.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/52.gif"
+  },
+  "persian": {
+    "tipos": ["Normal", "semtipo"],
+    "nome": "Persian",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Scratch", "tipo": "Normal", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Cut", "tipo": "Normal", "forca": 40, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Slash", "tipo": "Normal", "forca": 70, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Night Slash", "tipo": "Sombrio", "forca": 70, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Iron Tail", "tipo": "Ferro", "forca": 80, "pontosMax": 4, "pontosPoder": 4 },
+      { "nome": "Foul Play", "tipo": "Sombrio", "forca": 95, "pontosMax": 3, "pontosPoder": 3 }
+    ],
+    "vidaOriginal": 90,
+    "debilidades": [
+      { "tipo": "Luta", "dano": 1.6 },
+      { "tipo": "Fantasma", "dano": 0.3 }
+    ],
+    "evolucao": null,
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 90,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/53.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/53.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/53.gif"
+  },
+  "psyduck": {
+    "tipos": ["Água", "semtipo"],
+    "nome": "Psyduck",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Scratch", "tipo": "Normal", "forca": 30, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Water Gun", "tipo": "Água", "forca": 40, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Aerial Ace", "tipo": "Voador", "forca": 50, "pontosMax": 8, "pontosPoder": 8 },
+      { "nome": "Water Pulse", "tipo": "Água", "forca": 50, "pontosMax": 8, "pontosPoder": 8 },
+      { "nome": "Psybeam", "tipo": "Psíquico", "forca": 55, "pontosMax": 6, "pontosPoder": 6 }
+    ],
+    "vidaOriginal": 80,
+    "debilidades": [
+      { "tipo": "Planta", "dano": 1.6 },
+      { "tipo": "Elétrico", "dano": 1.6 },
+      { "tipo": "Ferro", "dano": 0.6 },
+      { "tipo": "Fogo", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
+      { "tipo": "Gelo", "dano": 0.6 }
+    ],
+    "evolucao": "golduck",
+    "levelMin": 1,
+    "levelMax": 10,
+    "ratioCaptura": 190,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/54.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/54.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/54.gif"
+  },
+  "golduck": {
+    "tipos": ["Água", "semtipo"],
+    "nome": "Golduck",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Water Gun", "tipo": "Água", "forca": 40, "pontosMax": 13, "pontosPoder": 13 },
+      { "nome": "Aerial Ace", "tipo": "Voador", "forca": 60, "pontosMax": 9, "pontosPoder": 9 },
+      { "nome": "Water Pulse", "tipo": "Água", "forca": 60, "pontosMax": 9, "pontosPoder": 9 },
+      { "nome": "Psybeam", "tipo": "Psíquico", "forca": 70, "pontosMax": 7, "pontosPoder": 7 },
+      { "nome": "Psyshock", "tipo": "Psíquico", "forca": 80, "pontosMax": 5, "pontosPoder": 5 },
+      { "nome": "Surf", "tipo": "Água", "forca": 85, "pontosMax": 4, "pontosPoder": 4 }
+    ],
+    "vidaOriginal": 100,
+    "debilidades": [
+      { "tipo": "Planta", "dano": 1.6 },
+      { "tipo": "Elétrico", "dano": 1.6 },
+      { "tipo": "Ferro", "dano": 0.6 },
+      { "tipo": "Fogo", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
+      { "tipo": "Gelo", "dano": 0.6 }
+    ],
+    "evolucao": "golduck",
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 75,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/55.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/55.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/55.png",
+    "animacao": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/55.gif"
   }
 }
