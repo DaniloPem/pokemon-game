@@ -50,7 +50,7 @@ export function aparecerTelaInicial() {
       const botaoPokemonInicial = document.createElement("button");
       const imgPokemonInicial = document.createElement("img");
       const nomePokemonInicial = document.createElement("span");
-      const srcImgPokemonInicial = pokeInicial.animacao;
+      const srcImgPokemonInicial = pokeInicial.animacaoFront;
       imgPokemonInicial.setAttribute("src", srcImgPokemonInicial);
       divListaPokemonInicial.append(botaoPokemonInicial);
       botaoPokemonInicial.append(imgPokemonInicial);

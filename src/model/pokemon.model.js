@@ -16,7 +16,7 @@ export class Pokemon {
   backDefault;
   frontDefault;
   icon;
-  animacao;
+  animacaoFront;
 
   constructor(pokemonPrototipo) {
     this.tipos = pokemonPrototipo.tipos;
@@ -36,7 +36,7 @@ export class Pokemon {
     this.backDefault = pokemonPrototipo.backDefault;
     this.frontDefault = pokemonPrototipo.frontDefault;
     this.icon = pokemonPrototipo.icon;
-    this.animacao = pokemonPrototipo.animacao;
+    this.animacaoFront = pokemonPrototipo.animacaoFront;
   }
 
   atacar(habilidade, pokemon) {
