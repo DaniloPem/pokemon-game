@@ -69,7 +69,7 @@ export function iniciarBatalha() {
     const divCompetidorBatalha = document.querySelector("#competidor-batalha");
     divCompetidorBatalha.innerHTML = "";
     const imgCompetidorBatalha = document.createElement("img");
-    const urlBackDefault = pokemonCompetidor.backDefault;
+    const urlBackDefault = pokemonCompetidor.animacaoBack;
     imgCompetidorBatalha.setAttribute("class", "img-competidor");
     imgCompetidorBatalha.setAttribute("src", urlBackDefault);
     imgCompetidorBatalha.setAttribute("id", "imgCompetidorBatalha");

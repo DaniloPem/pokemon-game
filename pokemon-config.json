@@ -2226,5 +2226,104 @@
     "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/68.png",
     "animacaoFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/68.gif",
     "animacaoBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/68.gif"
+  },
+  "bellsprout": {
+    "tipos": ["Planta", "Veneno"],
+    "nome": "Bellsprout",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Bullet Seed", "tipo": "Planta", "forca": 20, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Vine Whip", "tipo": "Planta", "forca": 30, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Acid", "tipo": "Veneno", "forca": 30, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Acid Spray", "tipo": "Veneno", "forca": 40, "pontosMax": 10, "pontosPoder": 10 }
+    ],
+    "vidaOriginal": 75,
+    "debilidades": [
+      { "tipo": "Voador", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Fogo", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Luta", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": "weepinbell",
+    "levelMin": 1,
+    "levelMax": 5,
+    "ratioCaptura": 255,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/69.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/69.png",
+    "animacaoFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/69.gif",
+    "animacaoBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/69.gif"
+  },
+  "weepinbell": {
+    "tipos": ["Planta", "Veneno"],
+    "nome": "Weepinbell",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Bullet Seed", "tipo": "Planta", "forca": 20, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Vine Whip", "tipo": "Planta", "forca": 30, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Acid", "tipo": "Veneno", "forca": 30, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Acid Spray", "tipo": "Veneno", "forca": 40, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Razor Leaf", "tipo": "Planta", "forca": 55, "pontosMax": 9, "pontosPoder": 9 }
+    ],
+    "vidaOriginal": 85,
+    "debilidades": [
+      { "tipo": "Voador", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Fogo", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Luta", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": "victreebel",
+    "levelMin": 6,
+    "levelMax": 10,
+    "ratioCaptura": 120,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/70.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/70.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/70.png",
+    "animacaoFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/70.gif",
+    "animacaoBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/70.gif"
+  },
+  "victreebel": {
+    "tipos": ["Planta", "Veneno"],
+    "nome": "Victreebel",
+    "sexosPossiveis": ["fêmea", "macho"],
+    "habilidades": [
+      { "nome": "Bullet Seed", "tipo": "Planta", "forca": 20, "pontosMax": 15, "pontosPoder": 15 },
+      { "nome": "Vine Whip", "tipo": "Planta", "forca": 30, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Acid", "tipo": "Veneno", "forca": 30, "pontosMax": 12, "pontosPoder": 12 },
+      { "nome": "Acid Spray", "tipo": "Veneno", "forca": 40, "pontosMax": 10, "pontosPoder": 10 },
+      { "nome": "Razor Leaf", "tipo": "Planta", "forca": 55, "pontosMax": 9, "pontosPoder": 9 },
+      { "nome": "Sludge Bomb", "tipo": "Veneno", "forca": 90, "pontosMax": 4, "pontosPoder": 4 }
+    ],
+    "vidaOriginal": 100,
+    "debilidades": [
+      { "tipo": "Voador", "dano": 1.6 },
+      { "tipo": "Psíquico", "dano": 1.6 },
+      { "tipo": "Fogo", "dano": 1.6 },
+      { "tipo": "Gelo", "dano": 1.6 },
+      { "tipo": "Luta", "dano": 0.6 },
+      { "tipo": "Água", "dano": 0.6 },
+      { "tipo": "Elétrico", "dano": 0.6 },
+      { "tipo": "Fada", "dano": 0.6 },
+      { "tipo": "Planta", "dano": 0.3 }
+    ],
+    "evolucao": null,
+    "levelMin": 11,
+    "levelMax": 30,
+    "ratioCaptura": 45,
+    "backDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/71.png",
+    "frontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png",
+    "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/71.png",
+    "animacaoFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/71.gif",
+    "animacaoBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/71.gif"
   }
 }

@@ -95,14 +95,14 @@ body::before {
 }
 
 .oponente-batalha {
-    /* width: 250px;
-    height: 250px; */
-    margin-top: 150px;
-    margin-left: 90px;
+    position: relative;
+    width: 250px;
+    height: 250px;
     float: left;
 }
 
 .competidor-batalha {
+    position: relative;
     display: block;
     width: 350px;
     height: 350px;
@@ -111,18 +111,21 @@ body::before {
 }
 
 .img-competidor {
-    width: 350px;
-    height: 350px;
+    position: absolute;
+    transform: scale(3);
     display: inline-block;
     image-rendering: pixelated;
+    bottom: 135px;
+    left: 100px;
 }
 
 .img-oponente {
-    /* width: 250px;
-    height: 250px; */
+    position: absolute;
     transform: scale(2.3);
     display: inline-block;
     image-rendering: pixelated;
+    bottom: 50px;
+    left: 100px;
 }
 
 .acoes {
