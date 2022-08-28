@@ -45,6 +45,7 @@ export class Pokemon {
     if (this.vida > 0 && pokemon.vida > 0) {
       const debilidadePokemon = pokemon.debilidades.find((debilidade) => debilidade.tipo === habilidade.tipo);
       const multiplicadorDano = !!debilidadePokemon ? debilidadePokemon.dano : 1;
+      console.log(debilidadePokemon);
       let danoBaseadoNoNivel = 0;
       if (this.level > pokemon.level) {
         danoBaseadoNoNivel = 1 + (this.level - pokemon.level) * 0.03;

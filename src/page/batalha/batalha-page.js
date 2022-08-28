@@ -228,6 +228,7 @@ export function iniciarBatalha() {
       });
       infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonCompetidor.nome}</span> usou <span style="font-weight: bold">${habilidade.nome}</span>`;
       pokemonCompetidor.atacar(habilidade, pokemonOponente);
+      console.log(habilidade);
       setTimeout(() => {
         audio.ataque.play();
       }, 800);

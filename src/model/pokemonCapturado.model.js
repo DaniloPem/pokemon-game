@@ -31,6 +31,7 @@ export class PokemonCapturado extends Pokemon {
       const pokemonPrototipo = buscarPokemonPorNome(this.evolucao);
       pokemonPrototipo.level = this.level;
       pokemonPrototipo.experiencia = this.experiencia;
+      pokemonPrototipo.sexo = this.sexo;
       Object.assign(this, new PokemonCapturado(pokemonPrototipo));
     }
   }
