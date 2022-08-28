@@ -5,7 +5,7 @@ Jogo desenvolvido em HTML, CSS e JavaScript vanilla com uso apenas da biblioteca
 Experimente agora!
 https://danilopem.github.io/pokemon-game/
 
-[![Batalha](https://github.com/DaniloPem/pokemon-game/examples/batalha.gif "Batalha")](https://github.com/DaniloPem/pokemon-game/examples/batalha.gif "Batalha")
+[![Batalha](https://github.com/DaniloPem/pokemon-game/blob/main/examples/batalha.gif "Batalha")](https://github.com/DaniloPem/pokemon-game/blob/main/examples/batalha.gif "Batalha")
 
 ### Funcionalidades do jogo
 
