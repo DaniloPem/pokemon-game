@@ -5,7 +5,26 @@ Jogo desenvolvido em HTML, CSS e JavaScript vanilla com uso apenas da biblioteca
 Experimente agora!
 https://danilopem.github.io/pokemon-game/
 
+Cadastrando o personagem:
+[![cadastro](https://github.com/DaniloPem/pokemon-game/blob/main/examples/cadastro.gif "cadastro")](https://github.com/DaniloPem/pokemon-game/blob/main/examples/cadastro.gif "cadastro")
+
+Encontrando uma batalha:
+[![encontrarBatalha1](https://github.com/DaniloPem/pokemon-game/blob/main/examples/encontrarBatalha1.gif "encontrarBatalha1")](https://github.com/DaniloPem/pokemon-game/blob/main/examples/encontrarBatalha1.gif "encontrarBatalha1")
+
+Batalhando:
 [![Batalha](https://github.com/DaniloPem/pokemon-game/blob/main/examples/batalha.gif "Batalha")](https://github.com/DaniloPem/pokemon-game/blob/main/examples/batalha.gif "Batalha")
+
+Trocando pokemon na batalha:
+[![trocarPokemon](https://github.com/DaniloPem/pokemon-game/blob/main/examples/trocarPokemon.gif "trocarPokemon")](https://github.com/DaniloPem/pokemon-game/blob/main/examples/trocarPokemon.gif "trocarPokemon")
+
+Capturando pokemons:
+[![captura](https://github.com/DaniloPem/pokemon-game/blob/main/examples/captura.gif "captura")](https://github.com/DaniloPem/pokemon-game/blob/main/examples/captura.gif "captura")
+
+Curando pokemons:
+[![curarPokemons](https://github.com/DaniloPem/pokemon-game/blob/main/examples/curarPokemons.gif "curarPokemons")](https://github.com/DaniloPem/pokemon-game/blob/main/examples/curarPokemons.gif "curarPokemons")
+
+Removendo e Adicionando pokemons:
+[![removerEAdicionar](https://github.com/DaniloPem/pokemon-game/blob/main/examples/removerEAdicionar.gif "removerEAdicionar")](https://github.com/DaniloPem/pokemon-game/blob/main/examples/removerEAdicionar.gif "removerEAdicionar")
 
 ### Funcionalidades do jogo
 
