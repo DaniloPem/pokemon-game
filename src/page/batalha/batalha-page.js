@@ -265,6 +265,7 @@ export function iniciarBatalha() {
       setTimeout(() => {
         if (pokemonCompetidor.vida > 0 && pokemonOponente.vida > 0) {
           const ataqueUtilizado = pokemonOponente.atacarAleatorio(pokemonCompetidor);
+          infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonOponente.nome}</span> usou <span style="font-weight: bold">${ataqueUtilizado.nome}</span>`;
           setTimeout(() => {
             audio.ataque.play();
           }, 800);
@@ -297,7 +298,6 @@ export function iniciarBatalha() {
               });
             },
           });
-          infoBatalha.innerHTML = `<span style="font-weight: bold">${pokemonOponente.nome}</span> usou <span style="font-weight: bold">${ataqueUtilizado.nome}</span>`;
           setTimeout(() => {
             botoesTodos.forEach((botao) => {
               botao.disabled = false;
