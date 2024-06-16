@@ -329,7 +329,8 @@ export function iniciarBatalha() {
             botao.disabled = false;
           });
           botaoLutar.classList.add("pokemonSemVida");
-          aparecerPokemons();
+          const encontrarPokemonComVida = personagem.pokemonsNaBolsa.find((pokemon) => pokemon.vida > 0);
+          !!encontrarPokemonComVida ? aparecerPokemons() : fugirPraTelaHome();
         }, 2000);
       } else if (pokemonOponente.vida === 0) {
         botoesTodos.forEach((botao) => {
@@ -529,13 +530,6 @@ export function iniciarBatalha() {
   };
   const atualizarPontosPoder = (spanPontosPoder, habilidade) => {
     spanPontosPoder.innerText = `${habilidade.pontosPoder}/${habilidade.pontosMax}`;
-  };
-
-  const voltarProMapaSemPokemonsComVida = () => {
-    let pokemonComVida = personagem.pokemonsNaBolsa.find((pokemon) => pokemon.vida > 0);
-    if (pokemonComVida === undefined) {
-      voltarProMapa();
-    }
   };
 
   aparecerAtaques();
