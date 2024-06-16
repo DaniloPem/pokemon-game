@@ -329,8 +329,8 @@ export function iniciarBatalha() {
             botao.disabled = false;
           });
           botaoLutar.classList.add("pokemonSemVida");
-          const encontrarPokemonComVida = personagem.pokemonsNaBolsa.find((pokemon) => pokemon.vida > 0);
-          !!encontrarPokemonComVida ? aparecerPokemons() : fugirPraTelaHome();
+          const existePokemomComVida = personagem.pokemonsNaBolsa.some((pokemon) => pokemon.vida > 0);
+          existePokemomComVida ? aparecerPokemons() : fugirPraTelaHome();
         }, 2000);
       } else if (pokemonOponente.vida === 0) {
         botoesTodos.forEach((botao) => {

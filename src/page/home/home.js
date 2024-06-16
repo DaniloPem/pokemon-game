@@ -264,7 +264,8 @@ const verificarPokemonsSelvagem = () => {
   ) {
     const numeroConstante = 0.005;
     const numeroAleatorio = Math.random();
-    if (numeroAleatorio <= numeroConstante) {
+    const existePokemonComVida = personagem.pokemonsNaBolsa.some((pokemon) => pokemon.vida > 0);
+    if (numeroAleatorio <= numeroConstante && existePokemonComVida) {
       personagem.posicaoX = spritePersonagem.posicaoX;
       personagem.posicaoY = spritePersonagem.posicaoY;
       const divTransicao = document.querySelector("#divTransicao");
