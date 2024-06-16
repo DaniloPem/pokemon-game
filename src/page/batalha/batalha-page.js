@@ -531,6 +531,13 @@ export function iniciarBatalha() {
     spanPontosPoder.innerText = `${habilidade.pontosPoder}/${habilidade.pontosMax}`;
   };
 
+  const voltarProMapaSemPokemonsComVida = () => {
+    let pokemonComVida = personagem.pokemonsNaBolsa.find((pokemon) => pokemon.vida > 0);
+    if (pokemonComVida === undefined) {
+      voltarProMapa();
+    }
+  };
+
   aparecerAtaques();
   const voltarProMapa = () => {
     const mapaDoJogo = document.querySelector("main");
